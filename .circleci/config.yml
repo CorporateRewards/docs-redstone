@@ -55,8 +55,6 @@ jobs:
               echo 'commiting new doc'
               git add .
               git commit -m "CircleCI build ($CIRCLE_SHA1): $LAST_GIT_MESSAGE"
-            else
-              echo 'commiting new doc'
             fi
 
       - run:
