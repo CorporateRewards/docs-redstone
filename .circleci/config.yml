@@ -5,10 +5,6 @@ jobs:
   build:
     working_directory: /apidocs
 
-    branches:
-      only:
-        - master
-
     docker:
       - image: createkio/slate:latest
 
@@ -68,4 +64,12 @@ jobs:
               echo 'nothing to push'
             fi
 
-
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
