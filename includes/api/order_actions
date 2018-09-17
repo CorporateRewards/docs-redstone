@@ -1,0 +1,92 @@
+<h1 id='order-actions'>Order actions</h1>
+<p>Once you have list of relevant orders to work on, you can perform a limit number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a &#39;pending&#39; order may transition to &#39;processing&#39; but not to &#39;dispatched&#39;.
+Any attempt to update an order using an invalid state transistion will be met with a 422 (unprocessable entity and a textual description of the error)
+In principle the vast majority of actions a supplier will be performing are:</p>
+<h2 id='accept'>accept</h2>
+<p>This action requires an order ID (in this case 123) with a current status of &#39;pending&#39; resulting in the order having a new status of
+&#39;processing&#39;</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/accept HTTP/1.1
+Authorization: Token token=xxx
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>info</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>None</p>
+<h2 id='reject'>reject</h2>
+<p>This action requires an order ID with a current status of &#39;pending&#39;  and will result in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/reject
+Authorization: Token token=xxx
+
+{
+  "order": {
+    "reason": "Reason for supplier rejecting this order"
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order[reason]</td>
+<td>String</td>
+<td>Required - text description of why the order cannot be fulfilled and is being rejected. Care should be taken when providing a reason as this will be seen by the end user/customer as well as our reward services team.</td>
+</tr>
+</tbody></table>
+<h2 id='dispatch'>dispatch</h2>
+<p>This action requries an order ID with a current status of &#39;processing&#39; and will result in this order having the status &#39;dispatched&#39;. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/dispatch
+Authorization: Token token=xxx
+
+{
+  "order": {
+    "dispatch_date": "2018-01-09 12:34:56",
+    "tracking_id": "",
+    "tracking_url": "https://tracking.com/123456"
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order[dispatch_date]</td>
+<td>DateTime (string)</td>
+<td>Required - string parsable as datetime (i.e. 2017-01-01 13:45:56) this should be the date and time the order was despatched at - there are currently no restrictions on whether this date is in the past or present, however logically it should not be before the order was accepted for processing</td>
+</tr>
+<tr>
+<td>order[tracking_id]</td>
+<td>String</td>
+<td>Optional - this value should represent an identifier or token for tracking the delivery with the relevant courier or handler</td>
+</tr>
+<tr>
+<td>order[tracking_url]</td>
+<td>String</td>
+<td>Optional - if provided, must be a valid url (i.e. https://courier.com/track?parcelID=232456) and should allow the user to click and be shown the progress of their delivery.</td>
+</tr>
+</tbody></table>

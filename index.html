@@ -1,0 +1,1279 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>GPS - API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#typical-process-flow" class="toc-h1 toc-link" data-title="Typical process flow">Typical process flow</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ordering-systems" class="toc-h2 toc-link" data-title="Ordering systems">Ordering systems</a>
+                  </li>
+                  <li>
+                    <a href="#suppliers" class="toc-h2 toc-link" data-title="Suppliers">Suppliers</a>
+                  </li>
+                  <li>
+                    <a href="#function-overview" class="toc-h2 toc-link" data-title="Function overview">Function overview</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#categories" class="toc-h1 toc-link" data-title="Categories">Categories</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-categories" class="toc-h2 toc-link" data-title="List categories">List categories</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#regions" class="toc-h1 toc-link" data-title="Regions">Regions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-regions-and-the-countries-within-them" class="toc-h2 toc-link" data-title="List all Regions and the Countries within them">List all Regions and the Countries within them</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#http-request" class="toc-h3 toc-link" data-title="Regions">HTTP Request</a>
+                          </li>
+                          <li>
+                            <a href="#attributes" class="toc-h3 toc-link" data-title="Regions">Attributes</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#catalogues" class="toc-h1 toc-link" data-title="Catalogues">Catalogues</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-catalogues" class="toc-h2 toc-link" data-title="List all Catalogues">List all Catalogues</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-products-in-a-catalogue" class="toc-h2 toc-link" data-title="List all products in a catalogue">List all products in a catalogue</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-orders" class="toc-h2 toc-link" data-title="List all orders">List all orders</a>
+                  </li>
+                  <li>
+                    <a href="#creating-orders" class="toc-h2 toc-link" data-title="Creating orders">Creating orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#order-actions" class="toc-h1 toc-link" data-title="Order actions">Order actions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#accept" class="toc-h2 toc-link" data-title="accept">accept</a>
+                  </li>
+                  <li>
+                    <a href="#reject" class="toc-h2 toc-link" data-title="reject">reject</a>
+                  </li>
+                  <li>
+                    <a href="#dispatch" class="toc-h2 toc-link" data-title="dispatch">dispatch</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the GPS API documentation.</p>
+
+<p>GPS – the Global Product System from Corporate Rewards Ltd exposes a RESTful JSON api over HTTPS.
+For information on how RESTful APIs are designed, how they work and what benefits they offer over more traditional styles of API, see <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">https://en.wikipedia.org/wiki/Representational_state_transfer</a>
+For more information about JSON, what it looks like and how to use it, see <a href="http://www.json.org/">http://www.json.org/</a> or <a href="https://en.wikipedia.org/wiki/JSON">https://en.wikipedia.org/wiki/JSON</a></p>
+
+<p>There are two principle use-cases for accessing this system using the API, Ordering systems and Supplier systems. Ordering systems consume product information for the purposes of displaying products to an end user. Ordering systems can then place orders for these products through the API. Orders are processed by GPS and passed to suppliers who then fulfil these orders. Updates to orders, their status and related information will come back to Ordering systems over the API.</p>
+
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>Use case</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET <a href="#list-all-orders">/api/v2/categories</a></td>
+<td>Orderer</td>
+</tr>
+<tr>
+<td>GET <a href="#regions">/api/v2/regions</a></td>
+<td>Orderer</td>
+</tr>
+<tr>
+<td>GET <a href="#catalogues">/api/v2/catalogues</a></td>
+<td>Orderer</td>
+</tr>
+<tr>
+<td>GET <a href="#list-all-products-in-a-catalogue">/api/v2/catalogues/{catalogue_id}/products</a></td>
+<td>Orderer</td>
+</tr>
+<tr>
+<td>GET <a href="#orders">/api/v2/orders</a></td>
+<td>Orderer &amp; Supplier</td>
+</tr>
+<tr>
+<td>POST <a href="#creating-orders">/api/v2/orders</a></td>
+<td>Orderer</td>
+</tr>
+<tr>
+<td>POST <a href="#accept">/api/v2/orders/{order_id}/accept</a></td>
+<td>Supplier</td>
+</tr>
+<tr>
+<td>POST <a href="#reject">/api/v2/orders/{order_id}/reject</a></td>
+<td>Supplier</td>
+</tr>
+<tr>
+<td>POST <a href="#dispatch">/api/v2/orders/{order_id}/dispatch</a></td>
+<td>Supplier</td>
+</tr>
+</tbody></table>
+
+<p>Product information can be quite dynamic in that Suppliers can modify the data for a product (such as media/images, prices, availability etc.) at any time. We recommend pulling or refreshing the product data approximately every 24 hours. It is typical for an ordering system to maintain a local store of some sort (cache, database tables etc.) for this product data to allow end users to access this data efficiently.</p>
+
+<p>If a product is made unavailable between the times that data is refreshed, then orders for this product will fail with an appropriate error message indicating why the order failed.
+Order information can also be pulled through the API to periodically update order information, again, it is recommended that the Ordering system keep some kind of local store of the order information which can be periodically updated (some Ordering systems can poll as much as once an hour to refresh order related information).</p>
+
+<p>There is an additional, optional method for getting updates to orders called “Pingback” which is documented in the ordering section. This method offers “near real-time” order updates for the ordering system that placed the order, that is to say that when an order is updated with GPS a call will be made to the ordering system - this is a prompt for the ordering system to fetch updated order information.</p>
+
+<p>The first thing you will have to find out is the correct API endpoint to use for
+the right environment.</p>
+
+<ul>
+<li>  <strong>Staging:</strong> <a href="http://greenstone.my-rewards.co.uk">https://greenstone.my-rewards.co.uk</a></li>
+<li>  For production access, please contact your Corporate Rewards representative</li>
+</ul>
+
+<p>A programme can have one or more API keys, each of which will be granted
+permission to access different functionality from the API. As a standard, we use
+RESTful json endpoints that will accept either HTML/HTTP form data or json data,
+HTML/HTTP is preferred.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>In order to use our API endpoints, you will need to have an API token created and
+for this token to be granted the relevant permissions. To authenticate requests we
+require you to pass us this token in the form of an HTTP header called
+<code>Authorization</code> with the value of <code>Token token=YOURAPITOKENHERE</code>.</p>
+
+<aside class="warning">You must set the <strong>Authorization</strong> as detailed above</aside>
+
+<p>Failure to supply a recognised key in the correct format will result in a 403 HTTP response code and an error message:
+HTTP Token: Access denied.</p>
+
+<p>Your api token should have the following format consisting of an api key followed by a api secret, separated with a colon like so:
+abcdefghijklmnopqrst:uvwxyz1234567890abcdefghijklmnop</p>
+<h1 id='typical-process-flow'>Typical process flow</h1><h2 id='ordering-systems'>Ordering systems</h2>
+<p>The typical process flow indicates how to consume information from this API, the order in which it makes sense to do this and some suggestions on how to make efficient use of this service.</p>
+
+<p>Categories are fairly stable and do not change too often. We recommend checking this endpoint and synchronising the information from here to your local store at most once per day and at least once per month. Ordering systems are free to organise the product data however they wish - these categories are provided as suggestions and are actively managed but are not mandatory.</p>
+
+<p>The typical process for fetching product information is to iterate over each available Catalogue, fetching the products for each one. Check to see if you have a local copy of each Product, if the data for the Product is new or has changed since the last sync, store this Product data. If at the end of the list there are local Products you have not seen in the latest sync of Product data, they should be removed from the local store.</p>
+
+<p>In order to find a list of products to show an end user, the ordering system should be able to find products by country. A user should therefore be able to see a list of products available to them in their country.
+Order information can be synchronised much more frequently, we recommend usage of the since parameter to restrict the volume of data being listed in each call the fetch Order information. The since parameter will filter the Orders endpoint to show only Orders that have been updated since a specified datetime. For instance, if Order information is synced every hour, then the since parameter should be used to request Orders updated in the last hour. An overlap can be used to ensure order updates are not missed.</p>
+
+<p>There is also a pingback capability – to allow for near real-time Order updates. We recommend using a combination of both approaches to allow prompt updates and ensure nothing is missed.</p>
+<h2 id='suppliers'>Suppliers</h2>
+<p>Suppliers will need to fetch order information from the API periodically (polling) and act accordingly. To act on an order one of the documented order actions will be required.</p>
+
+<p>When an order is created, we can send an email notification. This could be used as a prompt to fetch new order information but we would recommend polling be carried out in parallel. If using email notifications for this purpose, an integration would have to take account of the various concurrent requests and actions.</p>
+<h2 id='function-overview'>Function overview</h2>
+<p>Each of the main objects/entities available from GPS are introduced along with recommendations for how to use these in your ordering system.</p>
+<h4 id='categories'>Categories</h4>
+<p>Categories are also provided as a service/endpoint, while these are reasonably stable, we do recommend syncing the categories you keep locally against this service every time you go to pull product information. The Products will refer to these categories. You can of course decide to categorise Products in your own way and ignore the Product Categories from GPS – we provide these Categories (as we use them ourselves) for your reference, should you require.</p>
+<h4 id='regions'>Regions</h4>
+<p>We supply a list of all the countries rewards are available in by geographical region. The country name, ISO code and the id of this country as used by our system is available from the GPS api. It is possible that not every country available from GPS will have rewards in that you have been allocated on your API key.</p>
+<h4 id='catalogues'>Catalogues</h4>
+<p>Catalogues are the primary dimension along which we organise our products. An API key is granted access to one or more catalogues according to the requirements of the Ordering system and their agreement with Corporate Rewards. Catalogue allocation is also quite stable but we recommend iterating over each Catalogue in order to fetch product information to ensure that you are always getting the correct information.</p>
+<h4 id='products'>Products</h4>
+<p>Once a list of Catalogues is obtained, a list of products should be fetched from this catalogue. Depending on the catalogue there may be hundreds of products so this call may take several seconds to complete. There are parameters provided to manipulate the information coming back from the API - see the Catalogues section later.</p>
+
+<p>When getting Product information, we recommend checking each individual product in the feed (perhaps by hashing or somehow fingerprinting the actual product information) to see if it is new or has changed before adding it to the local store. This can speed up your processing of Products. It is possible that some products will have been removed from the feed, you will need to react to this situation and remove the product from your local store in this case.</p>
+<h5 id='variants-and-vouchers'>Variants and Vouchers</h5>
+<p>If we take an example case for a product that is available in a variety of colours, this information is stored against a product as a series of one or more variants against a &#39;base product&#39;. For instance, the Apple iPhone is available by default in black as the base product but can also be ordered in variants of gold or rose gold - therefore there are two elements under the variants key for this product. These variants are chiefly differentiated by their variant sku and the description of the reason for the variation. This means that we can have one product with a total of three variants as opposed to 3 products - there is one restriction, namely that the price of all these variants must be the same. When ordering you will need to provide the product_id and the sku of either the product or the chosen variant.</p>
+
+<p>When vouchers were added to the product catalogue, it was decided to use the product variant capability to store denominations for a voucher rather than add a new product for every denomination of a voucher. This does break the rule that all product variants must cost the same, so this lead to the introduction of the voucher flag - a boolean attribute on the product. This is used to indicate that this product is a set of voucher denominations (as opposed to a merchandise type product). The way voucher type products are configured is as follows:
+*   The lowest denomination voucher details are used to create the product, this also creates a single variant (denomination)
+*   Subsequent denominations are also added as variants
+*   The description of the voucher denomination is always recorded as the variant attribute (i.e. $500) and is suitable for displaying to users as a choice
+*   To reflect the GBP pricing expected of regular products and to allow a similar price calculation by ordering systems, each denomination has face_value_gbp and variant_base_price attributes which are calculated in GBP with any relevant/agreed markup in place</p>
+
+<p>An ordering system should calculate the cost of a voucher denomination using the variant_base_price attribute</p>
+<h5 id='price-calculation'>Price calculation</h5>
+<p>Products will be available in a set of one or more Countries however the base_price cost of an Product will always be presented in Pounds Sterling to an ordering system. To calculate the cost of an Order to an ordering system, the delivery Country will need to be known. The cost of the Product plus tax is calculated using the base_price field value then adding the sales tax using the Products vat_rate field value. This subtotal needs to be added to the delivery cost for the destination country. To calculate the delivery cost, use the delivery_charge value from the destination country your Order is being delivered to and add in the vat_rate for the delivery charge. This yields:</p>
+
+<p>Product (base_price + vat_rate) + (available_countries{delivery_charge + vat_rate})</p>
+<h4 id='orders'>Orders</h4>
+<p>Once your local store of Regions, Catalogues, Categories and Products are up to date, products can be displayed to users for them to order. Ordering systems have to decide if a user is eligible to order a product (has enough points or is over the minimum age) and pass the order information to GPS, if the order can be placed, GPS will respond with the Order information.</p>
+
+<p>An order can only ever be created for one product, referenced primarily by its id. In order to facilitate more flexible ordering of vouchers and prepaid cards, GPS requires orders to be created with one or more line items.</p>
+
+<p>An order for a physical product should have one line item describing the product, it’s variant (sku) and quantity required.
+When ordering a voucher or prepaid card, it is possible to order a combination of voucher/top up denominations. For instance, a user may wish to order a certain amount of points worth of credit on a prepaid card such as a £10, £20 and 3 multiples of a £50 credit/top up totalling £180, rather than processing 3 separate orders, a user can (and should be provided with the relevant user interface to do so) place one order for all the required amounts.</p>
+
+<p>In the case of ordering multiple denominations of a voucher product, the product_id is required as an order attribute and each combination of sku (for the particular denomination) and quantity are supplied in the line_item attributes.</p>
+<h5 id='calculating-the-cost-of-an-order'>Calculating the cost of an order</h5>
+<p>In order to calculate to total cost of an order, the follwing calculations apply, given that:</p>
+
+<p>p = product.base_price * (1 + prooduct.vat_rate)</p>
+
+<p>q = line_item.quantity</p>
+
+<p>c = product.available_countries[order.country]</p>
+
+<p>d = c.delivery_cost * (1 + c.vat_rate)</p>
+
+<p>Then the gross cost of an order for an order of a physical product is:</p>
+
+<p>(p + d) * q</p>
+
+<p>However for voucher products (indicated by product.is_voucher = true) the calculation is different. A voucher typically has variants which are used as denominations and as such, each denomination will have it&#39;s own base_price (as opposed to the base_price against the product). Orders for vouchers can have multiple line_items, each for a different denomination. To calculate the gross cost of an order for one or more vouchers:</p>
+
+<p>For each line_item, given that:</p>
+
+<p>v = product.variants[order.line_items.line_item.product_sku]</p>
+
+<p>p = v.variant_base_price * (1 + product.vat_rate)</p>
+
+<p>q = line_item.quantity</p>
+
+<p>s = p * q</p>
+
+<p>then:</p>
+
+<p>t = the sum of s for each line_item</p>
+
+<p>c = product.available_countries[order.country]</p>
+
+<p>d = c.delivery_cost * (1 + c.vat_rate)</p>
+
+<p>So the grand total with the deliverycost is:</p>
+
+<p>t + d</p>
+
+<p>An order for one or more vouchers is only charged one delivery_cost in total</p>
+
+<p>Ordering systems can then charge whatever mark-up on top of the calculated cost of the order they choose as well as converting to whatever local ‘currency’ is used to present orders to the end user. Many ordering systems use ‘Points’ to obscure the true value/cost of a Product. A ratio of points/Pound is typically chosen by the ordering system.</p>
+
+<p>We strongly suggest coupling the charge to an end user with the total cost of the order.</p>
+<h5 id='completed-orders'>Completed orders</h5>
+<p>Once and order is complete, the Ordering system should store order information (returned from a successful placement of an order) locally together with information to identify which user this Order information was for. Orders are created with a state (status) of Pending. When a supplier accepts an Order it moves to Processing, when dispatched by a supplier the Order state is set to Dispatched and tracking information is provided when available. If a pingback URL is supplied (when creating the order) that uniquely identifies this order on your system, whenever a change is made to the order in GPS a simple GET request will be made to this URL. This should signal the ordering system to fetch the updated information for this order. This is optional but will provide a near-realtime update for an order including tracking information.</p>
+
+<p>It is possible to request a list of orders made by your programme/api key and it is possible to filter the order using the parameters detailed in the section pursuant to orders below.</p>
+
+<p>We recommend that ordering systems periodically sync order information with GPS to track changes in order status and show this information to end users. Relying soley on the pingback URL mechanism is not recommended as it may result in stale information on the ordering side if the pingback is not successful - a ping back is only sent once</p>
+<h1 id='categories'>Categories</h1><h2 id='list-categories'>List categories</h2>
+<p>This endpoint fetches a JSON array of categories. There is a simple parent relationship represented using the parent_id field. This enables an ordering system that chooses to use the Categories from GPS to re-create the category structure. Product data has a reference to the GPS Category they are in using the category_id field.</p>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/categories</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"category name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"category name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+<p><code>GET /api/v2/categories</code></p>
+<h1 id='regions'>Regions</h1><h2 id='list-all-regions-and-the-countries-within-them'>List all Regions and the Countries within them</h2>
+<p>This endpoint fetches a JSON array of Regions each with an array of countries in that region. Each region will show a list of the countries in that region as a nested list of objects.</p>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/regions</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Europe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countries"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"iso_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dialing_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+44"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pounds Sterling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pounds Sterling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"iso_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
+        </span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Euro"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"€"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Euro"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.23</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /api/v2/regions</code></p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>none</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='catalogues'>Catalogues</h1><h2 id='list-all-catalogues'>List all Catalogues</h2>
+<p>This endpoint fetches a list of all catalogues available for your api key.</p>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/catalogues</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Core"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-27T12:22:26.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-27T12:22:26.000Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vouchers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-27T12:22:26.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-27T12:22:26.000Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+<p><code>GET /api/v2/catalogues</code></p>
+<h4 id='attributes'>Attributes</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>primary key for catalogues</td>
+</tr>
+</tbody></table>
+<h2 id='list-all-products-in-a-catalogue'>List all products in a catalogue</h2>
+<p>This is how ordering systems will access the products available to them. Typically, after fetching a list of catalogues, an ordering system will iterate over each catalogue, fetching the products in each one to add to a local store/cache of products.</p>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/catalogues/1/products</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINKS OF LONDON 32-09-006 EFFERVESCENCE PENDANT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A cluster of silver, white and grey pearls come together to create this elegant pendant complete with sterling silver chain. This pendant gives the traditional pearl a modern twist.&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minimum_age"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_image_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albania"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.75</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"numeric"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Approved"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"catalogue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Catalogue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necklaces"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ar_association_key_name"</span><span class="p">:</span><span class="w"> </span><span class="mi">414</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">529</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-017"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">530</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"requires_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pounds Sterling"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
+<p><code>GET /api/v2/catalogues/1/products</code></p>
+<h4 id='attributes-2'>Attributes</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>ordering systems will only see products with a status of approved - this is largely functionless for ordering systems</td>
+</tr>
+<tr>
+<td>minimum_age</td>
+<td>integer</td>
+<td>when present only products suitable for a minimum age of this value will be shown - for instance a value of 18 will only list products that have either no minimum age or a value greater then or equal to 18</td>
+</tr>
+<tr>
+<td>delivery_type</td>
+<td>string</td>
+<td>String (may be comma separated) delivery_types are typically Physical, Email, Downloadable and Prepaid. Products will only have this or these delivery type if this parameter is used</td>
+</tr>
+<tr>
+<td>country</td>
+<td>string</td>
+<td>This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed</td>
+</tr>
+</tbody></table>
+<h1 id='orders'>Orders</h1><h2 id='list-all-orders'>List all orders</h2>
+<p>This endpoint fetches a JSON array of orders you are allowed to see. Typically, ordering systems will want to periodically syncronise Orders so as to show up to date information to users about their Orders. By default this endpoint will fetch <strong>all</strong> orders from the first order ever placed by the client. This can grow to a long list over time and so becomes slow and taxing to fetch and process. We have provided some parameters for filtering this list of orders so clients can more easily stay up to date. We recommend using the since parameter - this will return a list of orders that have been updated on or after the date and time provided as this value. Typically ordes are updated daily but no more frequently than hourly.</p>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1142</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9001056"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5202</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ordered_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T16:53:26.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"programme_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ted Test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7189404020"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ted.moyses@corporaterewards.co.uk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipient_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8 The Courtyard </span><span class="se">\n</span><span class="s2">Timothy's Bridge Road </span><span class="se">\n</span><span class="s2">Stratford Upon Avon </span><span class="se">\n</span><span class="s2">UK </span><span class="se">\n</span><span class="s2">CV37 9NP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"voucher_card_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dispatch_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T16:53:26.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T16:53:26.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipient_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ted Test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipient_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7189404020"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipient_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ted.moyses@corporaterewards.co.uk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pingback_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amazon.co.uk eVoucher"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMA10|1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_variation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Variant: 10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="mi">1217</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"api_key_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remote_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_vat_numeric"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_vat_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"old_order_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8 The Courtyard"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timothy's Bridge Road"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stratford Upon Avon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CV37 9NP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remote_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1142</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redemption"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="mi">1217</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Initial points value of customer order"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transaction_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debit"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1121</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1142</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amazon.co.uk eVoucher"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Variant: 10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMA10|1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5202</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_variant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.7</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"individual_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.7</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">375</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1142</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Created"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T16:53:26.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T16:53:26.000Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"programme"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_by_client"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client Programme"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-27T08:29:27.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-27T08:29:27.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+<p><code>GET /api/v2/orders</code></p>
+<h4 id='parameters'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Optional - only orders with this status will be returned. Must be one of: pending, processing, dispatched, cancelled, unable to fulfill, cancel requested, pending return</td>
+</tr>
+<tr>
+<td>programme_ref</td>
+<td>String</td>
+<td>Optional - used to fetch orders for a given programme. Most ordering system api keys are only allocated/linked to one programme, ordering systems can only access orders for their own programme. This parameter has no effect unless your api key is linked to more than one programme. You should be issued your programme reference along with your api key</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Datetime</td>
+<td>Sending this parameter with a parsable datetime as the value will only return orders that have been updated since this datetime value. This is useful to poll for orders with new information. Without this parameter present, all orders since the start of your programme (that also match any other provided parameters) will be returned. Example 2017-11-21T23:56:34Z</td>
+</tr>
+</tbody></table>
+<h2 id='creating-orders'>Creating orders</h2>
+<p>This endpoint allows ordering systems to place orders on GPS. In order to place an order you will need:
+-   The id of a product and the SKU shall be provided in the line_item. If the product has variants, line_item will require the SKU of the variant. For vouchers, more than one line_item can be provided.
+-   A country name - as listed in the /regions endpoint
+-   Email address - used for delivery (i.e. for an eVoucher) and to notify users
+-   A full address for a product with delivery_type = Physical</p>
+
+<p>If the product is at status Approved and is available (product data can change since an ordering system last refreshed it&#39;s product data) at the time of order and the above information is provided correctly - GPS will respond with an HTTP status code of 200. Otherwise a status code of &gt;= 400 will be returned as per REST expectations along with an explanatory plain text message as body content. Ordering systems are expected to track and respond to the response status codes.</p>
+
+<p>The line_items object is a hash of array items and as such will require unique keys for each item. The value of these keys is not used.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+    "order": {
+        "programme_ref": "1309",
+        "product_id": "3257",
+        "quantity": "1",
+        "points": "100",
+        "customer_name": "Test Order User",
+        "customer_email": "email@address.com",
+        "customer_phone": "447502375063",
+        "customer_address_1": "22 A street",
+        "customer_address_2": "",
+        "country": "UK",
+        "town": "renfrew",
+        "postcode": "pa4 8qy",
+        "recipient_address": "22 A street \n\nrenfrew \npa4 8qy",
+        "recipient_name": "Mohammed Ashraf",
+        "recipient_email": "",
+        "recipient_phone": "447502375063",
+        "delivery_instructions": ""
+    },
+    "line_items": {
+        "0": {
+            "line_item": {
+                "name": "Sony Playstation 4 Console",
+                "sku": "PS222",
+                "quantity": "1",
+                "points": "27720"
+            }
+        }
+    }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1246,
+  "supplier_id": 3,
+  "number": 9001154,
+  "product_id": 3257,
+  "ordered_at": "2017-01-30T17:23:25.945Z",
+  "programme_id": 34,
+  "customer_name": "Test Order User",
+  "customer_phone": "447502375063",
+  "customer_email": "email@address.com",
+  "recipient_address": "22 A street \n \nrenfrew \nUK \npa4 8qy",
+  "delivery_instructions": "",
+  "voucher_card_number": null,
+  "tracking_id": null,
+  "tracking_url": null,
+  "dispatch_date": null,
+  "created_at": "2017-01-30T17:23:26.103Z",
+  "updated_at": "2017-01-30T17:23:26.103Z",
+  "recipient_name": "Mohammed Ashraf",
+  "recipient_phone": "447502375063",
+  "recipient_email": "",
+  "state": "pending",
+  "quantity": 1,
+  "variant_id": null,
+  "country_id": 140,
+  "pingback_url": null,
+  "po_number": null,
+  "product_name": "Sony Playstation 4 Console",
+  "product_sku": "PS222",
+  "product_variation": null,
+  "delivery_type": "Physical",
+  "international_requirements": false,
+  "price": "290.04",
+  "delivery_cost": 7,
+  "points": null,
+  "product_base_price": "290.04",
+  "product_vat_rate": "20.0",
+  "api_key_id": 12,
+  "remote_user_id": null,
+  "voucher": false,
+  "delivery_charge": 6.5,
+  "delivery_vat_numeric": 20,
+  "delivery_vat_name": "20.0%",
+  "old_order_type": false,
+  "customer_address_1": "22 A street",
+  "customer_address_2": "",
+  "town": "renfrew",
+  "postcode": "pa4 8qy",
+  "country_name": "UK",
+  "remote_order": null,
+  "currency_id": 3,
+  "transactions": [
+    {
+      "id": null,
+      "order_id": 1246,
+      "user_id": null,
+      "variety": "Redemption",
+      "points": null,
+      "reason": "Initial points value of customer order",
+      "transaction_type": "Debit"
+    }
+  ],
+  "line_items": [
+    {
+      "id": 1232,
+      "order_id": 1246,
+      "name": "Sony Playstation 4 Console",
+      "info": null,
+      "sku": "PS222",
+      "product_id": null,
+      "product_variant_id": null,
+      "delivery_type": "Physical",
+      "price": 290.04,
+      "quantity": 1,
+      "points": 27720,
+      "individual_price": 290.04
+    }
+  ],
+  "comments": []
+}
+</code></pre><h4 id='http-request-2'>HTTP Request</h4>
+<p><code>POST /api/v2/orders</code></p>
+<h4 id='attributes'>Attributes</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order[programme_ref]</td>
+<td>String</td>
+<td>Optional - Please provide the programme reference issued to you by Corporate Rewards - if you do not know this value, it will be inserted automatically</td>
+</tr>
+<tr>
+<td>order[product_id]</td>
+<td>Integer</td>
+<td>Required - this is the product.id you get from the product in the catalogues endpoint</td>
+</tr>
+<tr>
+<td>order[quantity]</td>
+<td>Integer</td>
+<td>Required - this is required to be calculated from the sum of all quantities in all line items.</td>
+</tr>
+<tr>
+<td>order[points]</td>
+<td>Integer</td>
+<td>Optional - the total amount of points the user was charged by the ordering system for this product including delivery. GPS does not care about points per se but this can be useful when Rewards services are talking about an order as part of a customer service query. This should reflect the total points for all line items in an order. Using this value will reflect a transaction in the transactions key in the returned order data.</td>
+</tr>
+<tr>
+<td>order[customer_name]</td>
+<td>String</td>
+<td>Required - This is the name of the customer who placed the order</td>
+</tr>
+<tr>
+<td>order[customer_email]</td>
+<td>String</td>
+<td>Required - This is the email address of the customer who placed the order</td>
+</tr>
+<tr>
+<td>order[customer_phone]</td>
+<td>String</td>
+<td>Required - this is the phone number of the customer who placed the order</td>
+</tr>
+<tr>
+<td>order[customer_address_1]</td>
+<td>String</td>
+<td>Required - this is the first line of the address, required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products</td>
+</tr>
+<tr>
+<td>order[customer_address_2]</td>
+<td>String</td>
+<td>Optional - second line of address</td>
+</tr>
+<tr>
+<td>order[country]</td>
+<td>String</td>
+<td>Required - this is the name of the country this product will be delivered to. Countries are available from the /regions endpoint or from the list of available_countries for this product. Always use the name of the country (not the id). Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products</td>
+</tr>
+<tr>
+<td>order[town]</td>
+<td>String</td>
+<td>Required - this is the postal town this product will be delivered to. Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products</td>
+</tr>
+<tr>
+<td>order[postcode]</td>
+<td>String</td>
+<td>Postal (or zip) code this product is to be delivered to. Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products</td>
+</tr>
+<tr>
+<td>order[recipient_address]</td>
+<td>String</td>
+<td>Required - this is the concatenated version of the full postal address this product will be delivered to. Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products</td>
+</tr>
+<tr>
+<td>order[recipient_name]</td>
+<td>String</td>
+<td>Optional - This allows a user to place an order and have it delivered to another person i.e. as a gift.</td>
+</tr>
+<tr>
+<td>order[recipient_email]</td>
+<td>String</td>
+<td>Optional - This allows a user to sepcify an alternate email address to be the recipient of this order</td>
+</tr>
+<tr>
+<td>order[recipient_phone]</td>
+<td>String</td>
+<td>Optional - string representation of an alternate phone number to be provided as the recipient of this product</td>
+</tr>
+<tr>
+<td>order[delivery_instructions]</td>
+<td>String</td>
+<td>Optional - allows for the provision of extra instructions for the delivery of this order such as &quot;Please knock, the door bell is not working&quot;</td>
+</tr>
+<tr>
+<td>order[remote_order]</td>
+<td>String</td>
+<td>Optional - this can be used to record the ordering systems own unique id for this order. Some systems will create an order locally before attempting to push the order over the api to GPS. This field can be used to store this id value for later cross referencing.</td>
+</tr>
+<tr>
+<td>order[pingback_url]</td>
+<td>String</td>
+<td>Optional - if provided, must be a valid url (with scheme i.e. http:// or https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not &#39;leak&#39; any information.</td>
+</tr>
+<tr>
+<td>line_items[0][line_item][name]</td>
+<td>String</td>
+<td>Required - this is the name of the product being ordered</td>
+</tr>
+<tr>
+<td>line_items[0][line_item][sku]</td>
+<td>String</td>
+<td>Required - this is the SKU of the product being order. If ordering a variant of a product, ALWAYS provide the variant SKU</td>
+</tr>
+<tr>
+<td>line_items[0][line_item][quantity]</td>
+<td>Integer</td>
+<td>Required - the number of this product to devliver</td>
+</tr>
+<tr>
+<td>line_items[0][line_item][points]</td>
+<td>Integer</td>
+<td>Optional - the value of points charged for this line item. This is used to indicate to GPS how many points each line item is work but is not related to the total points for the order. This has no effect in GPS other than to indicate points for a line item at time of order.</td>
+</tr>
+</tbody></table>
+<h4 id='error-messages-and-response-codes'>Error messages and response codes</h4>
+<table><thead>
+<tr>
+<th>StatusCode</th>
+<th>Likely cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>404</td>
+<td>This product either does not exist or is no longer available</td>
+</tr>
+<tr>
+<td>403</td>
+<td>API key supplied does not have permission to use this endpoint</td>
+</tr>
+<tr>
+<td>422</td>
+<td>The order information supplied is invalid - there will be an accompanying message in the body of the response to explain more about why the request is un acceptable</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Something unexpected has gone wrong on the server side - there may be a detailed error message from the staging environment, please copy and paste any such error to either the Product &amp; Proposition or Technical Team at CR to assist with diagnosing this error</td>
+</tr>
+</tbody></table>
+
+<p>Possible reasons for a 422:</p>
+
+<ul>
+<li><code>{{ProductName}}</code> can&#39;t be delivered to this country</li>
+<li><code>{{ProductName}}</code> isn&#39;t available to order</li>
+<li><code>{{order[pingback_url]}}</code> isn&#39;t a valid URL</li>
+<li><code>{{order[product_id]}}</code> is not supplied by Supplier: <code>{{SupplierName}}</code></li>
+<li>can&#39;t be blank or is an unknown supplier.</li>
+<li>can&#39;t be blank or is an unrecognised country.</li>
+<li>can&#39;t be blank or is an unrecognised product.</li>
+<li>can&#39;t be blank or is an unrecognised programme.</li>
+<li>One or more line items are invalid. It is likely that the corresponding
+voucher, variant or product may have been deleted in GPS - {{addtional line items errors may appear here, if known}}</li>
+<li>One or more line items are invalid - {{more line item related messages may be displayed here, if known}}</li>
+<li>No Line Items found</li>
+<li><code>{{line_items[0][line_item][name]}}</code> SKU does not match order product SKU</li>
+</ul>
+<h1 id='order-actions'>Order actions</h1>
+<p>Once you have list of relevant orders to work on, you can perform a limit number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a &#39;pending&#39; order may transition to &#39;processing&#39; but not to &#39;dispatched&#39;.
+Any attempt to update an order using an invalid state transistion will be met with a 422 (unprocessable entity and a textual description of the error)
+In principle the vast majority of actions a supplier will be performing are:</p>
+<h2 id='accept'>accept</h2>
+<p>This action requires an order ID (in this case 123) with a current status of &#39;pending&#39; resulting in the order having a new status of
+&#39;processing&#39;</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/accept HTTP/1.1
+Authorization: Token token=xxx
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>info</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>None</p>
+<h2 id='reject'>reject</h2>
+<p>This action requires an order ID with a current status of &#39;pending&#39;  and will result in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/reject
+Authorization: Token token=xxx
+
+{
+  "order": {
+    "reason": "Reason for supplier rejecting this order"
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order[reason]</td>
+<td>String</td>
+<td>Required - text description of why the order cannot be fulfilled and is being rejected. Care should be taken when providing a reason as this will be seen by the end user/customer as well as our reward services team.</td>
+</tr>
+</tbody></table>
+<h2 id='dispatch'>dispatch</h2>
+<p>This action requries an order ID with a current status of &#39;processing&#39; and will result in this order having the status &#39;dispatched&#39;. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/orders/123/dispatch
+Authorization: Token token=xxx
+
+{
+  "order": {
+    "dispatch_date": "2018-01-09 12:34:56",
+    "tracking_id": "",
+    "tracking_url": "https://tracking.com/123456"
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order[dispatch_date]</td>
+<td>DateTime (string)</td>
+<td>Required - string parsable as datetime (i.e. 2017-01-01 13:45:56) this should be the date and time the order was despatched at - there are currently no restrictions on whether this date is in the past or present, however logically it should not be before the order was accepted for processing</td>
+</tr>
+<tr>
+<td>order[tracking_id]</td>
+<td>String</td>
+<td>Optional - this value should represent an identifier or token for tracking the delivery with the relevant courier or handler</td>
+</tr>
+<tr>
+<td>order[tracking_url]</td>
+<td>String</td>
+<td>Optional - if provided, must be a valid url (i.e. https://courier.com/track?parcelID=232456) and should allow the user to click and be shown the progress of their delivery.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
