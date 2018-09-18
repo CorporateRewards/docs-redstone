@@ -5,13 +5,13 @@ In principle the vast majority of actions a supplier will be performing are:</p>
 <h2 id='accept'>accept</h2>
 <p>This action requires an order ID (in this case 123) with a current status of &#39;pending&#39; resulting in the order having a new status of
 &#39;processing&#39;</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/accept HTTP/1.1
-Authorization: Token token=xxx
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/accept</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-
-</code></pre>
+<span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -24,18 +24,17 @@ Content-Type: application/json
 <p>None</p>
 <h2 id='reject'>reject</h2>
 <p>This action requires an order ID with a current status of &#39;pending&#39;  and will result in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/reject
-Authorization: Token token=xxx
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/reject</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-  "order": {
-    "reason": "Reason for supplier rejecting this order"
-  }
-}
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
-
-
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reason for supplier rejecting this order"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
 <tr>
@@ -52,20 +51,19 @@ Content-Type: application/json
 </tbody></table>
 <h2 id='dispatch'>dispatch</h2>
 <p>This action requries an order ID with a current status of &#39;processing&#39; and will result in this order having the status &#39;dispatched&#39;. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/dispatch
-Authorization: Token token=xxx
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/dispatch</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-  "order": {
-    "dispatch_date": "2018-01-09 12:34:56",
-    "tracking_id": "",
-    "tracking_url": "https://tracking.com/123456"
-  }
-}
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
-
-
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"dispatch_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-09 12:34:56"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tracking.com/123456"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
 <tr>

@@ -893,125 +893,125 @@ When ordering a voucher or prepaid card, it is possible to order a combination o
 <p>If the product is at status Approved and is available (product data can change since an ordering system last refreshed it&#39;s product data) at the time of order and the above information is provided correctly - GPS will respond with an HTTP status code of 200. Otherwise a status code of &gt;= 400 will be returned as per REST expectations along with an explanatory plain text message as body content. Ordering systems are expected to track and respond to the response status codes.</p>
 
 <p>The line_items object is a hash of array items and as such will require unique keys for each item. The value of these keys is not used.</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders HTTP/1.1
-Authorization: Token token=xxx
-Content-Type: application/json
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-    "order": {
-        "programme_ref": "1309",
-        "product_id": "3257",
-        "quantity": "1",
-        "points": "100",
-        "customer_name": "Test Order User",
-        "customer_email": "email@address.com",
-        "customer_phone": "447502375063",
-        "customer_address_1": "22 A street",
-        "customer_address_2": "",
-        "country": "UK",
-        "town": "renfrew",
-        "postcode": "pa4 8qy",
-        "recipient_address": "22 A street \n\nrenfrew \npa4 8qy",
-        "recipient_name": "Mohammed Ashraf",
-        "recipient_email": "",
-        "recipient_phone": "447502375063",
-        "delivery_instructions": ""
-    },
-    "line_items": {
-        "0": {
-            "line_item": {
-                "name": "Sony Playstation 4 Console",
-                "sku": "PS222",
-                "quantity": "1",
-                "points": "27720"
-            }
-        }
-    }
-}
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"programme_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1309"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3257"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Order User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"447502375063"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22 A street"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"customer_address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"renfrew"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pa4 8qy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22 A street </span><span class="se">\n\n</span><span class="s2">renfrew </span><span class="se">\n</span><span class="s2">pa4 8qy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohammed Ashraf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"447502375063"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"line_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sony Playstation 4 Console"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PS222"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27720"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-  "id": 1246,
-  "supplier_id": 3,
-  "number": 9001154,
-  "product_id": 3257,
-  "ordered_at": "2017-01-30T17:23:25.945Z",
-  "programme_id": 34,
-  "customer_name": "Test Order User",
-  "customer_phone": "447502375063",
-  "customer_email": "email@address.com",
-  "recipient_address": "22 A street \n \nrenfrew \nUK \npa4 8qy",
-  "delivery_instructions": "",
-  "voucher_card_number": null,
-  "tracking_id": null,
-  "tracking_url": null,
-  "dispatch_date": null,
-  "created_at": "2017-01-30T17:23:26.103Z",
-  "updated_at": "2017-01-30T17:23:26.103Z",
-  "recipient_name": "Mohammed Ashraf",
-  "recipient_phone": "447502375063",
-  "recipient_email": "",
-  "state": "pending",
-  "quantity": 1,
-  "variant_id": null,
-  "country_id": 140,
-  "pingback_url": null,
-  "po_number": null,
-  "product_name": "Sony Playstation 4 Console",
-  "product_sku": "PS222",
-  "product_variation": null,
-  "delivery_type": "Physical",
-  "international_requirements": false,
-  "price": "290.04",
-  "delivery_cost": 7,
-  "points": null,
-  "product_base_price": "290.04",
-  "product_vat_rate": "20.0",
-  "api_key_id": 12,
-  "remote_user_id": null,
-  "voucher": false,
-  "delivery_charge": 6.5,
-  "delivery_vat_numeric": 20,
-  "delivery_vat_name": "20.0%",
-  "old_order_type": false,
-  "customer_address_1": "22 A street",
-  "customer_address_2": "",
-  "town": "renfrew",
-  "postcode": "pa4 8qy",
-  "country_name": "UK",
-  "remote_order": null,
-  "currency_id": 3,
-  "transactions": [
-    {
-      "id": null,
-      "order_id": 1246,
-      "user_id": null,
-      "variety": "Redemption",
-      "points": null,
-      "reason": "Initial points value of customer order",
-      "transaction_type": "Debit"
-    }
-  ],
-  "line_items": [
-    {
-      "id": 1232,
-      "order_id": 1246,
-      "name": "Sony Playstation 4 Console",
-      "info": null,
-      "sku": "PS222",
-      "product_id": null,
-      "product_variant_id": null,
-      "delivery_type": "Physical",
-      "price": 290.04,
-      "quantity": 1,
-      "points": 27720,
-      "individual_price": 290.04
-    }
-  ],
-  "comments": []
-}
-</code></pre><h4 id='http-request-2'>HTTP Request</h4>
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1246</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">9001154</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3257</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ordered_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-30T17:23:25.945Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"programme_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Order User"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"447502375063"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"recipient_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22 A street </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">renfrew </span><span class="se">\n</span><span class="s2">UK </span><span class="se">\n</span><span class="s2">pa4 8qy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"voucher_card_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tracking_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dispatch_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-30T17:23:26.103Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-30T17:23:26.103Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"recipient_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohammed Ashraf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"recipient_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"447502375063"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"recipient_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pingback_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sony Playstation 4 Console"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PS222"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_variation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"290.04"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_base_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"290.04"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_key_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remote_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_vat_numeric"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"delivery_vat_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.0%"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"old_order_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22 A street"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customer_address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"renfrew"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pa4 8qy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"country_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remote_order"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1246</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redemption"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Initial points value of customer order"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"transaction_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debit"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1232</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1246</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sony Playstation 4 Console"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PS222"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_variant_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">290.04</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="mi">27720</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"individual_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">290.04</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
 <p><code>POST /api/v2/orders</code></p>
 <h4 id='attributes'>Attributes</h4>
 <table><thead>
@@ -1186,13 +1186,13 @@ In principle the vast majority of actions a supplier will be performing are:</p>
 <h2 id='accept'>accept</h2>
 <p>This action requires an order ID (in this case 123) with a current status of &#39;pending&#39; resulting in the order having a new status of
 &#39;processing&#39;</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/accept HTTP/1.1
-Authorization: Token token=xxx
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/accept</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-
-</code></pre>
+<span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -1205,18 +1205,17 @@ Content-Type: application/json
 <p>None</p>
 <h2 id='reject'>reject</h2>
 <p>This action requires an order ID with a current status of &#39;pending&#39;  and will result in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/reject
-Authorization: Token token=xxx
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/reject</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-  "order": {
-    "reason": "Reason for supplier rejecting this order"
-  }
-}
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
-
-
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reason for supplier rejecting this order"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
 <tr>
@@ -1233,20 +1232,19 @@ Content-Type: application/json
 </tbody></table>
 <h2 id='dispatch'>dispatch</h2>
 <p>This action requries an order ID with a current status of &#39;processing&#39; and will result in this order having the status &#39;dispatched&#39;. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.</p>
-<pre class="highlight plaintext"><code>POST /api/v2/orders/123/dispatch
-Authorization: Token token=xxx
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/dispatch</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
-{
-  "order": {
-    "dispatch_date": "2018-01-09 12:34:56",
-    "tracking_id": "",
-    "tracking_url": "https://tracking.com/123456"
-  }
-}
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
-
-
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"dispatch_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-09 12:34:56"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tracking_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tracking.com/123456"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
 <tr>
