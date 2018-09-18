@@ -137,7 +137,7 @@ If the product is at status Approved and is available (product data can change s
 
 The line_items object is a hash of array items and as such will require unique keys for each item. The value of these keys is not used.
 
-```
+``` http
 POST /api/v2/orders HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
@@ -175,7 +175,7 @@ Content-Type: application/json
 }
 ```
 
-```
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
