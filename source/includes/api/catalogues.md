@@ -60,7 +60,6 @@ Content-Type: application/json
     "id": 357,
     "name": "LINKS OF LONDON 32-09-006 EFFERVESCENCE PENDANT",
     "base_price": 158.27,
-    "rrp": "159.99",
     "description": "<p>A cluster of silver, white and grey pearls come together to create this elegant pendant complete with sterling silver chain. This pendant gives the traditional pearl a modern twist.</p>",
     "model_no": "LK-016",
     "sku": "LK-016",
@@ -89,6 +88,7 @@ Content-Type: application/json
       },
     ...
     ],
+    "rrp": "159.99",
     "supplier": {
       "id": 14
     },
