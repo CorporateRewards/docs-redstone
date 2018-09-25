@@ -50,7 +50,6 @@
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINKS OF LONDON 32-09-006 EFFERVESCENCE PENDANT"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"159.99"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A cluster of silver, white and grey pearls come together to create this elegant pendant complete with sterling silver chain. This pendant gives the traditional pearl a modern twist.&lt;/p&gt;"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
@@ -79,6 +78,7 @@
       </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
     </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"159.99"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
     </span><span class="p">},</span><span class="w">
