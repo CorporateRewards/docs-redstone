@@ -11,6 +11,8 @@ includes:
 - api/catalogues
 - api/orders
 - api/order_actions
+- api/currencies/_0_currencies
+- api/currencies/list_all_currencies
 
 search: true
 ---
@@ -54,4 +56,3 @@ A programme can have one or more API keys, each of which will be granted
 permission to access different functionality from the API. As a standard, we use
 RESTful json endpoints that will accept either HTML/HTTP form data or json data,
 HTML/HTTP is preferred.
-
