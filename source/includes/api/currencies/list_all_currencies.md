@@ -29,16 +29,3 @@ Content-Type: application/json
 #### HTTP Request
 
 `GET /api/v2/currencies`
-
-#### Body Parameters
-
-Attribute | Type | Info
---------- | ---- | ----
-id | integer | The id of the currency
-title | string| The name of the currency
-abbreviation| string| 3 letter abbreviation
-sign| string| UTF8 character to represent currency
-name | string | Concatenation of the title and sign
-created_at | datetime | Datetime in SQL format indicating when this currency was created
-updated_at | datetime | Datetime in SQL format indicating when this currency was last updated
-exchange_rate| decimal | The currencies current exchange rate (to 4 decimal places)
