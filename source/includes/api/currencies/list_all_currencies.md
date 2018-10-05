@@ -3,6 +3,7 @@
 ### Get all currencies
 
 An endpoint to retrieve all currencies and their current exchange rate.
+Your api key must have permission to read currencies.
 
 ``` http
 GET /api/v2/currencies HTTP/1.1
