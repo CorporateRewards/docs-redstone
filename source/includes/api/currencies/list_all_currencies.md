@@ -1,6 +1,4 @@
-## List of all currencies
-
-### Get all currencies
+### List all currencies
 
 An endpoint to retrieve all currencies and their current exchange rate.
 Your api key must have permission to read currencies.
@@ -31,12 +29,12 @@ Content-Type: application/json
 
 `GET /api/v2/currencies`
 
-### Update currency
+### Update exchange rates
 
-An endpoint to update a specified currency.
+An endpoint to update the exchange rate of a specified currency. Your api key must have permission to write currencies.
 
 ``` http
-PATCH /api/v2/currencies/:id/exchange_rate HTTP/1.1
+PATCH /api/v2/currencies/:id HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 
@@ -58,7 +56,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`PATCH /api/v2/currencies/:id/exchange_rate`
+`PATCH /api/v2/currencies/:id`
 
 #### URL Parameters
 
