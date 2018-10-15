@@ -18,7 +18,7 @@ Content-Type: application/json
   "title": "Great British Pound",
   "abbreviation": "GBP",
   "sign": "£",
-  "name": "Great British Pound £",
+  "name": "Great British Pound (£)",
   "created_at": "01/01/2000 00:00:00",
   "updated_at": "01/02/2000 00:00:00",
   "exchange_rate": 1.1111
@@ -50,6 +50,7 @@ Content-Type: application/json
 
 {
   "id": 1,
+  "name": "Great British Pound (£)",
   "exchange_rate": 1.1111
 }
 ```
