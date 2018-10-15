@@ -12,7 +12,7 @@ Your api key must have permission to read currencies.</p>
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound £"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound (£)"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/01/2000 00:00:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/02/2000 00:00:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
@@ -34,6 +34,7 @@ Your api key must have permission to read currencies.</p>
 
 <span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound (£)"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
