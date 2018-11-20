@@ -131,11 +131,14 @@
 </tr>
 </tbody></table>
 <h2 id='creating-orders'>Creating orders</h2>
-<p>This endpoint allows ordering systems to place orders on GPS. In order to place an order you will need:
--   The id of a product and the SKU shall be provided in the line_item. If the product has variants, line_item will require the SKU of the variant. For vouchers, more than one line_item can be provided.
--   A country name - as listed in the /regions endpoint
--   Email address - used for delivery (i.e. for an eVoucher) and to notify users
--   A full address for a product with delivery_type = Physical</p>
+<p>This endpoint allows ordering systems to place orders on GPS. In order to place an order you will need:</p>
+
+<ul>
+<li><p>The id of a product and the SKU shall be provided in the line_item. If the product has variants, line_item will require the SKU of the variant. For vouchers, more than one line_item can be provided.</p></li>
+<li><p>A country name - as listed in the /regions endpoint</p></li>
+<li><p>Recipient email address - required for a product where the product <code>delivery_type</code> = <code>email</code> and is the email address where the order will be sent.</p></li>
+<li><p>Recipient delivery address - required for a product where the product <code>delivery_type</code> = <code>physical</code> and is the delivery address where the order will be sent.</p></li>
+</ul>
 
 <p>If the product is at status Approved and is available (product data can change since an ordering system last refreshed it&#39;s product data) at the time of order and the above information is provided correctly - GPS will respond with an HTTP status code of 200. Otherwise a status code of &gt;= 400 will be returned as per REST expectations along with an explanatory plain text message as body content. Ordering systems are expected to track and respond to the response status codes.</p>
 
@@ -296,7 +299,7 @@
 <tr>
 <td>order[customer_email]</td>
 <td>String</td>
-<td>Required - This is the email address of the customer who placed the order</td>
+<td>Optional - This is the email address of the customer who placed the order</td>
 </tr>
 <tr>
 <td>order[customer_phone]</td>
@@ -341,7 +344,7 @@
 <tr>
 <td>order[recipient_email]</td>
 <td>String</td>
-<td>Optional - This allows a user to sepcify an alternate email address to be the recipient of this order</td>
+<td>Required for a product where the product <code>delivery_type</code> =  <code>email</code> - This allows a user to specify an alternate email address to be the recipient of this order and is used to receive products with a <code>delivery_type</code> = <code>email</code></td>
 </tr>
 <tr>
 <td>order[recipient_phone]</td>
