@@ -128,10 +128,14 @@ since | Datetime | Sending this parameter with a parsable datetime as the value 
 ## Creating orders
 
 This endpoint allows ordering systems to place orders on GPS. In order to place an order you will need:
--   The id of a product and the SKU shall be provided in the line_item. If the product has variants, line_item will require the SKU of the variant. For vouchers, more than one line_item can be provided.
--   A country name - as listed in the /regions endpoint
--   Email address - used for delivery (i.e. for an eVoucher) and to notify users
--   A full address for a product with delivery_type = Physical
+
+- The id of a product and the SKU shall be provided in the line_item. If the product has variants, line_item will require the SKU of the variant. For vouchers, more than one line_item can be provided.
+
+- A country name - as listed in the /regions endpoint
+
+- Recipient email address - required for a product where the product `delivery_type` = `email` and is the email address where the order will be sent.
+
+- Recipient delivery address - required for a product where the product `delivery_type` = `physical` and is the delivery address where the order will be sent.
 
 If the product is at status Approved and is available (product data can change since an ordering system last refreshed it's product data) at the time of order and the above information is provided correctly - GPS will respond with an HTTP status code of 200. Otherwise a status code of >= 400 will be returned as per REST expectations along with an explanatory plain text message as body content. Ordering systems are expected to track and respond to the response status codes.
 
@@ -274,7 +278,7 @@ order\[product_id\] | Integer | Required - this is the product.id you get from t
 order\[quantity\] | Integer | Required - this is required to be calculated from the sum of all quantities in all line items.
 order\[points\] | Integer | Optional - the total amount of points the user was charged by the ordering system for this product including delivery. GPS does not care about points per se but this can be useful when Rewards services are talking about an order as part of a customer service query. This should reflect the total points for all line items in an order. Using this value will reflect a transaction in the transactions key in the returned order data.
 order\[customer_name\] | String | Required - This is the name of the customer who placed the order
-order\[customer_email\] | String | Required - This is the email address of the customer who placed the order
+order\[customer_email\] | String | Optional - This is the email address of the customer who placed the order
 order\[customer_phone\] | String | Required - this is the phone number of the customer who placed the order
 order\[customer_address_1\] | String | Required - this is the first line of the address, required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products
 order\[customer_address_2\] | String | Optional - second line of address
@@ -283,7 +287,7 @@ order\[town\] | String | Required - this is the postal town this product will be
 order\[postcode\] | String | Postal (or zip) code this product is to be delivered to. Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products
 order\[recipient_address\] | String | Required - this is the concatenated version of the full postal address this product will be delivered to. Required if this order is for a product with a delivery_type with requires_address = true (1) i.e. physically delivered products
 order\[recipient_name\] | String | Optional - This allows a user to place an order and have it delivered to another person i.e. as a gift.
-order\[recipient_email\] | String | Optional - This allows a user to sepcify an alternate email address to be the recipient of this order
+order\[recipient_email\] | String | Required for a product where the product `delivery_type` =  `email` - This allows a user to specify an alternate email address to be the recipient of this order and is used to receive products with a `delivery_type` = `email`
 order\[recipient_phone\] | String | Optional - string representation of an alternate phone number to be provided as the recipient of this product
 order\[delivery_instructions\] | String | Optional - allows for the provision of extra instructions for the delivery of this order such as "Please knock, the door bell is not working"
 order\[remote_order\] | String | Optional - this can be used to record the ordering systems own unique id for this order. Some systems will create an order locally before attempting to push the order over the api to GPS. This field can be used to store this id value for later cross referencing.
