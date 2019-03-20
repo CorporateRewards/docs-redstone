@@ -28,7 +28,6 @@
     </span><span class="s2">"recipient_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7189404020"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"recipient_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ted.moyses@corporaterewards.co.uk"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
     </span><span class="s2">"pingback_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -151,7 +150,6 @@
     </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"programme_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1309"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3257"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Order User"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"customer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@address.com"</span><span class="p">,</span><span class="w">
@@ -203,7 +201,6 @@
   </span><span class="s2">"recipient_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"447502375063"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"recipient_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
   </span><span class="s2">"pingback_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -280,11 +277,6 @@
 <td>order[product_id]</td>
 <td>Integer</td>
 <td>Required - this is the product.id you get from the product in the catalogues endpoint</td>
-</tr>
-<tr>
-<td>order[quantity]</td>
-<td>Integer</td>
-<td>Required - this is required to be calculated from the sum of all quantities in all line items.</td>
 </tr>
 <tr>
 <td>order[points]</td>
@@ -379,7 +371,7 @@
 <tr>
 <td>line_items[0][line_item][quantity]</td>
 <td>Integer</td>
-<td>Required - the number of this product to devliver</td>
+<td>Required - the number of this product to deliver</td>
 </tr>
 <tr>
 <td>line_items[0][line_item][points]</td>
