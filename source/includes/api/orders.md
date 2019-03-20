@@ -36,7 +36,6 @@ Content-Type: application/json
     "recipient_phone": "7189404020",
     "recipient_email": "ted.moyses@corporaterewards.co.uk",
     "state": "pending",
-    "quantity": 1,
     "variant_id": 1000,
     "country_id": 140,
     "pingback_url": null,
@@ -150,7 +149,6 @@ Content-Type: application/json
 	"order": {
 		"programme_ref": "1309",
 		"product_id": "3257",
-		"quantity": "1",
 		"points": "100",
 		"customer_name": "Test Order User",
 		"customer_email": "email@address.com",
@@ -205,7 +203,6 @@ Content-Type: application/json
   "recipient_phone": "447502375063",
   "recipient_email": "",
   "state": "pending",
-  "quantity": 1,
   "variant_id": null,
   "country_id": 140,
   "pingback_url": null,
@@ -275,7 +272,6 @@ Attribute | Type | Info
 --------- | ---- | ----
 order\[programme_ref\] | String | Optional - Please provide the programme reference issued to you by Corporate Rewards - if you do not know this value, it will be inserted automatically
 order\[product_id\] | Integer | Required - this is the product.id you get from the product in the catalogues endpoint
-order\[quantity\] | Integer | Required - this is required to be calculated from the sum of all quantities in all line items.
 order\[points\] | Integer | Optional - the total amount of points the user was charged by the ordering system for this product including delivery. GPS does not care about points per se but this can be useful when Rewards services are talking about an order as part of a customer service query. This should reflect the total points for all line items in an order. Using this value will reflect a transaction in the transactions key in the returned order data.
 order\[customer_name\] | String | Required - This is the name of the customer who placed the order
 order\[customer_email\] | String | Optional - This is the email address of the customer who placed the order
@@ -294,7 +290,7 @@ order\[remote_order\] | String | Optional - this can be used to record the order
 order\[pingback_url\] | String | Optional - if provided, must be a valid url (with scheme i.e. http:// or https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not 'leak' any information.
 line_items\[0\]\[line_item\]\[name\] | String | Required - this is the name of the product being ordered
 line_items\[0\]\[line_item\]\[sku\] | String | Required - this is the SKU of the product being order. If ordering a variant of a product, ALWAYS provide the variant SKU
-line_items\[0\]\[line_item\]\[quantity\] | Integer | Required - the number of this product to devliver
+line_items\[0\]\[line_item\]\[quantity\] | Integer | Required - the number of this product to deliver
 line_items\[0\]\[line_item\]\[points\] | Integer | Optional - the value of points charged for this line item. This is used to indicate to GPS how many points each line item is work but is not related to the total points for the order. This has no effect in GPS other than to indicate points for a line item at time of order.
 
 #### Error messages and response codes
