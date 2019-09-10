@@ -17,7 +17,7 @@ Your api key must have permission to read currencies.</p>
   </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/02/2000 00:00:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+</span></code></pre><h4 id='list-all-currencies-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/currencies</code></p>
 <h3 id='update-exchange-rates'>Update exchange rates</h3>
 <p>An endpoint to update the exchange rate of a specified currency. Your api key must have permission to write currencies.</p>
@@ -37,9 +37,9 @@ Your api key must have permission to read currencies.</p>
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound (£)"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
+</span></code></pre><h4 id='update-exchange-rates-http-request'>HTTP Request</h4>
 <p><code>PATCH /api/v2/currencies/:id</code></p>
-<h4 id='url-parameters'>URL Parameters</h4>
+<h4 id='update-exchange-rates-url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -53,7 +53,7 @@ Your api key must have permission to read currencies.</p>
 <td>The id of the currency</td>
 </tr>
 </tbody></table>
-<h4 id='body-parameters'>Body Parameters</h4>
+<h4 id='update-exchange-rates-body-parameters'>Body Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>

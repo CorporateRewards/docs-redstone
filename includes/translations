@@ -1,0 +1,56 @@
+<h1 id='translations'>Translations</h1>
+<p>Some endpoints in V3 of the API have translations available under the <code>translations</code> key, which is an array of all the translations available for that resource.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>locale</code></td>
+<td>The locale code for the set of translations. This is generally an <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a> code, or where translations are available for the same language across multiple countries or regions, a <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> code is used</td>
+</tr>
+<tr>
+<td><em><code>&lt;attribute&gt;</code></em></td>
+<td>Each translated attribute has a key - for example, if the <code>name</code> attribute of a resource has translations available, there will be a <code>name</code> attribute in each translation object</td>
+</tr>
+</tbody></table>
+
+<p>Note that GPS&#39; native locale is British English (<code>en-GB</code>) and will not be present in any <code>translations</code> array.</p>
+
+<p>Not all locales may be completed for all resources, but generally all attributes within a locale should be complete.</p>
+
+<p>The following resources have translations available:</p>
+
+<table><thead>
+<tr>
+<th>Resource</th>
+<th>Attributes</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#categories-list-categories-v3">Category</a></td>
+<td><code>name</code></td>
+</tr>
+</tbody></table>
+
+<p>An example payload for a fictitious resource is given on the right (below on mobile).</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name in British English"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description in British English"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name in Spanish"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description in Spanish"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name in French"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description in French"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>

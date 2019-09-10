@@ -1,4 +1,4 @@
-<h1 id='orders'>Orders</h1><h2 id='list-all-orders'>List all orders</h2>
+<h1 id='orders'>Orders</h1><h2 id='orders-list-all-orders'>List all orders</h2>
 <p>This endpoint fetches a JSON array of orders you are allowed to see. Typically, ordering systems will want to periodically syncronise Orders so as to show up to date information to users about their Orders. By default this endpoint will fetch <strong>all</strong> orders from the first order ever placed by the client. This can grow to a long list over time and so becomes slow and taxing to fetch and process. We have provided some parameters for filtering this list of orders so clients can more easily stay up to date. We recommend using the since parameter - this will return a list of orders that have been updated on or after the date and time provided as this value. Typically ordes are updated daily but no more frequently than hourly.</p>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/orders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
@@ -103,9 +103,9 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+</span></code></pre><h4 id='orders-list-all-orders-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/orders</code></p>
-<h4 id='parameters'>Parameters</h4>
+<h4 id='orders-list-all-orders-parameters'>Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -129,7 +129,7 @@
 <td>Sending this parameter with a parsable datetime as the value will only return orders that have been updated since this datetime value. This is useful to poll for orders with new information. Without this parameter present, all orders since the start of your programme (that also match any other provided parameters) will be returned. Example 2017-11-21T23:56:34Z</td>
 </tr>
 </tbody></table>
-<h2 id='creating-orders'>Creating orders</h2>
+<h2 id='orders-creating-orders'>Creating orders</h2>
 <p>This endpoint allows ordering systems to place orders on GPS. In order to place an order you will need:</p>
 
 <ul>
@@ -258,9 +258,9 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
+</span></code></pre><h4 id='orders-creating-orders-http-request'>HTTP Request</h4>
 <p><code>POST /api/v2/orders</code></p>
-<h4 id='attributes'>Attributes</h4>
+<h4 id='orders-creating-orders-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -379,7 +379,7 @@
 <td>Optional - the value of points charged for this line item. This is used to indicate to GPS how many points each line item is work but is not related to the total points for the order. This has no effect in GPS other than to indicate points for a line item at time of order.</td>
 </tr>
 </tbody></table>
-<h4 id='error-messages-and-response-codes'>Error messages and response codes</h4>
+<h4 id='orders-creating-orders-error-messages-and-response-codes'>Error messages and response codes</h4>
 <table><thead>
 <tr>
 <th>StatusCode</th>

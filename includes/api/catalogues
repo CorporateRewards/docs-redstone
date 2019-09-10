@@ -1,4 +1,4 @@
-<h1 id='catalogues'>Catalogues</h1><h2 id='list-all-catalogues'>List all Catalogues</h2>
+<h1 id='catalogues'>Catalogues</h1><h2 id='catalogues-list-all-catalogues'>List all Catalogues</h2>
 <p>This endpoint fetches a list of all catalogues available for your api key.</p>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/catalogues</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
@@ -22,9 +22,9 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h4 id='http-request'>HTTP Request</h4>
+</span></code></pre><h4 id='catalogues-list-all-catalogues-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/catalogues</code></p>
-<h4 id='attributes'>Attributes</h4>
+<h4 id='catalogues-list-all-catalogues-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -38,7 +38,7 @@
 <td>primary key for catalogues</td>
 </tr>
 </tbody></table>
-<h2 id='list-all-products-in-a-catalogue'>List all products in a catalogue</h2>
+<h2 id='catalogues-list-all-products-in-a-catalogue'>List all products in a catalogue</h2>
 <p>This is how ordering systems will access the products available to them. Typically, after fetching a list of catalogues, an ordering system will iterate over each catalogue, fetching the products in each one to add to a local store/cache of products.</p>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/catalogues/1/products</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
@@ -147,9 +147,9 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h4 id='http-request-2'>HTTP Request</h4>
+</span></code></pre><h4 id='catalogues-list-all-products-in-a-catalogue-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/catalogues/1/products</code></p>
-<h4 id='attributes-2'>Attributes</h4>
+<h4 id='catalogues-list-all-products-in-a-catalogue-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
