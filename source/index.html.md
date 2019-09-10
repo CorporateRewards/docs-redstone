@@ -6,6 +6,7 @@ language_tabs:
 includes:
 - authentication
 - process_flow
+- translations
 - api/categories
 - api/regions
 - api/catalogues
@@ -28,15 +29,15 @@ There are two principle use-cases for accessing this system using the API, Order
 
 | Endpoint | Use case |
 | -------- | ------- |
-| GET [/api/v2/categories](#list-all-orders) | Orderer |
+| GET [/api/v2/categories](#orders-list-all-orders) | Orderer |
 | GET [/api/v2/regions](#regions)  | Orderer  |
 | GET [/api/v2/catalogues](#catalogues)  | Orderer  |
-| GET [/api/v2/catalogues/{catalogue_id}/products](#list-all-products-in-a-catalogue) | Orderer  |
+| GET [/api/v2/catalogues/{catalogue_id}/products](#catalogues-list-all-products-in-a-catalogue) | Orderer  |
 | GET [/api/v2/orders](#orders)  | Orderer & Supplier |
-| POST [/api/v2/orders](#creating-orders)  | Orderer |
-| POST [/api/v2/orders/{order_id}/accept](#accept) | Supplier |
-| POST [/api/v2/orders/{order_id}/reject](#reject) | Supplier |
-| POST [/api/v2/orders/{order_id}/dispatch](#dispatch) | Supplier |
+| POST [/api/v2/orders](#orders-creating-orders)  | Orderer |
+| POST [/api/v2/orders/{order_id}/accept](#order-actions-accept) | Supplier |
+| POST [/api/v2/orders/{order_id}/reject](#order-actions-reject) | Supplier |
+| POST [/api/v2/orders/{order_id}/dispatch](#order-actions-dispatch) | Supplier |
 
 Product information can be quite dynamic in that Suppliers can modify the data for a product (such as media/images, prices, availability etc.) at any time. We recommend pulling or refreshing the product data approximately every 24 hours. It is typical for an ordering system to maintain a local store of some sort (cache, database tables etc.) for this product data to allow end users to access this data efficiently.
 
