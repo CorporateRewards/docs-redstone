@@ -6,6 +6,7 @@ language_tabs:
 includes:
 - authentication
 - process_flow
+- translations
 - api/categories
 - api/regions
 - api/catalogues
