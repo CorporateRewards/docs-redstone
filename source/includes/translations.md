@@ -27,12 +27,12 @@ An example payload for a fictitious resource is given on the right (below on mob
     {
       "locale": "es",
       "name": "name in Spanish",
-      "name": "description in Spanish"
+      "description": "description in Spanish"
     },
     {
       "locale": "fr",
       "name": "name in French",
-      "name": "description in French"
+      "description": "description in French"
     }
     ...
   ]
