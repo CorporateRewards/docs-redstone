@@ -255,7 +255,7 @@ Content-Type: application/json
           },
           {
             "locale": "de",
-            "name": "kein"
+            "name": "klein"
           }
         ],
         "sku": "LK-017",
