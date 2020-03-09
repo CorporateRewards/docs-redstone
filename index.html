@@ -325,6 +325,17 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#products-list-all-products" class="toc-h2 toc-link" data-title="List all products">List all products</a>
+                  </li>
+                  <li>
+                    <a href="#products-create-product" class="toc-h2 toc-link" data-title="Create product">Create product</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -379,6 +390,14 @@ For more information about JSON, what it looks like and how to use it, see <a hr
 </tr>
 <tr>
 <td>POST <a href="#order-actions-dispatch">/api/v2/orders/{order_id}/dispatch</a></td>
+<td>Supplier</td>
+</tr>
+<tr>
+<td>GET <a href="#products-list-products">api/v2/products</a></td>
+<td>Supplier</td>
+</tr>
+<tr>
+<td>POST <a href="#products-create-product">api/v2/products</a></td>
 <td>Supplier</td>
 </tr>
 </tbody></table>
@@ -1611,6 +1630,441 @@ Your api key must have permission to read currencies.</p>
 <td>exchange_rate</td>
 <td>decimal</td>
 <td>The currencies current exchange rate (to 4 decimal places)</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1>
+<p>Access to products endpoint will be scoped to your supplier in GPS.</p>
+
+<p><strong>This section is should be considered pre-production and subject to significant change</strong></p>
+<h2 id='products-list-all-products'>List all products</h2>
+<p>This endpoint shows all products associated with this api key as a list</p>
+<pre class="highlight plaintext"><code>GET /api/v2/products
+Authorization: Token token=xxx
+
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/JSON
+
+[
+  {
+    "id": 22413,
+    "base_price": 100.0,
+    "model_no": "bub001",
+    "sku": "000123454",
+    "available": true,
+    "availability_note": null,
+    "international_requirements": false,
+    "minimum_age": 0,
+    "primary_image_id": 6419,
+    "variant": null,
+    "voucher": false,
+    "lowest_denomination": null,
+    "face_value":null,
+    "supplier_currency_id": 1,
+    "name": "Bat Utility Belt",
+    "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+    "available_countries": [
+        {
+            "id": 1,
+            "name": "USA",
+            "vat_rate": "0%",
+            "delivery_charge": 0.0
+        }
+    ],
+    "rrp": "100",
+    "supplier": {
+        "id": 66
+    },
+    "vat_rate": {
+        "name": "0%",
+        "numeric": 0.0
+    },
+    "status": {
+        "name": "Approved"
+    },
+    "catalogue": {
+        "id": 1,
+        "name": "Superhero Equipment",
+        "exclusive": false
+    },
+    "categories": [
+        {
+            "id": 407,
+            "parent_id": 75,
+            "name": "Outerwear"
+        }
+    ],
+    "variants": [
+        {
+            "id": 30111,
+            "sku": "000123457",
+            "available": true,
+            "product_sku": "000123454",
+            "face_value": null,
+            "product_id": null,
+            "voucher_status": false,
+            "variant": "small",
+            "variant_base_price": 100,
+            "face_value_gbp": null
+        },
+        {
+            "id": 30112,
+            "sku": "000123459",
+            "available": true,
+            "product_sku": "000123454",
+            "face_value": null,
+            "product_id": null,
+            "voucher_status": false,
+            "variant": "medium",
+            "variant_base_price": 100,
+            "face_value_gbp": null
+        },
+        {
+            "id": 30113,
+            "sku": "000123461",
+            "available": true,
+            "product_sku": "000123454",
+            "face_value": null,
+            "product_id": null,
+            "voucher_status": false,
+            "variant": "large",
+            "variant_base_price": 100,
+            "face_value_gbp": null
+        },
+        {
+            "id": 30114,
+            "sku": "000123463",
+            "available": true,
+            "product_sku": "000123454",
+            "face_value": null,
+            "product_id": null,
+            "voucher_status": false,
+            "variant": "Afleck",
+            "variant_base_price": 100,
+            "face_value_gbp": null
+        }
+    ],
+    "media": [
+        {
+            "id": 6419,
+            "url": "https://images.com/123533.jpg"
+        }
+    ],
+    "delivery_type": {
+        "id": 1,
+        "name": "Physical",
+        "requires_address": true,
+        "requires_email": true
+    },
+    "currency": {
+        "title": "Dollars",
+        "abbreviation": "USD",
+        "sign": "$"
+    }
+  },
+  {
+    ...
+  }
+]
+</code></pre><h2 id='products-create-product'>Create product</h2>
+<p>You can create products over the api as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.</p>
+<pre class="highlight plaintext"><code>POST /api/v2/products
+Authorization: Token token=xxx
+
+{
+    "product": {
+        "name": "Bat Utility Belt",
+        "model_no": "bub001",
+        "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+        "sku": "000123454",
+        "base_price": 100.0,
+        "rrp": 100.0,
+        "face_value": null,
+        "media": "https://images.com/12353.jpg",
+        "currency": "USD",
+        "availability_note": "",
+        "available": "yes",
+        "countries": [{
+            "country": "USA",
+            "vat_rate": 0,
+            "delivery_charge": 0
+        }],
+        "international_requirements": 0,
+        "minimum_age": 0,
+        "vat_rate_id": 1,
+        "delivery_type_id": 1,
+        "voucher": false,
+        "lowest_denomination": null,
+        "variants": [
+            "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"small\" }",
+      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123459\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"medium\" }",
+      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123461\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"large\" }",
+      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123463\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"Afleck\" }"
+        ]
+    }
+}
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 22413,
+  "base_price": 100.0,
+  "model_no": "bub001",
+  "sku": "000123454",
+  "available": true,
+  "availability_note": null,
+  "international_requirements": false,
+  "minimum_age": 0,
+  "primary_image_id": 6419,
+  "variant": null,
+  "voucher": false,
+  "lowest_denomination": null,
+  "face_value":null,
+  "supplier_currency_id": 1,
+  "name": "Bat Utility Belt",
+  "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+  "available_countries": [
+      {
+          "id": 1,
+          "name": "USA",
+          "vat_rate": "0%",
+          "delivery_charge": 0.0
+      }
+  ],
+  "rrp": "100",
+  "supplier": {
+      "id": 66
+  },
+  "vat_rate": {
+      "name": "0%",
+      "numeric": 0.0
+  },
+  "status": {
+      "name": "Pending"
+  },
+  "catalogue": null,
+  "categories": [],
+  "variants": [
+      {
+          "id": 30111,
+          "sku": "000123457",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "small",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30112,
+          "sku": "000123459",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "medium",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30113,
+          "sku": "000123461",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "large",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30114,
+          "sku": "000123463",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "Afleck",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      }
+  ],
+  "media": [
+      {
+          "id": 6419,
+          "url": "https://images.com/123533.jpg"
+      }
+  ],
+  "delivery_type": {
+      "id": 1,
+      "name": "Physical",
+      "requires_address": true,
+      "requires_email": true
+  },
+  "currency": {
+      "title": "Dollars",
+      "abbreviation": "USD",
+      "sign": "$"
+  }
+}
+</code></pre>
+<p>The created product has no catalogue or category and a status of pending - this product needs to be approved in GPS before it will show in a catalogue</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required - name of the product as it displayed in the catalogue</td>
+</tr>
+<tr>
+<td>model_no</td>
+<td>String</td>
+<td>Optional - short descriptive code or model name</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Html (String)</td>
+<td>Required - a textual, detailed description of the product can be plain text or marked up in html</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>String</td>
+<td>Required - cannonical unique reference or identity of a product used to for ordering</td>
+</tr>
+<tr>
+<td>base_price</td>
+<td>Float</td>
+<td>Required - this is the base_price excluding tax and delivery - the cost of the product</td>
+</tr>
+<tr>
+<td>rrp</td>
+<td>Float</td>
+<td>Optional - recommended retail price of product</td>
+</tr>
+<tr>
+<td>face_value</td>
+<td>Integer</td>
+<td>Optional conditional - if this product is to be classed as a voucher, this is face value of the lowest denomination</td>
+</tr>
+<tr>
+<td>media</td>
+<td>Url (String)</td>
+<td>Optional - a publicly accessible url for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>Required - ISO 3 letter currency code for the currency this product will be billed in - this currency must be associated with your supplier record</td>
+</tr>
+<tr>
+<td>availability_note</td>
+<td>String</td>
+<td>Optional - this text will be displayed in place of an order button to explain why the product is not available such as &quot;Coming soon&quot; or &quot;Temporarily out of stock&quot;</td>
+</tr>
+<tr>
+<td>available</td>
+<td>Boolean</td>
+<td>Required - this indicates the product is or isn&#39;t available and triggers the availability_note</td>
+</tr>
+<tr>
+<td>countries</td>
+<td>Array</td>
+<td>Required - a list of at least one country this product is available to order in</td>
+</tr>
+<tr>
+<td>countries.country</td>
+<td>String</td>
+<td>Required - 3 letter ISO country code - this country must be associated with your supplier</td>
+</tr>
+<tr>
+<td>countries.vat_rate</td>
+<td>Float</td>
+<td>the rate of sales tax that will be used to bill for the delivery of this product</td>
+</tr>
+<tr>
+<td>countries.delivery_charge</td>
+<td>Float</td>
+<td>The charge to be billed for shipping this product excluding taxes</td>
+</tr>
+<tr>
+<td>international_requirements</td>
+<td>Boolean</td>
+<td>Required - indicates if this product has international requirements or variations such as alternative plugs or instructions. Not shown to end users, more intended for order fulfilment</td>
+</tr>
+<tr>
+<td>minimum_age</td>
+<td>Integer</td>
+<td>Required - indicates if a minimum age is legally required for this product such as alcohol</td>
+</tr>
+<tr>
+<td>vat_rate_id</td>
+<td>Integer</td>
+<td>Required - this indicates a sales tax rate. Note this is not a value but a reference to a sales tax rate stored in GPS</td>
+</tr>
+<tr>
+<td>delivery_type_id</td>
+<td>Integer</td>
+<td>Required - delivery types in GPS are (but not limited to) Physical = 1, Downloadable = 2, Eamil = 3, Prepaid = 4. These types are used to enforce validation strategies on orders for these products i.e. for physical orders, you must provide a postal address</td>
+</tr>
+<tr>
+<td>voucher</td>
+<td>Boolean</td>
+<td>Required - indicates if this product is to be treated as a voucher</td>
+</tr>
+<tr>
+<td>lowest_denomination</td>
+<td>Integer</td>
+<td>Optional conditional - if this product is considered a voucher this field should indicate the lowest denomination of voucher available</td>
+</tr>
+<tr>
+<td>variants</td>
+<td>Array</td>
+<td>Required - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant</td>
+</tr>
+<tr>
+<td>variants.available</td>
+<td>Boolean</td>
+<td>Required - indicates the availability of this particular variant</td>
+</tr>
+<tr>
+<td>variants.product_sku</td>
+<td>String</td>
+<td>Required - this is a &#39;key&#39; that links this variant to its parent product, the value should be the sku of the main product we are posting</td>
+</tr>
+<tr>
+<td>variants.sku</td>
+<td>String</td>
+<td>Required - this is the sku of this particular variant and should be unique</td>
+</tr>
+<tr>
+<td>variants.face_value</td>
+<td>Integer</td>
+<td>Required conditional - if this product is a voucher, this shows the face value of this denomination</td>
+</tr>
+<tr>
+<td>variants.base_price</td>
+<td>Float</td>
+<td>Required conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices</td>
+</tr>
+<tr>
+<td>variants.voucher_status</td>
+<td>Boolean</td>
+<td>Required - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product</td>
+</tr>
+<tr>
+<td>variants.variant</td>
+<td>String</td>
+<td>Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
 </tr>
 </tbody></table>
 
