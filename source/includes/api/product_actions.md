@@ -17,11 +17,11 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `POST /api/v3/products/:id/approve`
 
-### URL Parameters
+#### URL Parameters
 
 Attribute | Type | Info
 --------- | ---- | ----
@@ -43,11 +43,11 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `POST /api/v3/products/:id/onhold`
 
-### URL Parameters
+#### URL Parameters
 
 Attribute | Type | Info
 --------- | ---- | ----
@@ -68,11 +68,11 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `POST /api/v3/products/:id/archive`
 
-### URL Parameters
+#### URL Parameters
 
 Attribute | Type | Info
 --------- | ---- | ----
