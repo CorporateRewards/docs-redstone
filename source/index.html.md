@@ -18,6 +18,7 @@ includes:
 - api/products/list_all_products
 - api/products/create_product
 - api/products/delete_product
+- api/product_actions
 
 search: true
 ---
