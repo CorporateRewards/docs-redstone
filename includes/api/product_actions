@@ -7,9 +7,9 @@ Authorization: Token token=xxx
 Content-Type: application/json
 </code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json
-</code></pre><h3 id='product-actions-approve-product-http-request'>HTTP Request</h3>
+</code></pre><h4 id='product-actions-approve-product-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/:id/approve</code></p>
-<h3 id='product-actions-approve-product-url-parameters'>URL Parameters</h3>
+<h4 id='product-actions-approve-product-url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -30,9 +30,9 @@ Authorization: Token token=xxx
 Content-Type: application/json
 </code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json
-</code></pre><h3 id='product-actions-put-product-on-hold-http-request'>HTTP Request</h3>
+</code></pre><h4 id='product-actions-put-product-on-hold-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/:id/onhold</code></p>
-<h3 id='product-actions-put-product-on-hold-url-parameters'>URL Parameters</h3>
+<h4 id='product-actions-put-product-on-hold-url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -53,9 +53,9 @@ Authorization: Token token=xxx
 Content-Type: application/json
 </code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json
-</code></pre><h3 id='product-actions-archive-product-http-request'>HTTP Request</h3>
+</code></pre><h4 id='product-actions-archive-product-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/:id/archive</code></p>
-<h3 id='product-actions-archive-product-url-parameters'>URL Parameters</h3>
+<h4 id='product-actions-archive-product-url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
