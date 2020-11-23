@@ -1,4 +1,4 @@
-<h2 id='authentication-delete-product'>Delete Product</h2>
+<h2 id='delete-product'>Delete Product</h2>
 <p>You can also delete products over the api as shown. Products can only be deleted by the supplier of the product. </p>
 
 <p>Deleting a product will:</p>

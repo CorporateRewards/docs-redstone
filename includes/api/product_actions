@@ -1,0 +1,71 @@
+<h1 id='product-actions'>Product actions</h1>
+<p>Available on v3 of the api only</p>
+<h2 id='product-actions-approve-product'>Approve product</h2>
+<p>Changes the status of a product to approved. A product must have at least one country, one catalogue, one category, and one image before it can be approved.</p>
+<pre class="highlight plaintext"><code>POST /api/v3/products/:id/approve HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+</code></pre><h3 id='product-actions-approve-product-http-request'>HTTP Request</h3>
+<p><code>POST /api/v3/products/:id/approve</code></p>
+<h3 id='product-actions-approve-product-url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of the product</td>
+</tr>
+</tbody></table>
+<h2 id='product-actions-put-product-on-hold'>Put product on hold</h2>
+<p>Changes the status of a product to on hold</p>
+<pre class="highlight plaintext"><code>POST /api/v3/products/:id/onhold HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+</code></pre><h3 id='product-actions-put-product-on-hold-http-request'>HTTP Request</h3>
+<p><code>POST /api/v3/products/:id/onhold</code></p>
+<h3 id='product-actions-put-product-on-hold-url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of the product</td>
+</tr>
+</tbody></table>
+<h2 id='product-actions-archive-product'>Archive product</h2>
+<p>Changes the status of a product to archived</p>
+<pre class="highlight plaintext"><code>POST /api/v3/products/:id/archive HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+</code></pre><h3 id='product-actions-archive-product-http-request'>HTTP Request</h3>
+<p><code>POST /api/v3/products/:id/archive</code></p>
+<h3 id='product-actions-archive-product-url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>The id of the product</td>
+</tr>
+</tbody></table>
