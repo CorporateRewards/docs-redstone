@@ -7,7 +7,7 @@ Authorization: Token token=xxx
     "product": {
         "name": "Bat Utility Belt",
         "model_no": "bub001",
-        "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+        "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
         "sku": "000123454",
         "base_price": 100.0,
         "rrp": 100.0,
@@ -27,11 +27,13 @@ Authorization: Token token=xxx
         "delivery_type_id": 1,
         "voucher": false,
         "lowest_denomination": null,
+        "catalogue_id": 8,
+        "categories": [3,4,12]
         "variants": [
             "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"small\" }",
-      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123459\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"medium\" }",
-      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123461\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"large\" }",
-      "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123463\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"Afleck\" }"
+            "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123459\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"medium\" }",
+            "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123461\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"large\" }",
+            "{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123463\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"Afleck\" }"
         ]
     }
 }
@@ -54,7 +56,7 @@ Content-Type: application/json
   "face_value":null,
   "supplier_currency_id": 1,
   "name": "Bat Utility Belt",
-  "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+  "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
   "available_countries": [
       {
           "id": 1,
@@ -74,8 +76,28 @@ Content-Type: application/json
   "status": {
       "name": "Pending"
   },
-  "catalogue": null,
-  "categories": [],
+  "catalogue": {
+      "id": 8,
+      "name": "Demo Catalogue",
+      "exclusive": false
+  },
+  "categories": [
+      {
+          "id": 3,
+          "parent_id": 1,
+          "name": "Experiences &amp; Days Out"
+      },
+      {
+          "id": 4,
+          "parent_id": 1,
+          "name": "Food and Drink"
+      },
+      {
+          "id": 12,
+          "parent_id": 11,
+          "name": "Home Entertainment"
+      }
+  ],
   "variants": [
       {
           "id": 30111,
@@ -145,7 +167,7 @@ Content-Type: application/json
   }
 }
 </code></pre>
-<p>The created product has no catalogue or category and a status of pending - this product needs to be approved in GPS before it will show in a catalogue</p>
+<p>The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue</p>
 
 <table><thead>
 <tr>
@@ -172,7 +194,7 @@ Content-Type: application/json
 <tr>
 <td>sku</td>
 <td>String</td>
-<td>Required - cannonical unique reference or identity of a product used to for ordering</td>
+<td>Required - canonical unique reference or identity of a product used for ordering</td>
 </tr>
 <tr>
 <td>base_price</td>
@@ -247,7 +269,7 @@ Content-Type: application/json
 <tr>
 <td>delivery_type_id</td>
 <td>Integer</td>
-<td>Required - delivery types in GPS are (but not limited to) Physical = 1, Downloadable = 2, Eamil = 3, Prepaid = 4. These types are used to enforce validation strategies on orders for these products i.e. for physical orders, you must provide a postal address</td>
+<td>Required - delivery types in GPS are (but not limited to) Physical = 1, Downloadable = 2, Email = 3, Prepaid = 4. These types are used to enforce validation strategies on orders for these products i.e. for physical orders, you must provide a postal address</td>
 </tr>
 <tr>
 <td>voucher</td>
@@ -258,6 +280,16 @@ Content-Type: application/json
 <td>lowest_denomination</td>
 <td>Integer</td>
 <td>Optional conditional - if this product is considered a voucher this field should indicate the lowest denomination of voucher available</td>
+</tr>
+<tr>
+<td>catalogue_id</td>
+<td>Integer</td>
+<td>Optional - The id of the catalogue the product should belong to</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>Array</td>
+<td>Optional - An array of category ids that the product should belong to</td>
 </tr>
 <tr>
 <td>variants</td>
