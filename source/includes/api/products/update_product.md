@@ -5,7 +5,7 @@ The update product API is available to update product information. This uses the
 > Request:
 
 ``` http
-PATCH /api/v2/products/{123} HTTP/1.1
+PATCH /api/v2/products/{product_id} HTTP/1.1
 Authorization: Token token={KEY}:{SECRET}
 Content-Type: application/json
 
