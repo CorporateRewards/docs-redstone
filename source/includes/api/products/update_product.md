@@ -1,6 +1,6 @@
 ## Update product
 
-The update product API is available to update product information. This uses the same params as the create product API above.
+The update product API is available to update product information. This uses the same params as the [Create product API](https://docs.gps.my-rewards.co.uk/#products-create-product) above.
 
 > Request:
 
