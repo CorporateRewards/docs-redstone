@@ -1,0 +1,153 @@
+<h2 id='update-product'>Update product</h2>
+<p>The update product API is available to update product information. This uses the same params as the <a href="#products-create-product">Create product API</a> above.</p>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">PATCH</span> <span class="nn">/api/v2/products/{product_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token={KEY}:{SECRET}</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Product"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_model"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "base_price": 100.0,
+  "model_no": "test_model",
+  "sku": "000123454",
+  "available": true,
+  "availability_note": null,
+  "international_requirements": false,
+  "minimum_age": 0,
+  "primary_image_id": 6419,
+  "variant": null,
+  "voucher": false,
+  "lowest_denomination": null,
+  "face_value":null,
+  "supplier_currency_id": 1,
+  "name": "Updated Product",
+  "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
+  "available_countries": [
+      {
+          "id": 1,
+          "name": "USA",
+          "vat_rate": "0%",
+          "delivery_charge": 0.0
+      }
+  ],
+  "rrp": "100",
+  "supplier": {
+      "id": 66
+  },
+  "vat_rate": {
+      "name": "0%",
+      "numeric": 0.0
+  },
+  "status": {
+      "name": "Pending"
+  },
+  "catalogue": {
+      "id": 8,
+      "name": "Demo Catalogue",
+      "exclusive": false
+  },
+  "categories": [
+      {
+          "id": 3,
+          "parent_id": 1,
+          "name": "Experiences &amp; Days Out"
+      },
+      {
+          "id": 4,
+          "parent_id": 1,
+          "name": "Food and Drink"
+      },
+      {
+          "id": 12,
+          "parent_id": 11,
+          "name": "Home Entertainment"
+      }
+  ],
+  "variants": [
+      {
+          "id": 30111,
+          "sku": "000123457",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "small",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30112,
+          "sku": "000123459",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "medium",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30113,
+          "sku": "000123461",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "large",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      },
+      {
+          "id": 30114,
+          "sku": "000123463",
+          "available": true,
+          "product_sku": "000123454",
+          "face_value": null,
+          "product_id": null,
+          "voucher_status": false,
+          "variant": "Afleck",
+          "variant_base_price": 100,
+          "face_value_gbp": null
+      }
+  ],
+  "media": [
+      {
+          "id": 6419,
+          "url": "https://images.com/123533.jpg"
+      }
+  ],
+  "delivery_type": {
+      "id": 1,
+      "name": "Physical",
+      "requires_address": true,
+      "requires_email": true
+  },
+  "currency": {
+      "title": "Dollars",
+      "abbreviation": "USD",
+      "sign": "$"
+  }
+}
+</code></pre><h4 id='update-product-http-request'>HTTP Request</h4>
+<p><code>PUT /api/v2/products/{product_id}</code></p>
+
+<p><code>PATCH /api/v2/products/{product_id}</code></p>
