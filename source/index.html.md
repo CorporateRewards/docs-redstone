@@ -17,6 +17,7 @@ includes:
 - api/products/_0_products
 - api/products/list_all_products
 - api/products/create_product
+- api/products/update_product
 - api/products/delete_product
 - api/product_actions
 
@@ -45,6 +46,8 @@ There are two principle use-cases for accessing this system using the API, Order
 | POST [/api/v2/orders/{order_id}/dispatch](#order-actions-dispatch) | Supplier |
 | GET [api/v2/products](#products-list-products) | Supplier |
 | POST [api/v2/products](#products-create-product) | Supplier |
+| PATCH [api/v2/products/{product_id}](#products-update-product) | Supplier |
+| PUT [api/v2/products/{product_id}](#products-update-product) | Supplier |
 | DELETE [api/v2/products/{product_id}](#products-delete-product) | Supplier |
 
 Product information can be quite dynamic in that Suppliers can modify the data for a product (such as media/images, prices, availability etc.) at any time. We recommend pulling or refreshing the product data approximately every 24 hours. It is typical for an ordering system to maintain a local store of some sort (cache, database tables etc.) for this product data to allow end users to access this data efficiently.
