@@ -143,12 +143,12 @@ Attribute | Type | Info
 --------- | ---- | ----
 name  | String  |  Optional - name of the product as it displayed in the catalogue
 model_no  | String  |  Optional - short descriptive code or model name
-description  | Html (String)  |  Optional - a textual, detailed description of the product can be plain text or marked up in html
+description  | HTML (String)  |  Optional - a textual, detailed description of the product can be plain text or marked up in HTML
 sku  | String  |  Optional - canonical unique reference or identity of a product used for ordering
 base_price  | Float  |  Optional - this is the base_price excluding tax and delivery - the cost of the product
 rrp  | Float  |  Optional - recommended retail price of product
 face_value  | Integer  |  Optional conditional - if this product is to be classed as a voucher, this is face value of the lowest denomination
-media  | Url (String)  |  Optional - a publicly accessible url for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS
+media  | URL (String)  |  Optional - a publicly accessible URL for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS
 currency  | String  |  Optional - ISO currency code for the currency this product will be billed in - this currency must be associated with your supplier record
 availability_note  | String  |  Optional - this text will be displayed in place of an order button to explain why the product is not available such as "Coming soon" or "Temporarily out of stock"
 available  | Boolean  |  Optional - this indicates the product is or isn't available and triggers the availability_note
