@@ -10,6 +10,7 @@ Authorization: Token token=xxx
 	"product": {
 		"name": "Bat Utility Belt",
 		"model_no": "bub001",
+		"brand_id": 1,
 		"description": "<p>Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it </p>",
 		"sku": "000123454",
 		"base_price": 100.0,
@@ -31,7 +32,6 @@ Authorization: Token token=xxx
 		"voucher": false,
 		"lowest_denomination": null,
 		"catalogue_id": 8,
-        "brand_id": 1,
 		"categories": [3,4,12]
 		"variants": [
 			"{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"small\" }",
