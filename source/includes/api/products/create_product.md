@@ -211,4 +211,4 @@ variants.face_value  | Integer  |  Required conditional - if this product is a v
 variants.base_price  | Float  |  Required conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product
 variants.variant  | String  |  Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
-brand_id  | Integer  |  Optional - this indicates a brand. Note this is not a value but a reference to a Brand stored in GPS
+brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS
