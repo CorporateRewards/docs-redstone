@@ -35,6 +35,7 @@ Content-Type: application/json
         "voucher": false,
         "lowest_denomination": null,
         "catalogue_id": 1,
+        "brand_id": 1,
         "variants": ["{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"test\" }"]
     }
 }
@@ -61,6 +62,7 @@ Content-Type: application/json
     "face_value": null,
     "supplier_currency_id": 123,
     "max_value": null,
+    "brand_id": 1,
     "name": "Updated product",
     "description": "<p>A high quality updated product</p>",
     "available_countries": [
@@ -171,3 +173,4 @@ variants.face_value  | Integer  |  Required for each variant added - conditional
 variants.base_price  | Float  |  Required for each variant added - conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required for each variant added - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product
 variants.variant  | String  |  Required for each variant added - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
+brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS

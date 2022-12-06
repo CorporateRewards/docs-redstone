@@ -28,6 +28,7 @@ Content-Type: application/JSON
     "lowest_denomination": null,
     "face_value":null,
     "supplier_currency_id": 1,
+    "brand_id": null,
     "name": "Bat Utility Belt",
     "description": "<p>Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it </p>",
     "available_countries": [
