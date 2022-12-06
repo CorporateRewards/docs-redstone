@@ -7,6 +7,7 @@ Authorization: Token token=xxx
     "product": {
         "name": "Bat Utility Belt",
         "model_no": "bub001",
+        "brand_id": 1,
         "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
         "sku": "000123454",
         "base_price": 100.0,
@@ -55,6 +56,7 @@ Content-Type: application/json
   "lowest_denomination": null,
   "face_value":null,
   "supplier_currency_id": 1,
+  "brand_id": 1,
   "name": "Bat Utility Belt",
   "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
   "available_countries": [
@@ -330,5 +332,10 @@ Content-Type: application/json
 <td>variants.variant</td>
 <td>String</td>
 <td>Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
 </tr>
 </tbody></table>

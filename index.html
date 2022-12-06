@@ -1692,6 +1692,7 @@ Content-Type: application/JSON
     "lowest_denomination": null,
     "face_value":null,
     "supplier_currency_id": 1,
+    "brand_id": null,
     "name": "Bat Utility Belt",
     "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
     "available_countries": [
@@ -1806,6 +1807,7 @@ Authorization: Token token=xxx
     "product": {
         "name": "Bat Utility Belt",
         "model_no": "bub001",
+        "brand_id": 1,
         "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
         "sku": "000123454",
         "base_price": 100.0,
@@ -1854,6 +1856,7 @@ Content-Type: application/json
   "lowest_denomination": null,
   "face_value":null,
   "supplier_currency_id": 1,
+  "brand_id": 1,
   "name": "Bat Utility Belt",
   "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconic and functional - no bat-based superhero should be without it &lt;/p&gt;",
   "available_countries": [
@@ -2130,6 +2133,11 @@ Content-Type: application/json
 <td>String</td>
 <td>Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
 </tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
+</tr>
 </tbody></table>
 <h2 id='products-update-product'>Update product</h2>
 <p>The update product API is available to update product information.</p>
@@ -2167,6 +2175,7 @@ Content-Type: application/json
         </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"catalogue_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{</span><span class="se">\"</span><span class="s2">available</span><span class="se">\"</span><span class="s2">: 1, </span><span class="se">\"</span><span class="s2">product_sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123454</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">face_value</span><span class="se">\"</span><span class="s2">: null, </span><span class="se">\"</span><span class="s2">base_price</span><span class="se">\"</span><span class="s2">: 100.0, </span><span class="se">\"</span><span class="s2">voucher_status</span><span class="se">\"</span><span class="s2">: 0, </span><span class="se">\"</span><span class="s2">variant</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">test</span><span class="se">\"</span><span class="s2"> }"</span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2192,6 +2201,7 @@ Content-Type: application/json
     "face_value": null,
     "supplier_currency_id": 123,
     "max_value": null,
+    "brand_id": 1,
     "name": "Updated product",
     "description": "&lt;p&gt;A high quality updated product&lt;/p&gt;",
     "available_countries": [
@@ -2422,6 +2432,11 @@ Content-Type: application/json
 <td>variants.variant</td>
 <td>String</td>
 <td>Required for each variant added - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
 </tr>
 </tbody></table>
 <h2 id='products-delete-product'>Delete Product</h2>

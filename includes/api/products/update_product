@@ -34,6 +34,7 @@
         </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"catalogue_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{</span><span class="se">\"</span><span class="s2">available</span><span class="se">\"</span><span class="s2">: 1, </span><span class="se">\"</span><span class="s2">product_sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123454</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">face_value</span><span class="se">\"</span><span class="s2">: null, </span><span class="se">\"</span><span class="s2">base_price</span><span class="se">\"</span><span class="s2">: 100.0, </span><span class="se">\"</span><span class="s2">voucher_status</span><span class="se">\"</span><span class="s2">: 0, </span><span class="se">\"</span><span class="s2">variant</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">test</span><span class="se">\"</span><span class="s2"> }"</span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -59,6 +60,7 @@ Content-Type: application/json
     "face_value": null,
     "supplier_currency_id": 123,
     "max_value": null,
+    "brand_id": 1,
     "name": "Updated product",
     "description": "&lt;p&gt;A high quality updated product&lt;/p&gt;",
     "available_countries": [
@@ -289,5 +291,10 @@ Content-Type: application/json
 <td>variants.variant</td>
 <td>String</td>
 <td>Required for each variant added - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
 </tr>
 </tbody></table>
