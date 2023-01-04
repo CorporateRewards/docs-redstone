@@ -143,7 +143,7 @@ Content-Type: application/json
     "media": [
       {
         "id": 337,
-        "url": "http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"
+        "url": "https://images.com/123533.jpg"
       }
     ],
     "delivery_type": {
@@ -283,7 +283,7 @@ Content-Type: application/json
     "media": [
       {
         "id": 337,
-        "url": "http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"
+        "url": "https://images.com/123533.jpg"
       }
     ],
     "delivery_type": {
@@ -440,7 +440,7 @@ Content-Type: application/json
     "media": [
       {
         "id": 337,
-        "url": "http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"
+        "url": "https://images.com/123533.jpg"
       }
     ],
     "delivery_type": {
@@ -478,10 +478,10 @@ Content-Type: application/json
 
 Parameter | Type | Info
 --------- | ---- | ----
-id | Array | Otptional - A list of product ids. This will return products which have ids that match an integer supplied in this list.
+id | Array | Optional - A list of product ids. This will return products which have ids that match an integer supplied in this list.
 status | String | Optional - Only products with this status will be returned. For example 'Pending' or 'Approved'.
 sku | String | Optional - Specific product SKU.
-country_id | Array | Otptional - A list of country ids. This will return products which have associated countries with an id that matches an integer supplied in this list.
+country_id | Array | Optional - A list of country ids. This will return products which have associated countries with an id that matches an integer supplied in this list.
 availability | String | Optional - Indicates whether a product is available, the value must be either 'True' or 'False'.
 brand_id | Integer | Optional - Only products linked to this brand_id will be returned.
 page | Integer | Optional - The requested page number. Defaults to page 1 if not supplied. Optional.
