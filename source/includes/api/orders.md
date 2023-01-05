@@ -41,7 +41,7 @@ Content-Type: application/json
     "pingback_url": null,
     "po_number": null,
     "product_name": "Amazon.co.uk eVoucher",
-    "product_sku": "AMA10|1",
+    "product_sku": "A-123",
     "product_variation": "Variant: 10",
     "delivery_type": "Email",
     "international_requirements": false,
@@ -81,7 +81,7 @@ Content-Type: application/json
         "order_id": 1142,
         "name": "Amazon.co.uk eVoucher",
         "info": "Variant: 10",
-        "sku": "AMA10|1",
+        "sku": "A-123",
         "product_id": 5202,
         "product_variant_id": 1000,
         "delivery_type": "Email",
@@ -168,7 +168,7 @@ Content-Type: application/json
 		"0": {
 			"line_item": {
 				"name": "Sony Playstation 4 Console",
-				"sku": "PS222",
+				"sku": "L-123",
 				"quantity": "1",
 				"points": "27720"
 			}
@@ -208,7 +208,7 @@ Content-Type: application/json
   "pingback_url": null,
   "po_number": null,
   "product_name": "Sony Playstation 4 Console",
-  "product_sku": "PS222",
+  "product_sku": "L-123",
   "product_variation": null,
   "delivery_type": "Physical",
   "international_requirements": false,
@@ -248,7 +248,7 @@ Content-Type: application/json
       "order_id": 1246,
       "name": "Sony Playstation 4 Console",
       "info": null,
-      "sku": "PS222",
+      "sku": "L-123",
       "product_id": null,
       "product_variant_id": null,
       "delivery_type": "Physical",
