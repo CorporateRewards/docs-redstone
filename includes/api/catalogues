@@ -48,11 +48,11 @@
 <span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINKS OF LONDON 32-09-006 EFFERVESCENCE PENDANT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Name"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A cluster of silver, white and grey pearls come together to create this elegant pendant complete with sterling silver chain. This pendant gives the traditional pearl a modern twist.&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -106,9 +106,9 @@
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">529</span><span class="p">,</span><span class="w">
         </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-017"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -118,9 +118,9 @@
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">530</span><span class="p">,</span><span class="w">
         </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-234"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -131,7 +131,7 @@
     </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.com/123533.jpg"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -188,11 +188,11 @@
 <span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LINKS OF LONDON 32-09-006 EFFERVESCENCE PENDANT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Name"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;A cluster of silver, white and grey pearls come together to create this elegant pendant complete with sterling silver chain. This pendant gives the traditional pearl a modern twist.&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -256,9 +256,9 @@
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"klein"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-017"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -268,9 +268,9 @@
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">530</span><span class="p">,</span><span class="w">
         </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-234"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LK-016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -281,7 +281,7 @@
     </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://redstone-beta.s3.amazonaws.com/2014/10/21/13/38/44/960/lk_016.jpg"</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.com/123533.jpg"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -338,5 +338,186 @@
 <td>country</td>
 <td>string</td>
 <td>This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed</td>
+</tr>
+</tbody></table>
+<h3 id='catalogues-list-all-products-in-a-catalogue-v4'>V4</h3>
+<p>This endpoint is available for ordering systems that wish to access the list of products available to them. It behaves in a similar way to the V3 endpoint, but includes pagination, query parameters and additional fields such as <code>brand_id</code> and <code>max_value</code> (please note that all price values are shown in GBP).</p>
+
+<aside class="warning">Note that this endpoint is currently <strong>only</strong> to be used by ordering systems, <strong>not</strong>  supplier systems.</aside>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/catalogues/1/products</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">38.95</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minimum_age"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_image_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albania"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.75</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"159.99"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"numeric"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Approved"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"catalogue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Catalogue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necklaces"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ar_association_key_name"</span><span class="p">:</span><span class="w"> </span><span class="mi">414</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">529</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"petit"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"klein"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-123"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">530</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.com/123533.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"requires_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pounds Sterling"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_name_french"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product description_french"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product_name_german"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product description_german"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h4 id='catalogues-list-all-products-in-a-catalogue-v4-http-request'>HTTP Request</h4>
+<p><code>GET /api/v4/catalogues/1/products</code></p>
+<h4 id='catalogues-list-all-products-in-a-catalogue-v4-parameters'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Array</td>
+<td>Optional - A list of product ids. This will return products which have ids that match an integer supplied in this list.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Optional - Only products with this status will be returned. For example &#39;Pending&#39; or &#39;Approved&#39;.</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>String</td>
+<td>Optional - Specific product SKU.</td>
+</tr>
+<tr>
+<td>country_id</td>
+<td>Array</td>
+<td>Optional - A list of country ids. This will return products which have associated countries with an id that matches an integer supplied in this list.</td>
+</tr>
+<tr>
+<td>availability</td>
+<td>String</td>
+<td>Optional - Indicates whether a product is available, the value must be either &#39;True&#39; or &#39;False&#39;.</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - Only products linked to this brand_id will be returned.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Integer</td>
+<td>Optional - The requested page number. Defaults to page 1 if not supplied. Optional.</td>
 </tr>
 </tbody></table>
