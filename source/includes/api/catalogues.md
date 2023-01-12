@@ -347,7 +347,6 @@ Content-Type: application/json
     "id": 357,
     "name": "Product Name",
     "base_price": 158.27,
-    "brand_id": 1,
     "max_value": 38.95,
     "description": "Product Description",
     "model_no": "A-123",
@@ -377,6 +376,8 @@ Content-Type: application/json
       },
     ...
     ],
+    "brand_id": 1,
+    "max_value": 200,
     "rrp": "159.99",
     "supplier": {
       "id": 14
@@ -397,8 +398,7 @@ Content-Type: application/json
       {
         "id": 62,
         "name": "Necklaces",
-        "parent_id": 59,
-        "ar_association_key_name": 414
+        "parent_id": 59
       }
     ],
     "variants": [
