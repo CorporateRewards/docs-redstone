@@ -347,7 +347,6 @@ Content-Type: application/json
     "id": 357,
     "name": "Product Name",
     "base_price": 158.27,
-    "max_value": 38.95,
     "description": "Product Description",
     "model_no": "A-123",
     "sku": "A-123",
@@ -357,7 +356,7 @@ Content-Type: application/json
     "minimum_age": null,
     "primary_image_id": 337,
     "variant": "",
-    "voucher": null,
+    "voucher": false,
     "lowest_denomination": null,
     "face_value": null,
     "supplier_currency_id": 31,
@@ -403,31 +402,33 @@ Content-Type: application/json
     ],
     "variants": [
       {
-        "id": 529,
-        "variant": "small",
-        "translations": [
-          {
-            "locale": "fr",
-            "name": "petit"
-          },
-          {
-            "locale": "de",
-            "name": "klein"
-          }
-        ],
+        "id": 63489,
+        "variant": "Small",
         "sku": "B-123",
+        "translations": [
+            {
+                "locale": "fr",
+                "variant": "Petit"
+            }
+        ],
         "available": true,
         "product_sku": "A-123",
         "face_value": null,
         "product_id": null,
         "voucher_status": false,
-        "variant_base_price": null,
+        "variant_base_price": 354.6728,
         "face_value_gbp": null
       },
       {
-        "id": 530,
-        "variant": "large",
+        "id": 63490,
+        "variant": "Large",
         "sku": "B-234",
+        "translations": [
+          {
+            "locale": "fr",
+            "variant": "Grande"
+          }
+        ],
         "available": true,
         "product_sku": "A-123",
         "face_value": null,
