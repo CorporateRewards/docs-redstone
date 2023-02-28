@@ -16,7 +16,7 @@ includes:
 - api/currencies/list_all_currencies
 - api/products/_0_products
 - api/products/list_all_products
-- api/products/create_product
+- api/products/create_product_v2
 - api/products/update_product
 - api/products/delete_product
 - api/product_actions
