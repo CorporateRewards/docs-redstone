@@ -5,7 +5,7 @@ This endpoint shows all products associated with this api key as a list
 > Request
 
 ``` http
-GET /api/v2/products
+GET /api/v2/products HTTP/1.1
 Authorization: Token token=xxx
 
 ```

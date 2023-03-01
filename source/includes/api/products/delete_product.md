@@ -11,7 +11,7 @@ You can also delete products over the api as shown. Products can only be deleted
  > Request
 
 ``` http
-DELETE /api/v2/products/{product_id}
+DELETE /api/v2/products/{product_id} HTTP/1.1
 Authorization: Token token=xxx
 ```
 

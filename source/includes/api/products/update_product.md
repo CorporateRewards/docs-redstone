@@ -46,6 +46,7 @@ Content-Type: application/json
 ``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "id": 123,
     "base_price": 30,

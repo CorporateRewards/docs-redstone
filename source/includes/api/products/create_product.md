@@ -5,7 +5,7 @@ You can create products over the api as shown - all new products require approva
 > Request
 
 ``` http
-POST /api/v2/products
+POST /api/v2/products HTTP/1.1
 Authorization: Token token=xxx
 
 {
