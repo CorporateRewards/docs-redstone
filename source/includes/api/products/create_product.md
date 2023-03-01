@@ -183,6 +183,10 @@ Content-Type: application/json
 
 The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue
 
+#### HTTP Request
+
+`POST /api/v2/products`
+
 Attribute | Type | Info
 --------- | ---- | ----
 name  | String  |  Required - name of the product as it displayed in the catalogue

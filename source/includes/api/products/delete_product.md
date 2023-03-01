@@ -21,3 +21,7 @@ Authorization: Token token=xxx
 HTTP/1.1 200 OK
 Content-Type: application/json
 ```
+
+#### HTTP Request
+
+`DELETE /api/v2/products/{product_id}`
