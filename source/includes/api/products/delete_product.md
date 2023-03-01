@@ -10,14 +10,14 @@ You can also delete products over the api as shown. Products can only be deleted
  
  > Request
 
-```
+``` http
 DELETE /api/v2/products/{product_id}
 Authorization: Token token=xxx
 ```
 
 > Response
 
-```
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
 ```

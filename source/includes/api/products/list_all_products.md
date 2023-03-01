@@ -4,7 +4,7 @@ This endpoint shows all products associated with this api key as a list
 
 > Request
 
-```
+``` http
 GET /api/v2/products
 Authorization: Token token=xxx
 
@@ -12,7 +12,7 @@ Authorization: Token token=xxx
 
 > Response
 
-```
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/JSON
 

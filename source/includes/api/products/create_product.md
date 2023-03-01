@@ -4,7 +4,7 @@ You can create products over the api as shown - all new products require approva
 
 > Request
 
-```
+``` http
 POST /api/v2/products
 Authorization: Token token=xxx
 
@@ -47,7 +47,7 @@ Authorization: Token token=xxx
 
 > Response
 
-```
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
