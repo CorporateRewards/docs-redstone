@@ -9,7 +9,7 @@ Changes the status of a product to approved. A product must have at least one co
 > Request
 
 ``` http
-POST /api/v3/products/:id/approve HTTP/1.1
+POST /api/v3/products/{id}/approve HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`POST /api/v3/products/:id/approve`
+`POST /api/v3/products/{id}/approve`
 
 #### URL Parameters
 
@@ -38,7 +38,7 @@ Changes the status of a product to on hold
 > Request
 
 ``` http
-POST /api/v3/products/:id/onhold HTTP/1.1
+POST /api/v3/products/{id}/onhold HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -51,7 +51,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`POST /api/v3/products/:id/onhold`
+`POST /api/v3/products/{id}/onhold`
 
 #### URL Parameters
 
@@ -66,7 +66,7 @@ Changes the status of a product to archived
 > Request
 
 ``` http
-POST /api/v3/products/:id/archive HTTP/1.1
+POST /api/v3/products/{id}/archive HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -79,7 +79,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`POST /api/v3/products/:id/archive`
+`POST /api/v3/products/{id}/archive`
 
 #### URL Parameters
 

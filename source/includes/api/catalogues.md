@@ -55,7 +55,7 @@ This is how ordering systems will access the products available to them. Typical
 > Request
 
 ``` http
-GET /api/v2/catalogues/1/products HTTP/1.1
+GET /api/v2/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -171,7 +171,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v2/catalogues/1/products`
+`GET /api/v2/catalogues/{id}/products`
 
 #### Attributes
 
@@ -189,7 +189,7 @@ Behaves the same as V2, but includes [translations](#translations) (where availa
 > Request
 
 ``` http
-GET /api/v3/catalogues/1/products HTTP/1.1
+GET /api/v3/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -327,7 +327,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v3/catalogues/1/products`
+`GET /api/v3/catalogues/{id}/products`
 
 #### Attributes
 
@@ -347,7 +347,7 @@ This endpoint is available for ordering systems that wish to access the list of 
 > Request
 
 ``` http
-GET /api/v4/catalogues/1/products HTTP/1.1
+GET /api/v4/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -488,7 +488,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v4/catalogues/1/products`
+`GET /api/v4/catalogues/{id}/products`
 
 #### Parameters
 

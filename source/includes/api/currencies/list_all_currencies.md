@@ -39,7 +39,7 @@ An endpoint to update the exchange rate of a specified currency. Your api key mu
 > Request
 
 ``` http
-PATCH /api/v2/currencies/:id HTTP/1.1
+PATCH /api/v2/currencies/{id} HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`PATCH /api/v2/currencies/:id`
+`PATCH /api/v2/currencies/{id}`
 
 #### URL Parameters
 

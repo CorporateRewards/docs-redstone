@@ -12,7 +12,7 @@ This action requires an order ID (in this case 123) with a current status of 'pe
 > Request
 
 ``` http
-POST /api/v2/orders/123/accept HTTP/1.1
+POST /api/v2/orders/{id}/accept HTTP/1.1
 Authorization: Token token=xxx
 ```
 
@@ -36,7 +36,7 @@ This action requires an order ID with a current status of 'pending'  and will re
 > Request
 
 ``` http
-POST /api/v2/orders/123/reject HTTP/1.1
+POST /api/v2/orders/{id}/reject HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 
@@ -65,7 +65,7 @@ This action requries an order ID with a current status of 'processing' and will 
 > Request
 
 ``` http
-POST /api/v2/orders/123/dispatch HTTP/1.1
+POST /api/v2/orders/{id}/dispatch HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 
