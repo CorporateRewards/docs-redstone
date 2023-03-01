@@ -187,6 +187,8 @@ Content-Type: application/json
 
 `POST /api/v2/products`
 
+#### Attributes
+
 Attribute | Type | Info
 --------- | ---- | ----
 name  | String  |  Required - name of the product as it displayed in the catalogue
