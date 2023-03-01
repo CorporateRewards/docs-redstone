@@ -1,13 +1,14 @@
 # Order actions
 
-Once you have list of relevant orders to work on, you can perform a limit number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a 'pending' order may transition to 'processing' but not to 'dispatched'.
-Any attempt to update an order using an invalid state transistion will be met with a 422 (unprocessable entity and a textual description of the error)
+Once you have a list of relevant orders to work on, you can perform a limited number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a 'pending' order may transition to 'processing' but not to 'dispatched'.
+
+Any attempt to update an order using an invalid state transition will be met with a 422 (unprocessable entity) and a textual description of the error.
+
 In principle the vast majority of actions a supplier will be performing are:
 
 ## accept
 
-This action requires an order ID (in this case 123) with a current status of 'pending' resulting in the order having a new status of
-'processing'
+This action requires the ID of an order with a current status of 'pending', and results in the order having a new status of 'processing'
 
 > Request
 
@@ -27,7 +28,7 @@ Content-Type: application/json
 
 ## reject
 
-This action requires an order ID with a current status of 'pending'  and will result in the order having the status 'unable to fulfill'. A reason is required for any order being rejected.
+This action requires the ID of an order with a current status of 'pending', and results in the order having the status 'unable to fulfill'. A reason is required for any order being rejected.
 
 > Request
 
@@ -56,7 +57,7 @@ order\[reason\] | String | Required - text description of why the order cannot b
 
 ## dispatch
 
-This action requries an order ID with a current status of 'processing' and will result in this order having the status 'dispatched'. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.
+This action requires the ID of an order with a current status of 'processing', and results in this order having the status 'dispatched'. In order to dispatch an order you will have to provide a date at which the order was dispatched and optionally either a tracking URL or tracking ID or (preferably) both if required to trace the delivery using a courier.
 
 > Request
 
@@ -85,4 +86,4 @@ Attribute | Type | Info
 --------- | ---- | ----
 order\[dispatch_date\] | DateTime (string) | Required - string parsable as datetime (i.e. 2017-01-01 13:45:56) this should be the date and time the order was despatched at - there are currently no restrictions on whether this date is in the past or present, however logically it should not be before the order was accepted for processing
 order\[tracking_id\] | String | Optional - this value should represent an identifier or token for tracking the delivery with the relevant courier or handler
-order\[tracking_url\] | String | Optional - if provided, must be a valid url (i.e. https://courier.com/track?parcelID=232456) and should allow the user to click and be shown the progress of their delivery.
+order\[tracking_url\] | String | Optional - if provided, must be a valid URL (i.e. `https://courier.com/track?parcelID=232456`) and should allow the user to click and be shown the progress of their delivery.

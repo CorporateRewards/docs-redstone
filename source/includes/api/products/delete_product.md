@@ -1,6 +1,6 @@
 ## Delete Product
 
-You can also delete products over the api as shown. Products can only be deleted by the supplier of the product. 
+You can also delete products over the API as shown. Products can only be deleted by the supplier of the product. 
  
  Deleting a product will:
  

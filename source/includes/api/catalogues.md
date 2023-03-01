@@ -2,7 +2,7 @@
 
 ## List all Catalogues
 
-This endpoint fetches a list of all catalogues available for your api key.
+This endpoint fetches a list of all catalogues available for your API key.
 
 > Request
 
@@ -179,7 +179,7 @@ Attribute | Type | Info
 status | string | ordering systems will only see products with a status of approved - this is largely functionless for ordering systems
 minimum_age | integer | when present only products suitable for a minimum age of this value will be shown - for instance a value of 18 will only list products that have either no minimum age or a value greater then or equal to 18
 delivery_type | string | String (may be comma separated) delivery_types are typically Physical, Email, Downloadable and Prepaid. Products will only have this or these delivery type if this parameter is used
-country | string | This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed
+country | string | This should be a proper case, URL-encoded string of a Country name (as reported in the Regions endpoint). Only products available in this country will be listed
 
 ### V3
 
@@ -334,7 +334,7 @@ Attribute | Type | Info
 status | string | ordering systems will only see products with a status of approved - this is largely functionless for ordering systems
 minimum_age | integer | when present only products suitable for a minimum age of this value will be shown - for instance a value of 18 will only list products that have either no minimum age or a value greater then or equal to 18
 delivery_type | string | String (may be comma separated) delivery_types are typically Physical, Email, Downloadable and Prepaid. Products will only have this or these delivery type if this parameter is used
-country | string | This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed
+country | string | This should be a proper case, URL-encoded string of a Country name (as reported in the Regions endpoint). Only products available in this country will be listed
 
 ### V4
 

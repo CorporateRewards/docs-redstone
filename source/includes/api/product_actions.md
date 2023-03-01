@@ -1,6 +1,6 @@
 # Product actions
 
-Available on v3 of the api only
+Available on v3 of the API only
 
 ## Approve product
 

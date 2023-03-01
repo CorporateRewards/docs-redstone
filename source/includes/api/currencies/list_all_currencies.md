@@ -1,7 +1,7 @@
 ### List all currencies
 
 An endpoint to retrieve all currencies and their current exchange rate.
-Your api key must have permission to read currencies.
+Your API key must have permission to read currencies.
 
 > Request
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 ### Update exchange rates
 
-An endpoint to update the exchange rate of a specified currency. Your api key must have permission to write currencies.
+An endpoint to update the exchange rate of a specified currency. Your API key must have permission to write currencies.
 
 > Request
 

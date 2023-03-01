@@ -1,6 +1,6 @@
 ## List all products
 
-This endpoint shows all products associated with this api key as a list
+This endpoint shows all products associated with this API key as a list
 
 > Request
 

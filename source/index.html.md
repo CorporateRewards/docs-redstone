@@ -27,7 +27,7 @@ search: true
 # Introduction
 Welcome to the GPS API documentation.
 
-GPS – the Global Product System from Corporate Rewards Ltd exposes a RESTful JSON api over HTTPS.
+GPS – the Global Product System from Corporate Rewards Ltd exposes a RESTful JSON API over HTTPS.
 For information on how RESTful APIs are designed, how they work and what benefits they offer over more traditional styles of API, see <https://en.wikipedia.org/wiki/Representational_state_transfer>
 For more information about JSON, what it looks like and how to use it, see <http://www.json.org/> or <https://en.wikipedia.org/wiki/JSON>
 

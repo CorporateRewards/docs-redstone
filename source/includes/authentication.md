@@ -10,7 +10,7 @@ require you to pass us this token in the form of an HTTP header called
 Failure to supply a recognised key in the correct format will result in a 403 HTTP response code and an error message:
 HTTP Token: Access denied.
 
-Your api token should have the following format consisting of an api key followed by a api secret, separated with a colon like so:
+Your API token should have the following format consisting of an API key followed by a API secret, separated with a colon like so:
 abcdefghijklmnopqrst:uvwxyz1234567890abcdefghijklmnop
 
 

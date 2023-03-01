@@ -168,8 +168,8 @@ lowest_denomination  | Integer  | Optional conditional - if this product is cons
 catalogue_id  | Integer  |  Optional - The id of the catalogue the product should belong to
 variants  | Array  |  Optional - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant
 variants.available  | Boolean  |  Required for each variant added - indicates the availability of this particular variant
-variants.product_sku  | String  |  Required for each variant added - this is a 'key' that links this variant to its parent product, the value should be the sku of the main product we are posting
-variants.sku  | String  |  Required for each variant added - this is the sku of this particular variant and should be unique
+variants.product_sku  | String  |  Required for each variant added - this is a 'key' that links this variant to its parent product, the value should be the SKU of the main product we are posting
+variants.sku  | String  |  Required for each variant added - this is the SKU of this particular variant and should be unique
 variants.face_value  | Integer  |  Required for each variant added - conditional - if this product is a voucher, this shows the face value of this denomination
 variants.base_price  | Float  |  Required for each variant added - conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required for each variant added - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product
