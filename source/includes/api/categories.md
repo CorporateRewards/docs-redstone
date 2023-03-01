@@ -60,7 +60,7 @@ Content-Type: application/json
     "id" : 1,
     "name" : "category name",
     "parent_id" : null,
-    "translations": [ 
+    "translations": [
       {
         "locale": "fr",
         "name": "category name in French"
