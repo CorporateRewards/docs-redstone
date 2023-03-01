@@ -8,7 +8,6 @@ Your api key must have permission to read currencies.
 ``` http
 GET /api/v2/currencies HTTP/1.1
 Authorization: Token token=xxx
-Content-Type: application/json
 ```
 
 > Response
@@ -47,7 +46,6 @@ Content-Type: application/json
 {
   "exchange_rate": 1.1111
 }
-
 ```
 
 > Response

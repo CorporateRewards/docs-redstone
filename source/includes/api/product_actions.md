@@ -11,7 +11,6 @@ Changes the status of a product to approved. A product must have at least one co
 ``` http
 POST /api/v3/products/:id/approve HTTP/1.1
 Authorization: Token token=xxx
-Content-Type: application/json
 ```
 
 > Response
@@ -41,7 +40,6 @@ Changes the status of a product to on hold
 ``` http
 POST /api/v3/products/:id/onhold HTTP/1.1
 Authorization: Token token=xxx
-Content-Type: application/json
 ```
 
 > Response
@@ -70,7 +68,6 @@ Changes the status of a product to archived
 ``` http
 POST /api/v3/products/:id/archive HTTP/1.1
 Authorization: Token token=xxx
-Content-Type: application/json
 ```
 
 > Response

@@ -7,14 +7,13 @@ This endpoint shows all products associated with this api key as a list
 ``` http
 GET /api/v2/products HTTP/1.1
 Authorization: Token token=xxx
-
 ```
 
 > Response
 
 ``` http
 HTTP/1.1 200 OK
-Content-Type: application/JSON
+Content-Type: application/json
 
 [
   {
