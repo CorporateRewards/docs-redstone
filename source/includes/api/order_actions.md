@@ -25,10 +25,6 @@ Content-Type: application/json
 
 ```
 
-Attribute | Type | info
---------- | ---- | ----
-None
-
 ## reject
 
 This action requires an order ID with a current status of 'pending'  and will result in the order having the status 'unable to fulfill'. A reason is required for any order being rejected.

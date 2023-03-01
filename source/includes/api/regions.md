@@ -63,11 +63,3 @@ Content-Type: application/json
 ### HTTP Request
 
 `GET /api/v2/regions`
-
-### Attributes
-
-Attribute | Type | Info
---------- | ---- | ----
-none | |
-
-
