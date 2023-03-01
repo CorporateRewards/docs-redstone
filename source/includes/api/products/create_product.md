@@ -2,6 +2,8 @@
 
 You can create products over the api as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.
 
+> Request
+
 ```
 POST /api/v2/products
 Authorization: Token token=xxx
@@ -42,6 +44,8 @@ Authorization: Token token=xxx
 	}
 }
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK

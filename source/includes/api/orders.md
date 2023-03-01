@@ -4,10 +4,14 @@
 
 This endpoint fetches a JSON array of orders you are allowed to see. Typically, ordering systems will want to periodically syncronise Orders so as to show up to date information to users about their Orders. By default this endpoint will fetch **all** orders from the first order ever placed by the client. This can grow to a long list over time and so becomes slow and taxing to fetch and process. We have provided some parameters for filtering this list of orders so clients can more easily stay up to date. We recommend using the since parameter - this will return a list of orders that have been updated on or after the date and time provided as this value. Typically ordes are updated daily but no more frequently than hourly.
 
+> Request
+
 ``` http
 GET /api/v2/orders HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -140,6 +144,8 @@ If the product is at status Approved and is available (product data can change s
 
 The line_items object is a hash of array items and as such will require unique keys for each item. The value of these keys is not used.
 
+> Request
+
 ``` http
 POST /api/v2/orders HTTP/1.1
 Authorization: Token token=xxx
@@ -176,6 +182,8 @@ Content-Type: application/json
 	}
 }
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK

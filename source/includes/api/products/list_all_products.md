@@ -2,11 +2,15 @@
 
 This endpoint shows all products associated with this api key as a list
 
+> Request
+
 ```
 GET /api/v2/products
 Authorization: Token token=xxx
 
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK

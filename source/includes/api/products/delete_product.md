@@ -8,10 +8,14 @@ You can also delete products over the api as shown. Products can only be deleted
  - Remove any associated media, providing it is not used by other products
  - Preserve the order history
  
+ > Request
+
 ```
 DELETE /api/v2/products/{product_id}
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK

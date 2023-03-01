@@ -9,10 +9,14 @@ In principle the vast majority of actions a supplier will be performing are:
 This action requires an order ID (in this case 123) with a current status of 'pending' resulting in the order having a new status of
 'processing'
 
+> Request
+
 ``` http
 POST /api/v2/orders/123/accept HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -29,6 +33,8 @@ None
 
 This action requires an order ID with a current status of 'pending'  and will result in the order having the status 'unable to fulfill'. A reason is required for any order being rejected.
 
+> Request
+
 ``` http
 POST /api/v2/orders/123/reject HTTP/1.1
 Authorization: Token token=xxx
@@ -40,6 +46,8 @@ Content-Type: application/json
   }
 }
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -54,6 +62,8 @@ order\[reason\] | String | Required - text description of why the order cannot b
 
 This action requries an order ID with a current status of 'processing' and will result in this order having the status 'dispatched'. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.
 
+> Request
+
 ``` http
 POST /api/v2/orders/123/dispatch HTTP/1.1
 Authorization: Token token=xxx
@@ -67,6 +77,8 @@ Content-Type: application/json
   }
 }
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK

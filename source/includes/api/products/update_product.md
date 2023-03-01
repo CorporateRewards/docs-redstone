@@ -2,7 +2,7 @@
 
 The update product API is available to update product information.
 
-> Request:
+> Request
 
 ``` http
 PATCH /api/v2/products/{product_id} HTTP/1.1

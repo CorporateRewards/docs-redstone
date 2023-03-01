@@ -4,10 +4,14 @@
 
 This endpoint fetches a list of all catalogues available for your api key.
 
+> Request
+
 ``` http
 GET /api/v2/catalogues HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -48,10 +52,14 @@ id | integer | primary key for catalogues
 
 This is how ordering systems will access the products available to them. Typically, after fetching a list of catalogues, an ordering system will iterate over each catalogue, fetching the products in each one to add to a local store/cache of products.
 
+> Request
+
 ``` http
 GET /api/v2/catalogues/1/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -178,10 +186,14 @@ country | string | This should be a proper case, url encoded string of a Country
 
 Behaves the same as V2, but includes [translations](#translations) (where available).
 
+> Request
+
 ``` http
 GET /api/v3/catalogues/1/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -332,11 +344,14 @@ This endpoint is available for ordering systems that wish to access the list of 
 
 <aside class="warning">Note that this endpoint is currently <strong>only</strong> to be used by ordering systems, <strong>not</strong>  supplier systems.</aside>
 
+> Request
 
 ``` http
 GET /api/v4/catalogues/1/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK

@@ -4,10 +4,14 @@
 
 This endpoint fetches a JSON array of Regions each with an array of countries in that region. Each region will show a list of the countries in that region as a nested list of objects.
 
+> Request
+
 ``` http
 GET /api/v2/regions HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK

@@ -6,11 +6,15 @@ Available on v3 of the api only
 
 Changes the status of a product to approved. A product must have at least one country, one catalogue, one category, and one image before it can be approved.
 
+> Request
+
 ```
 POST /api/v3/products/:id/approve HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK
@@ -32,11 +36,15 @@ id | integer | The id of the product
 
 Changes the status of a product to on hold
 
+> Request
+
 ```
 POST /api/v3/products/:id/onhold HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK
@@ -57,11 +65,15 @@ id | integer | The id of the product
 
 Changes the status of a product to archived
 
+> Request
+
 ```
 POST /api/v3/products/:id/archive HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
 ```
+
+> Response
 
 ```
 HTTP/1.1 200 OK
