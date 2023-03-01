@@ -86,4 +86,3 @@ Attribute | Type | Info
 order\[dispatch_date\] | DateTime (string) | Required - string parsable as datetime (i.e. 2017-01-01 13:45:56) this should be the date and time the order was despatched at - there are currently no restrictions on whether this date is in the past or present, however logically it should not be before the order was accepted for processing
 order\[tracking_id\] | String | Optional - this value should represent an identifier or token for tracking the delivery with the relevant courier or handler
 order\[tracking_url\] | String | Optional - if provided, must be a valid url (i.e. https://courier.com/track?parcelID=232456) and should allow the user to click and be shown the progress of their delivery.
-

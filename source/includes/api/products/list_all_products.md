@@ -138,5 +138,3 @@ Content-Type: application/json
   }
 ]
 ```
-
-

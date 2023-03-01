@@ -325,5 +325,3 @@ Possible reasons for a 422:
 - One or more line items are invalid - {{more line item related messages may be displayed here, if known}}
 - No Line Items found
 - `{{line_items[0][line_item][name]}}` SKU does not match order product SKU
-
-
