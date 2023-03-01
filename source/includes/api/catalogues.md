@@ -40,12 +40,6 @@ Content-Type: application/json
 
 `GET /api/v2/catalogues`
 
-#### Attributes
-
-Attribute | Type | Info
---------- | ---- | ----
-id | integer | primary key for catalogues
-
 ## List all products in a catalogue
 
 ### V2
@@ -173,7 +167,13 @@ Content-Type: application/json
 
 `GET /api/v2/catalogues/{id}/products`
 
-#### Attributes
+#### URL Parameters
+
+Attribute | Type | Info
+--------- | ---- | ----
+id | integer | primary key for catalogues
+
+#### Body Parameters
 
 Attribute | Type | Info
 --------- | ---- | ----
