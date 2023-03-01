@@ -112,8 +112,7 @@ Content-Type: application/json
       {
         "id": 62,
         "name": "Necklaces",
-        "parent_id": 59,
-        "ar_association_key_name": 414
+        "parent_id": 59
       }
     ],
     "variants": [
@@ -252,8 +251,7 @@ Content-Type: application/json
       {
         "id": 62,
         "name": "Necklaces",
-        "parent_id": 59,
-        "ar_association_key_name": 414
+        "parent_id": 59
       }
     ],
     "variants": [
