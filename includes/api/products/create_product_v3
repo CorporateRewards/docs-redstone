@@ -1,0 +1,314 @@
+<h3 id='v3'>V3</h3>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.75</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"159.99"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"catalogue_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">62</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-234"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://example.test/image.jpg"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"delivery_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">158.27</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"minimum_age"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"primary_image_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier_currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"available_countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albania"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.5%"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.75</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"159.99"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numeric"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Approved"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"catalogue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo Catalogue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">62</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necklaces"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">529</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">530</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-234"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">337</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.test/image.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requires_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pounds Sterling"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"£"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='v3-http-request'>HTTP Request</h4>
+<p><code>POST /api/v3/products</code></p>
+<h4 id='v3-attributes'>Attributes</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Info</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required - name of the product as it is displayed in the catalogue</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Required - a textual, detailed description of the product - can be plain text or HTML</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>String</td>
+<td>Required - canonical unique reference or identity of a product used for ordering</td>
+</tr>
+<tr>
+<td>base_price</td>
+<td>Float</td>
+<td>Required - this is the <code>base_price</code> excluding tax and delivery - the cost of the product</td>
+</tr>
+<tr>
+<td>rrp</td>
+<td>String</td>
+<td>Required - recommended retail price of product</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>Required - ISO 3-letter currency code for the currency this product will be billed in - this currency must be associated with your supplier</td>
+</tr>
+<tr>
+<td>available</td>
+<td>Boolean</td>
+<td>Required - this indicates if the product is or isn&#39;t available and triggers the <code>availability_note</code> if false</td>
+</tr>
+<tr>
+<td>vat_rate</td>
+<td>Float</td>
+<td>Required - this indicates a sales tax rate</td>
+</tr>
+<tr>
+<td>delivery_type_id</td>
+<td>Integer</td>
+<td>Required - delivery types in GPS are (but not limited to) Physical = 1, Downloadable = 2, Email = 3, Prepaid = 4. These types are used to enforce validation strategies on orders for these products - i.e. for physical orders, you must provide a postal address</td>
+</tr>
+<tr>
+<td>voucher</td>
+<td>Boolean</td>
+<td>Optional (default false) - indicates if this product is to be treated as a voucher</td>
+</tr>
+<tr>
+<td>model_no</td>
+<td>String</td>
+<td>Optional - short descriptive code or model name</td>
+</tr>
+<tr>
+<td>face_value</td>
+<td>Integer</td>
+<td>Required (conditional) - if this product is to be classed as a voucher, this is the face value of the lowest denomination</td>
+</tr>
+<tr>
+<td>media</td>
+<td>Array of URLs (String)</td>
+<td>Optional - publicly accessible URL(s) for image(s) (JPG or PNG). This will be fetched by our system, transcoded and associated with this product, with the first URL as the primary image. Images will also be placed in the media library for your supplier in GPS</td>
+</tr>
+<tr>
+<td>availability_note</td>
+<td>String</td>
+<td>Optional - this text will be displayed in place of an order button to explain why the product is not available such as &quot;Coming soon&quot; or &quot;Temporarily out of stock&quot;</td>
+</tr>
+<tr>
+<td>countries</td>
+<td>Array</td>
+<td>Optional - a list of at least one country this product is available to order in</td>
+</tr>
+<tr>
+<td>countries.country</td>
+<td>String</td>
+<td>Required - 2-letter ISO country code - this country must be associated with your supplier</td>
+</tr>
+<tr>
+<td>countries.vat_rate</td>
+<td>Float</td>
+<td>Required - the rate of sales tax that will be used to bill for the delivery of this product</td>
+</tr>
+<tr>
+<td>countries.delivery_charge</td>
+<td>Float</td>
+<td>Required - the charge to be billed for shipping this product, excluding taxes</td>
+</tr>
+<tr>
+<td>international_requirements</td>
+<td>Boolean</td>
+<td>Optional (default false) - indicates if this product has international requirements or variations such as alternative plugs or instructions. Not shown to end users, more intended for order fulfilment</td>
+</tr>
+<tr>
+<td>minimum_age</td>
+<td>Integer</td>
+<td>Optional - indicates if a minimum age is legally required for this product (as with alcohol etc.)</td>
+</tr>
+<tr>
+<td>lowest_denomination</td>
+<td>Integer</td>
+<td>Required (conditional) - if this product is considered a voucher, this field should indicate the lowest denomination of voucher available</td>
+</tr>
+<tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the ID of the brand as stored in GPS</td>
+</tr>
+<tr>
+<td>catalogue_id</td>
+<td>Integer</td>
+<td>Optional - the ID of the catalogue the product should belong to</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>Array of Integers</td>
+<td>Optional - an array of category IDs that the product should belong to</td>
+</tr>
+<tr>
+<td>variants</td>
+<td>Array</td>
+<td>Optional - an array of variants or denominations for this product</td>
+</tr>
+<tr>
+<td>variants.variant</td>
+<td>String</td>
+<td>Required - for non-voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
+</tr>
+<tr>
+<td>variants.sku</td>
+<td>String</td>
+<td>Required - this is the SKU of this particular variant and should be unique</td>
+</tr>
+<tr>
+<td>variants.face_value</td>
+<td>Integer</td>
+<td>Required (conditional) - if this product is a voucher, this shows the face value of this denomination</td>
+</tr>
+<tr>
+<td>variants.base_price</td>
+<td>Float</td>
+<td>Required (conditional) - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices</td>
+</tr>
+<tr>
+<td>variants.available</td>
+<td>Boolean</td>
+<td>Optional (default true) - indicates the availability of this particular variant</td>
+</tr>
+</tbody></table>
