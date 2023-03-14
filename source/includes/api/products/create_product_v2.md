@@ -2,9 +2,20 @@
 
 You can create products over the api as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.
 
-```
-POST /api/v2/products
+The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue
+
+### V2
+
+<aside class="warning">
+  <strong>Deprecated</strong> - use <a href="#products-create-product-v3">V3</a> instead
+</aside>
+
+> Request
+
+``` http
+POST /api/v2/products HTTP/1.1
 Authorization: Token token=xxx
+Content-Type: application/json
 
 {
 	"product": {
@@ -43,7 +54,9 @@ Authorization: Token token=xxx
 }
 ```
 
-```
+> Response
+
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -176,7 +189,11 @@ Content-Type: application/json
 }
 ```
 
-The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue
+#### HTTP Request
+
+`POST /api/v2/products`
+
+#### Attributes
 
 Attribute | Type | Info
 --------- | ---- | ----
@@ -192,7 +209,7 @@ currency  | String  |  Required - ISO 3 letter currency code for the currency th
 availability_note  | String  |  Optional - this text will be displayed in place of an order button to explain why the product is not available such as "Coming soon" or "Temporarily out of stock"
 available  | Boolean  |  Required - this indicates the product is or isn't available and triggers the availability_note
 countries  | Array  |  Required - a list of at least one country this product is available to order in
-countries.country  | String  |  Required - 3 letter ISO country code - this country must be associated with your supplier
+countries.country  | String  |  Required - 2 letter ISO country code - this country must be associated with your supplier
 countries.vat_rate  | Float  |  the rate of sales tax that will be used to bill for the delivery of this product
 countries.delivery_charge  | Float  |  The charge to be billed for shipping this product excluding taxes
 international_requirements  | Boolean  |  Required - indicates if this product has international requirements or variations such as alternative plugs or instructions. Not shown to end users, more intended for order fulfilment
