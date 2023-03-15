@@ -1,8 +1,16 @@
 <h1 id='categories'>Categories</h1><h2 id='categories-list-categories'>List categories</h2><h3 id='categories-list-categories-v2'>V2</h3>
 <p>This endpoint fetches a JSON array of categories. There is a simple parent relationship represented using the <code>parent_id</code> field. This enables an ordering system that chooses to use the Categories from GPS to re-create the category structure. Product data has a reference to the GPS Category they are in using the <code>category_id</code> field.</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/categories</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">[</span><span class="w">
@@ -22,9 +30,17 @@
 <p><code>GET /api/v2/categories</code></p>
 <h3 id='categories-list-categories-v3'>V3</h3>
 <p>Behaves the same as V2, but includes <a href="#translations">translations</a> (where available).</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v3/categories</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">[</span><span class="w">
@@ -32,7 +48,7 @@
     </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"category name"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"parent_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+    </span><span class="s2">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category name in French"</span><span class="w">

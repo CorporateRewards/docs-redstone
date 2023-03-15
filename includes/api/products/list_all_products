@@ -1,131 +1,138 @@
 <h2 id='list-all-products'>List all products</h2>
-<p>This endpoint shows all products associated with this api key as a list</p>
-<pre class="highlight plaintext"><code>GET /api/v2/products
-Authorization: Token token=xxx
+<p>This endpoint shows all products associated with this API key as a list</p>
 
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/JSON
-
-[
-  {
-    "id": 22413,
-    "base_price": 100.0,
-    "model_no": "bub001",
-    "sku": "000123454",
-    "available": true,
-    "availability_note": null,
-    "international_requirements": false,
-    "minimum_age": 0,
-    "primary_image_id": 6419,
-    "variant": null,
-    "voucher": false,
-    "lowest_denomination": null,
-    "face_value":null,
-    "supplier_currency_id": 1,
-    "brand_id": null,
-    "name": "Bat Utility Belt",
-    "description": "&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;",
-    "available_countries": [
-        {
-            "id": 1,
-            "name": "USA",
-            "vat_rate": "0%",
-            "delivery_charge": 0.0
-        }
-    ],
-    "rrp": "100",
-    "supplier": {
-        "id": 66
-    },
-    "vat_rate": {
-        "name": "0%",
-        "numeric": 0.0
-    },
-    "status": {
-        "name": "Approved"
-    },
-    "catalogue": {
-        "id": 1,
-        "name": "Superhero Equipment",
-        "exclusive": false
-    },
-    "categories": [
-        {
-            "id": 407,
-            "parent_id": 75,
-            "name": "Outerwear"
-        }
-    ],
-    "variants": [
-        {
-            "id": 30111,
-            "sku": "000123457",
-            "available": true,
-            "product_sku": "000123454",
-            "face_value": null,
-            "product_id": null,
-            "voucher_status": false,
-            "variant": "small",
-            "variant_base_price": 100,
-            "face_value_gbp": null
-        },
-        {
-            "id": 30112,
-            "sku": "000123459",
-            "available": true,
-            "product_sku": "000123454",
-            "face_value": null,
-            "product_id": null,
-            "voucher_status": false,
-            "variant": "medium",
-            "variant_base_price": 100,
-            "face_value_gbp": null
-        },
-        {
-            "id": 30113,
-            "sku": "000123461",
-            "available": true,
-            "product_sku": "000123454",
-            "face_value": null,
-            "product_id": null,
-            "voucher_status": false,
-            "variant": "large",
-            "variant_base_price": 100,
-            "face_value_gbp": null
-        },
-        {
-            "id": 30114,
-            "sku": "000123463",
-            "available": true,
-            "product_sku": "000123454",
-            "face_value": null,
-            "product_id": null,
-            "voucher_status": false,
-            "variant": "Afleck",
-            "variant_base_price": 100,
-            "face_value_gbp": null
-        }
-    ],
-    "media": [
-        {
-            "id": 6419,
-            "url": "https://images.com/123533.jpg"
-        }
-    ],
-    "delivery_type": {
-        "id": 1,
-        "name": "Physical",
-        "requires_address": true,
-        "requires_email": true
-    },
-    "currency": {
-        "title": "Dollars",
-        "abbreviation": "USD",
-        "sign": "$"
-    }
-  },
-  {
-    ...
-  }
-]
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/products</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
 </code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22413</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bub001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123454"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minimum_age"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"primary_image_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6419</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"voucher"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"face_value"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier_currency_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bat Utility Belt"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Quite simply the quintessential superhero utility belt. Iconnic and functional - no bat-based superhero should be without it &lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0%"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"rrp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"supplier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numeric"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Approved"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"catalogue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Superhero Equipment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exclusive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">407</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outerwear"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30111</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123457"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123454"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30112</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123459"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123454"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30113</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123461"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123454"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">30114</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123463"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000123454"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"voucher_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Afleck"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"variant_base_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"face_value_gbp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6419</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.com/123533.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Physical"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requires_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requires_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollars"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>

@@ -1,5 +1,5 @@
 <h2 id='delete-product'>Delete Product</h2>
-<p>You can also delete products over the api as shown. Products can only be deleted by the supplier of the product. </p>
+<p>You can also delete products over the API as shown. Products can only be deleted by the supplier of the product.</p>
 
 <p>Deleting a product will:</p>
 
@@ -8,8 +8,17 @@
 <li>Remove any associated media, providing it is not used by other products</li>
 <li>Preserve the order history</li>
 </ul>
-<pre class="highlight plaintext"><code>DELETE /api/v2/products/{product_id}
-Authorization: Token token=xxx
-</code></pre><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
-Content-Type: application/json
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/api/v2/products/{product_id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
 </code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><h4 id='delete-product-http-request'>HTTP Request</h4>
+<p><code>DELETE /api/v2/products/{product_id}</code></p>

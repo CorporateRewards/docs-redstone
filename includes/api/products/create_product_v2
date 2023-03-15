@@ -1,5 +1,5 @@
 <h2 id='create-product'>Create product</h2>
-<p>You can create products over the api as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.</p>
+<p>You can create products over the API as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.</p>
 
 <p>The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue</p>
 <h3 id='create-product-v2'>V2</h3>
@@ -205,8 +205,8 @@
 </tr>
 <tr>
 <td>description</td>
-<td>Html (String)</td>
-<td>Required - a textual, detailed description of the product can be plain text or marked up in html</td>
+<td>HTML (String)</td>
+<td>Required - a textual, detailed description of the product can be plain text or marked up in HTML</td>
 </tr>
 <tr>
 <td>sku</td>
@@ -231,7 +231,7 @@
 <tr>
 <td>media</td>
 <td>Url (String)</td>
-<td>Optional - a publicly accessible url for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS</td>
+<td>Optional - a publicly accessible URL for an image (JPG or PNG). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -321,12 +321,12 @@
 <tr>
 <td>variants.product_sku</td>
 <td>String</td>
-<td>Required - this is a &#39;key&#39; that links this variant to its parent product, the value should be the sku of the main product we are posting</td>
+<td>Required - this is a &#39;key&#39; that links this variant to its parent product, the value should be the SKU of the main product we are posting</td>
 </tr>
 <tr>
 <td>variants.sku</td>
 <td>String</td>
-<td>Required - this is the sku of this particular variant and should be unique</td>
+<td>Required - this is the SKU of this particular variant and should be unique</td>
 </tr>
 <tr>
 <td>variants.face_value</td>

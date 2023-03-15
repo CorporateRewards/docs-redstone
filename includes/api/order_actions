@@ -1,30 +1,32 @@
 <h1 id='order-actions'>Order actions</h1>
-<p>Once you have list of relevant orders to work on, you can perform a limit number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a &#39;pending&#39; order may transition to &#39;processing&#39; but not to &#39;dispatched&#39;.
-Any attempt to update an order using an invalid state transistion will be met with a 422 (unprocessable entity and a textual description of the error)
-In principle the vast majority of actions a supplier will be performing are:</p>
+<p>Once you have a list of relevant orders to work on, you can perform a limited number of actions on these orders to progress these orders along the order management lifecycle. The order status transitions are governed by a state machine – this state machine will only allow orders to transition between states that valid starting and ending states for a given action. For instance a &#39;pending&#39; order may transition to &#39;processing&#39; but not to &#39;dispatched&#39;.</p>
+
+<p>Any attempt to update an order using an invalid state transition will be met with a 422 (unprocessable entity) and a textual description of the error.</p>
+
+<p>In principle the vast majority of actions a supplier will be performing are:</p>
 <h2 id='order-actions-accept'>accept</h2>
-<p>This action requires an order ID (in this case 123) with a current status of &#39;pending&#39; resulting in the order having a new status of
-&#39;processing&#39;</p>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/accept</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<p>This action requires the ID of an order with a current status of &#39;pending&#39;, and results in the order having a new status of &#39;processing&#39;</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/{id}/accept</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>info</th>
-</tr>
-</thead><tbody>
-</tbody></table>
+</span></code></pre><h2 id='order-actions-reject'>reject</h2>
+<p>This action requires the ID of an order with a current status of &#39;pending&#39;, and results in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
 
-<p>None</p>
-<h2 id='order-actions-reject'>reject</h2>
-<p>This action requires an order ID with a current status of &#39;pending&#39;  and will result in the order having the status &#39;unable to fulfill&#39;. A reason is required for any order being rejected.</p>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/reject</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/{id}/reject</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -33,7 +35,11 @@ In principle the vast majority of actions a supplier will be performing are:</p>
     </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reason for supplier rejecting this order"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
@@ -50,8 +56,12 @@ In principle the vast majority of actions a supplier will be performing are:</p>
 </tr>
 </tbody></table>
 <h2 id='order-actions-dispatch'>dispatch</h2>
-<p>This action requries an order ID with a current status of &#39;processing&#39; and will result in this order having the status &#39;dispatched&#39;. In order to despatch an order you will have to provide a date at which the order was despatched and optionally either a tracking url or tracking id or (prefereably) both if required to trace the delivery using a courier.</p>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/123/dispatch</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<p>This action requires the ID of an order with a current status of &#39;processing&#39;, and results in this order having the status &#39;dispatched&#39;. In order to dispatch an order you will have to provide a date at which the order was dispatched and optionally either a tracking URL or tracking ID or (preferably) both if required to trace the delivery using a courier.</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/orders/{id}/dispatch</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -62,7 +72,11 @@ In principle the vast majority of actions a supplier will be performing are:</p>
     </span><span class="s2">"tracking_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tracking.com/123456"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre>
 <table><thead>
@@ -85,6 +99,6 @@ In principle the vast majority of actions a supplier will be performing are:</p>
 <tr>
 <td>order[tracking_url]</td>
 <td>String</td>
-<td>Optional - if provided, must be a valid url (i.e. https://courier.com/track?parcelID=232456) and should allow the user to click and be shown the progress of their delivery.</td>
+<td>Optional - if provided, must be a valid URL (i.e. <code>https://courier.com/track?parcelID=232456</code>) and should allow the user to click and be shown the progress of their delivery.</td>
 </tr>
 </tbody></table>

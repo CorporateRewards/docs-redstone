@@ -1,8 +1,16 @@
 <h1 id='regions'>Regions</h1><h2 id='regions-list-all-regions-and-the-countries-within-them'>List all Regions and the Countries within them</h2>
 <p>This endpoint fetches a JSON array of Regions each with an array of countries in that region. Each region will show a list of the countries in that region as a nested list of objects.</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
 <pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/regions</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">[</span><span class="w">
@@ -46,19 +54,5 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='regions-list-all-regions-and-the-countries-within-them-http-request'>HTTP Request</h3>
+</span></code></pre><h4 id='regions-list-all-regions-and-the-countries-within-them-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/regions</code></p>
-<h3 id='regions-list-all-regions-and-the-countries-within-them-attributes'>Attributes</h3>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Info</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>none</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
