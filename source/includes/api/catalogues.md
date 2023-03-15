@@ -2,12 +2,16 @@
 
 ## List all Catalogues
 
-This endpoint fetches a list of all catalogues available for your api key.
+This endpoint fetches a list of all catalogues available for your API key.
+
+> Request
 
 ``` http
 GET /api/v2/catalogues HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -36,22 +40,20 @@ Content-Type: application/json
 
 `GET /api/v2/catalogues`
 
-#### Attributes
-
-Attribute | Type | Info
---------- | ---- | ----
-id | integer | primary key for catalogues
-
 ## List all products in a catalogue
 
 ### V2
 
 This is how ordering systems will access the products available to them. Typically, after fetching a list of catalogues, an ordering system will iterate over each catalogue, fetching the products in each one to add to a local store/cache of products.
 
+> Request
+
 ``` http
-GET /api/v2/catalogues/1/products HTTP/1.1
+GET /api/v2/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -110,8 +112,7 @@ Content-Type: application/json
       {
         "id": 62,
         "name": "Necklaces",
-        "parent_id": 59,
-        "ar_association_key_name": 414
+        "parent_id": 59
       }
     ],
     "variants": [
@@ -163,25 +164,35 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v2/catalogues/1/products`
+`GET /api/v2/catalogues/{id}/products`
 
-#### Attributes
+#### URL Parameters
+
+Attribute | Type | Info
+--------- | ---- | ----
+id | integer | primary key for catalogues
+
+#### Body Parameters
 
 Attribute | Type | Info
 --------- | ---- | ----
 status | string | ordering systems will only see products with a status of approved - this is largely functionless for ordering systems
 minimum_age | integer | when present only products suitable for a minimum age of this value will be shown - for instance a value of 18 will only list products that have either no minimum age or a value greater then or equal to 18
 delivery_type | string | String (may be comma separated) delivery_types are typically Physical, Email, Downloadable and Prepaid. Products will only have this or these delivery type if this parameter is used
-country | string | This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed
+country | string | This should be a proper case, URL-encoded string of a Country name (as reported in the Regions endpoint). Only products available in this country will be listed
 
 ### V3
 
 Behaves the same as V2, but includes [translations](#translations) (where available).
 
+> Request
+
 ``` http
-GET /api/v3/catalogues/1/products HTTP/1.1
+GET /api/v3/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -240,8 +251,7 @@ Content-Type: application/json
       {
         "id": 62,
         "name": "Necklaces",
-        "parent_id": 59,
-        "ar_association_key_name": 414
+        "parent_id": 59
       }
     ],
     "variants": [
@@ -315,7 +325,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v3/catalogues/1/products`
+`GET /api/v3/catalogues/{id}/products`
 
 #### Attributes
 
@@ -324,7 +334,7 @@ Attribute | Type | Info
 status | string | ordering systems will only see products with a status of approved - this is largely functionless for ordering systems
 minimum_age | integer | when present only products suitable for a minimum age of this value will be shown - for instance a value of 18 will only list products that have either no minimum age or a value greater then or equal to 18
 delivery_type | string | String (may be comma separated) delivery_types are typically Physical, Email, Downloadable and Prepaid. Products will only have this or these delivery type if this parameter is used
-country | string | This should be a proper case, url encoded string of a Country name (as reported in the Regions endpoint). Only products available in this coutry will be listed
+country | string | This should be a proper case, URL-encoded string of a Country name (as reported in the Regions endpoint). Only products available in this country will be listed
 
 ### V4
 
@@ -332,11 +342,14 @@ This endpoint is available for ordering systems that wish to access the list of 
 
 <aside class="warning">Note that this endpoint is currently <strong>only</strong> to be used by ordering systems, <strong>not</strong>  supplier systems.</aside>
 
+> Request
 
 ``` http
-GET /api/v4/catalogues/1/products HTTP/1.1
+GET /api/v4/catalogues/{id}/products HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -473,7 +486,7 @@ Content-Type: application/json
 
 #### HTTP Request
 
-`GET /api/v4/catalogues/1/products`
+`GET /api/v4/catalogues/{id}/products`
 
 #### Parameters
 

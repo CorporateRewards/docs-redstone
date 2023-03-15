@@ -1,16 +1,19 @@
 ## List all products
 
-This endpoint shows all products associated with this api key as a list
+This endpoint shows all products associated with this API key as a list
 
-```
-GET /api/v2/products
+> Request
+
+``` http
+GET /api/v2/products HTTP/1.1
 Authorization: Token token=xxx
-
 ```
 
-```
+> Response
+
+``` http
 HTTP/1.1 200 OK
-Content-Type: application/JSON
+Content-Type: application/json
 
 [
   {
@@ -135,5 +138,3 @@ Content-Type: application/JSON
   }
 ]
 ```
-
-

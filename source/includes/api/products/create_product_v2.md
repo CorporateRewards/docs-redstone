@@ -1,6 +1,6 @@
 ## Create product
 
-You can create products over the api as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.
+You can create products over the API as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.
 
 The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue
 
@@ -199,12 +199,12 @@ Attribute | Type | Info
 --------- | ---- | ----
 name  | String  |  Required - name of the product as it displayed in the catalogue
 model_no  | String  |  Optional - short descriptive code or model name
-description  | Html (String)  |  Required - a textual, detailed description of the product can be plain text or marked up in html
+description  | HTML (String)  |  Required - a textual, detailed description of the product can be plain text or marked up in HTML
 sku  | String  |  Required - canonical unique reference or identity of a product used for ordering
 base_price  | Float  |  Required - this is the base_price excluding tax and delivery - the cost of the product
 rrp  | Float  |  Optional - recommended retail price of product
 face_value  | Integer  |  Optional conditional - if this product is to be classed as a voucher, this is face value of the lowest denomination
-media  | Url (String)  |  Optional - a publicly accessible url for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS
+media  | Url (String)  |  Optional - a publicly accessible URL for an image (JPG or PNG). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS
 currency  | String  |  Required - ISO 3 letter currency code for the currency this product will be billed in - this currency must be associated with your supplier record
 availability_note  | String  |  Optional - this text will be displayed in place of an order button to explain why the product is not available such as "Coming soon" or "Temporarily out of stock"
 available  | Boolean  |  Required - this indicates the product is or isn't available and triggers the availability_note
@@ -222,8 +222,8 @@ catalogue_id  | Integer  |  Optional - The id of the catalogue the product shoul
 categories  | Array  |  Optional - An array of category ids that the product should belong to
 variants  | Array  |  Required - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant
 variants.available  | Boolean  |  Required - indicates the availability of this particular variant
-variants.product_sku  | String  |  Required - this is a 'key' that links this variant to its parent product, the value should be the sku of the main product we are posting
-variants.sku  | String  |  Required - this is the sku of this particular variant and should be unique
+variants.product_sku  | String  |  Required - this is a 'key' that links this variant to its parent product, the value should be the SKU of the main product we are posting
+variants.sku  | String  |  Required - this is the SKU of this particular variant and should be unique
 variants.face_value  | Integer  |  Required conditional - if this product is a voucher, this shows the face value of this denomination
 variants.base_price  | Float  |  Required conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product

@@ -2,12 +2,16 @@
 
 ## List all orders
 
-This endpoint fetches a JSON array of orders you are allowed to see. Typically, ordering systems will want to periodically syncronise Orders so as to show up to date information to users about their Orders. By default this endpoint will fetch **all** orders from the first order ever placed by the client. This can grow to a long list over time and so becomes slow and taxing to fetch and process. We have provided some parameters for filtering this list of orders so clients can more easily stay up to date. We recommend using the since parameter - this will return a list of orders that have been updated on or after the date and time provided as this value. Typically ordes are updated daily but no more frequently than hourly.
+This endpoint fetches a JSON array of orders you are allowed to see. Typically, ordering systems will want to periodically synchronise orders so as to show up-to-date information to users about their Orders. By default this endpoint will fetch **all** orders from the first order ever placed by the client. This can grow to a long list over time and so becomes slow and taxing to fetch and process. We have provided some parameters for filtering this list of orders so clients can more easily stay up to date. We recommend using the `since` parameter - this will return a list of orders that have been updated on or after the date and time provided as this value. Typically orders are updated daily but no more frequently than hourly.
+
+> Request
 
 ``` http
 GET /api/v2/orders HTTP/1.1
 Authorization: Token token=xxx
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -121,7 +125,7 @@ Content-Type: application/json
 Parameter | Type | Info
 --------- | ---- | ----
 status | String | Optional - only orders with this status will be returned. Must be one of: pending, processing, dispatched, cancelled, unable to fulfill, cancel requested, pending return
-programme_ref | String | Optional - used to fetch orders for a given programme. Most ordering system api keys are only allocated/linked to one programme, ordering systems can only access orders for their own programme. This parameter has no effect unless your api key is linked to more than one programme. You should be issued your programme reference along with your api key
+programme_ref | String | Optional - used to fetch orders for a given programme. Most ordering system API keys are only allocated/linked to one programme, ordering systems can only access orders for their own programme. This parameter has no effect unless your API key is linked to more than one programme. You should be issued your programme reference along with your API key
 since | Datetime | Sending this parameter with a parsable datetime as the value will only return orders that have been updated since this datetime value. This is useful to poll for orders with new information. Without this parameter present, all orders since the start of your programme (that also match any other provided parameters) will be returned. Example 2017-11-21T23:56:34Z
 
 ## Creating orders
@@ -139,6 +143,8 @@ This endpoint allows ordering systems to place orders on GPS. In order to place 
 If the product is at status Approved and is available (product data can change since an ordering system last refreshed it's product data) at the time of order and the above information is provided correctly - GPS will respond with an HTTP status code of 200. Otherwise a status code of >= 400 will be returned as per REST expectations along with an explanatory plain text message as body content. Ordering systems are expected to track and respond to the response status codes.
 
 The line_items object is a hash of array items and as such will require unique keys for each item. The value of these keys is not used.
+
+> Request
 
 ``` http
 POST /api/v2/orders HTTP/1.1
@@ -176,6 +182,8 @@ Content-Type: application/json
 	}
 }
 ```
+
+> Response
 
 ``` http
 HTTP/1.1 200 OK
@@ -286,8 +294,8 @@ order\[recipient_name\] | String | Optional - This allows a user to place an ord
 order\[recipient_email\] | String | Required for a product where the product `delivery_type` =  `email` - This allows a user to specify an alternate email address to be the recipient of this order and is used to receive products with a `delivery_type` = `email`
 order\[recipient_phone\] | String | Optional - string representation of an alternate phone number to be provided as the recipient of this product
 order\[delivery_instructions\] | String | Optional - allows for the provision of extra instructions for the delivery of this order such as "Please knock, the door bell is not working"
-order\[remote_order\] | String | Optional - this can be used to record the ordering systems own unique id for this order. Some systems will create an order locally before attempting to push the order over the api to GPS. This field can be used to store this id value for later cross referencing.
-order\[pingback_url\] | String | Optional - if provided, must be a valid url (with scheme i.e. http:// or https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not 'leak' any information.
+order\[remote_order\] | String | Optional - this can be used to record the ordering systems own unique id for this order. Some systems will create an order locally before attempting to push the order over the API to GPS. This field can be used to store this id value for later cross referencing.
+order\[pingback_url\] | String | Optional - if provided, must be a valid URL (with scheme i.e. http:// or https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not 'leak' any information.
 line_items\[0\]\[line_item\]\[name\] | String | Required - this is the name of the product being ordered
 line_items\[0\]\[line_item\]\[sku\] | String | Required - this is the SKU of the product being order. If ordering a variant of a product, ALWAYS provide the variant SKU
 line_items\[0\]\[line_item\]\[quantity\] | Integer | Required - the number of this product to deliver
@@ -313,9 +321,7 @@ Possible reasons for a 422:
 - can't be blank or is an unrecognised product.
 - can't be blank or is an unrecognised programme.
 - One or more line items are invalid. It is likely that the corresponding
-  voucher, variant or product may have been deleted in GPS - {{addtional line items errors may appear here, if known}}
+  voucher, variant or product may have been deleted in GPS - {{additional line items errors may appear here, if known}}
 - One or more line items are invalid - {{more line item related messages may be displayed here, if known}}
 - No Line Items found
 - `{{line_items[0][line_item][name]}}` SKU does not match order product SKU
-
-
