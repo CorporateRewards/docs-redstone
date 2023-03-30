@@ -73,6 +73,7 @@ Content-Type: application/json
   "lowest_denomination": null,
   "face_value": null,
   "supplier_currency_id": 31,
+  "max_value_per_order": null,
   "available_countries": [
     {
       "id": 140,
@@ -184,6 +185,7 @@ countries.vat_rate | Float | Required - the rate of sales tax that will be used 
 countries.delivery_charge | Float | Required - the charge to be billed for shipping this product, excluding taxes
 international_requirements | Boolean | Optional (default false) - indicates if this product has international requirements or variations such as alternative plugs or instructions. Not shown to end users, more intended for order fulfilment
 minimum_age | Integer | Optional - indicates if a minimum age is legally required for this product (as with alcohol etc.)
+max_value_per_order | Float | Optional - the maximum total value (`quantity * face_value` for vouchers, `quantity * base_price` otherwise) of this product that can be purchased in a single order
 lowest_denomination | Integer | Required (conditional) - if this product is considered a voucher, this field should indicate the lowest denomination of voucher available
 brand_id | Integer | Optional - this indicates a brand. Note this is not the name of the brand, but the ID of the brand as stored in GPS
 catalogue_id | Integer | Optional - the ID of the catalogue the product should belong to
