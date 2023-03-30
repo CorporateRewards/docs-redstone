@@ -29,6 +29,7 @@ Content-Type: application/json
   ],
   "rrp": "159.99",
   "vat_rate": 20,
+  "brand_id": 1,
   "catalogue_id": 8,
   "categories": [62],
   "variants": [
