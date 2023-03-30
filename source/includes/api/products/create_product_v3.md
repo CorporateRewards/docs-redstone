@@ -176,7 +176,7 @@ voucher | Boolean | Optional (default false) - indicates if this product is to b
 model_no | String | Optional - short descriptive code or model name
 face_value | Integer | Required (conditional) - if this product is to be classed as a voucher, this is the face value of the lowest denomination
 media | Array of URLs (String) | Optional - publicly accessible URL(s) for image(s) (JPG or PNG). This will be fetched by our system, transcoded and associated with this product, with the first URL as the primary image. Images will also be placed in the media library for your supplier in GPS
-availability_note | String | Optional - this text will be displayed in place of an order button to explain why the product is not available such as "Coming soon" or "Temporarily out of stock"
+availability_note | String | Optional - this text will be displayed in GPS only to inform our team why the product is not available such as "Coming soon" or "Temporarily out of stock"
 countries | Array | Optional - a list of at least one country this product is available to order in
 countries.country | String | Required - 2-letter ISO country code - this country must be associated with your supplier
 countries.vat_rate | Float | Required - the rate of sales tax that will be used to bill for the delivery of this product

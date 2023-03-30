@@ -206,7 +206,7 @@ rrp  | Float  |  Optional - recommended retail price of product
 face_value  | Integer  |  Optional conditional - if this product is to be classed as a voucher, this is face value of the lowest denomination
 media  | Url (String)  |  Optional - a publicly accessible url for an image (jpg or png). This will be fetched by our system, transcoded and associated with this product as the primary image. This image will also be placed in the media library for your supplier in GPS
 currency  | String  |  Required - ISO 3 letter currency code for the currency this product will be billed in - this currency must be associated with your supplier record
-availability_note  | String  |  Optional - this text will be displayed in place of an order button to explain why the product is not available such as "Coming soon" or "Temporarily out of stock"
+availability_note  | String  |  Optional - this text will be displayed in GPS only to inform our team why the product is not available such as "Coming soon" or "Temporarily out of stock"
 available  | Boolean  |  Required - this indicates the product is or isn't available and triggers the availability_note
 countries  | Array  |  Required - a list of at least one country this product is available to order in
 countries.country  | String  |  Required - 2 letter ISO country code - this country must be associated with your supplier
