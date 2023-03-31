@@ -1,6 +1,6 @@
 ### V3
 
-> Request
+> Request (non-voucher example)
 
 ``` http
 POST /api/v3/products HTTP/1.1
@@ -50,7 +50,7 @@ Content-Type: application/json
 }
 ```
 
-> Response
+> Response (non-voucher example)
 
 ``` http
 HTTP/1.1 201 Created
@@ -97,7 +97,7 @@ Content-Type: application/json
     "numeric": 20
   },
   "status": {
-    "name": "Approved"
+    "name": "Pending"
   },
   "catalogue": {
     "id": 8,
@@ -157,6 +157,166 @@ Content-Type: application/json
 }
 ```
 
+> Request (voucher example)
+
+``` http
+POST /api/v3/products HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+  "name": "Product Name",
+  "base_price": 9.95,
+  "description": "Product Description",
+  "sku": "A-123|10",
+  "available": true,
+  "voucher": true,
+  "face_value": 10,
+  "lowest_denomination": "$10",
+  "countries": [
+    {
+      "country": "GB",
+      "vat_rate": 0,
+      "delivery_charge": 0
+    },
+    {
+      "country": "AL",
+      "vat_rate": 0,
+      "delivery_charge": 0
+    }
+  ],
+  "rrp": "$10",
+  "vat_rate": 0,
+  "catalogue_id": 2,
+  "categories": [542],
+  "variants": [
+    {
+      "variant": "$10",
+      "face_value": 10,
+      "base_price": 9.95,
+      "sku": "A-123|10",
+      "available": true
+    },
+    {
+      "variant": "$20",
+      "face_value": 20,
+      "base_price": 19.95,
+      "sku": "A-123|20",
+      "available": true
+    }
+  ],
+  "media": ["https://example.test/image.jpg"],
+  "delivery_type_id": 3,
+  "currency": "USD"
+}
+```
+
+> Response (voucher example)
+
+``` http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "id": 357,
+  "name": "Product Name",
+  "base_price": 158.27,
+  "description": "Product Description",
+  "model_no": null,
+  "sku": "A-123",
+  "available": true,
+  "availability_note": "",
+  "international_requirements": false,
+  "minimum_age": null,
+  "primary_image_id": 337,
+  "variant": "",
+  "voucher": true,
+  "lowest_denomination": "$10",
+  "face_value": 10,
+  "supplier_currency_id": 41,
+  "max_value_per_order": null,
+  "available_countries": [
+    {
+      "id": 140,
+      "name": "UK",
+      "vat_rate": "0%",
+      "delivery_charge": 0
+    },
+    {
+      "id": 165,
+      "name": "Albania",
+      "vat_rate": "0%",
+      "delivery_charge": 0
+    }
+  ],
+  "rrp": "159.99",
+  "supplier": {
+    "id": 14
+  },
+  "vat_rate": {
+    "name": "0%",
+    "numeric": 0
+  },
+  "status": {
+    "name": "Pending"
+  },
+  "catalogue": {
+    "id": 2,
+    "name": "Vouchers",
+    "exclusive": false
+  },
+  "categories": [
+    {
+      "id": 542,
+      "name": "Food & Dining",
+      "parent_id": 75
+    }
+  ],
+  "variants": [
+    {
+      "id": 529,
+      "variant": "$10",
+      "sku": "A-123|10",
+      "available": true,
+      "product_sku": "A-123|10",
+      "face_value": 10,
+      "product_id": null,
+      "voucher_status": true,
+      "variant_base_price": 9.95,
+      "face_value_gbp": null
+    },
+    {
+      "id": 530,
+      "variant": "$20",
+      "sku": "A-123|20",
+      "available": true,
+      "product_sku": "A-123|10",
+      "face_value": 20,
+      "product_id": null,
+      "voucher_status": true,
+      "variant_base_price": 19.95,
+      "face_value_gbp": null
+    }
+  ],
+  "media": [
+    {
+      "id": 337,
+      "url": "https://example.test/image.jpg"
+    }
+  ],
+  "delivery_type": {
+    "id": 3,
+    "name": "Email",
+    "requires_address": false
+  },
+  "currency": {
+    "title": "US Dollars",
+    "abbreviation": "USD",
+    "sign": "$"
+  },
+  "translations": []
+}
+```
 #### HTTP Request
 
 `POST /api/v3/products`
@@ -186,7 +346,7 @@ countries.delivery_charge | Float | Required - the charge to be billed for shipp
 international_requirements | Boolean | Optional (default false) - indicates if this product has international requirements or variations such as alternative plugs or instructions. Not shown to end users, more intended for order fulfilment
 minimum_age | Integer | Optional - indicates if a minimum age is legally required for this product (as with alcohol etc.)
 max_value_per_order | Float | Optional - the maximum total value (`quantity * face_value` for vouchers, `quantity * base_price` otherwise) of this product that can be purchased in a single order
-lowest_denomination | Integer | Required (conditional) - if this product is considered a voucher, this field should indicate the lowest denomination of voucher available
+lowest_denomination | String | Required (conditional) - if this product is considered a voucher, this field should indicate the lowest denomination of voucher available
 brand_id | Integer | Optional - this indicates a brand. Note this is not the name of the brand, but the ID of the brand as stored in GPS
 catalogue_id | Integer | Optional - the ID of the catalogue the product should belong to
 categories | Array of Integers | Optional - an array of category IDs that the product should belong to
