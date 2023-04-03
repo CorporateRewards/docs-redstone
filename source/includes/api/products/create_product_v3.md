@@ -92,6 +92,10 @@ Content-Type: application/json
   "supplier": {
     "id": 14
   },
+  "brand": {
+    "id": 1,
+    "name": "Acme"
+  },
   "vat_rate": {
     "name": "20%",
     "numeric": 20
