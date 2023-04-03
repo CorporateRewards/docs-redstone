@@ -32,6 +32,7 @@ Content-Type: application/json
   "brand_id": 1,
   "catalogue_id": 8,
   "categories": [62],
+  "variant_type_id": 2,
   "variants": [
     {
       "variant": "small",
@@ -95,6 +96,10 @@ Content-Type: application/json
   "brand": {
     "id": 1,
     "name": "Acme"
+  },
+  "variant_type": {
+    "id": 2,
+    "name": "Size"
   },
   "vat_rate": {
     "name": "20%",
@@ -354,6 +359,7 @@ lowest_denomination | String | Required (conditional) - if this product is consi
 brand_id | Integer | Optional - this indicates a brand. Note this is not the name of the brand, but the ID of the brand as stored in GPS
 catalogue_id | Integer | Optional - the ID of the catalogue the product should belong to
 categories | Array of Integers | Optional - an array of category IDs that the product should belong to
+variant_type_id | Integer | Optional - the ID of a variant type in GPS (Colour = 1, Size = 2, Other = 8). Ignored for vouchers (since their variants are always denominations)
 variants | Array | Optional - an array of variants or denominations for this product
 variants.variant | String | Required - for non-voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
 variants.sku | String | Required - this is the SKU of this particular variant and should be unique
