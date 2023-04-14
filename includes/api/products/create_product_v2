@@ -241,7 +241,7 @@
 <tr>
 <td>availability_note</td>
 <td>String</td>
-<td>Optional - this text will be displayed in place of an order button to explain why the product is not available such as &quot;Coming soon&quot; or &quot;Temporarily out of stock&quot;</td>
+<td>Optional - this text will be displayed in GPS only to inform our team why the product is not available such as &quot;Coming soon&quot; or &quot;Temporarily out of stock&quot;</td>
 </tr>
 <tr>
 <td>available</td>
