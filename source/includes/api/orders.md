@@ -266,7 +266,8 @@ Content-Type: application/json
       "individual_price": 290.04
     }
   ],
-  "comments": []
+  "comments": [],
+  "api_key_catalogue_markup": null
 }
 ```
 
