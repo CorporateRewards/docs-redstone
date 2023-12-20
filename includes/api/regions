@@ -54,5 +54,5 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h4 id='regions-list-all-regions-and-the-countries-within-them-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='regions-list-all-regions-and-the-countries-within-them-v4-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/regions</code></p>
