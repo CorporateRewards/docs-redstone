@@ -6,7 +6,7 @@ jobs:
     working_directory: /apidocs
 
     docker:
-      - image: createkio/slate:latest
+      - image: createkio/docs-redstone:latest
 
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
             --jobs 20 \
             --retry 2
       - run:
-          name: Congifure git
+          name: Configure git
           command: |
             git config --global user.email 'ci@createk.io'
             git config --global user.name 'CreatekCI'
@@ -31,13 +31,6 @@ jobs:
       - run:
           name: Build docs
           command: bundle exec middleman build --clean
-
-      - run:
-          name: Perserve config files
-          command: |
-            cd build
-            git checkout CNAME
-            git checkout .circleci/config.yml
 
       - run:
           name: Git commit new build
