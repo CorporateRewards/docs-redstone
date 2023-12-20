@@ -6,7 +6,7 @@ jobs:
     working_directory: /apidocs
 
     docker:
-      - image: createkio/slate:latest
+      - image: createkio/docs-redstone:latest
 
     steps:
       - checkout
