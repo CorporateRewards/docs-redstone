@@ -6,15 +6,15 @@
 <blockquote>
 <p>Request</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/approve</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/approve</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-</code></pre><h4 id='product-actions-approve-product-http-request'>HTTP Request</h4>
+</code></pre></div><h4 id='product-actions-approve-product-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/{id}/approve</code></p>
 <h4 id='product-actions-approve-product-url-parameters'>URL Parameters</h4>
 <table><thead>
@@ -36,15 +36,15 @@
 <blockquote>
 <p>Request</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/onhold</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/onhold</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-</code></pre><h4 id='product-actions-put-product-on-hold-http-request'>HTTP Request</h4>
+</code></pre></div><h4 id='product-actions-put-product-on-hold-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/{id}/onhold</code></p>
 <h4 id='product-actions-put-product-on-hold-url-parameters'>URL Parameters</h4>
 <table><thead>
@@ -66,15 +66,15 @@
 <blockquote>
 <p>Request</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/archive</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v3/products/{id}/archive</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token token=xxx</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response</p>
 </blockquote>
-<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-</code></pre><h4 id='product-actions-archive-product-http-request'>HTTP Request</h4>
+</code></pre></div><h4 id='product-actions-archive-product-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products/{id}/archive</code></p>
 <h4 id='product-actions-archive-product-url-parameters'>URL Parameters</h4>
 <table><thead>
