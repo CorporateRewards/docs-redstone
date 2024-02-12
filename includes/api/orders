@@ -111,9 +111,9 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h4 id='orders-list-all-orders-v3-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='orders-list-all-orders-v2-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/orders</code></p>
-<h4 id='orders-list-all-orders-v3-parameters'>Parameters</h4>
+<h4 id='orders-list-all-orders-v2-parameters'>Parameters</h4>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -275,9 +275,9 @@
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="nl">"api_key_catalogue_markup"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='orders-creating-orders-v3-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='orders-creating-orders-v2-http-request'>HTTP Request</h4>
 <p><code>POST /api/v2/orders</code></p>
-<h4 id='orders-creating-orders-v3-attributes'>Attributes</h4>
+<h4 id='orders-creating-orders-v2-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -396,7 +396,7 @@
 <td>Optional - the value of points charged for this line item. This is used to indicate to GPS how many points each line item is work but is not related to the total points for the order. This has no effect in GPS other than to indicate points for a line item at time of order.</td>
 </tr>
 </tbody></table>
-<h4 id='orders-creating-orders-v3-error-messages-and-response-codes'>Error messages and response codes</h4>
+<h4 id='orders-creating-orders-v2-error-messages-and-response-codes'>Error messages and response codes</h4>
 <table><thead>
 <tr>
 <th>StatusCode</th>
