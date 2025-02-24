@@ -2,7 +2,8 @@
 version: '3'
 services:
   slate:
-    image: createkio/docs-redstone:latest
+    build:
+      context: .
     volumes:
       - .:/srv/slate
     ports:
