@@ -1,4 +1,4 @@
-<h3 id='order-actions-dispatch-list-all-currencies'>List all currencies</h3>
+<h3 id='catalogues-delete-product-list-all-currencies'>List all currencies</h3>
 <p>An endpoint to retrieve all currencies and their current exchange rate.
 Your API key must have permission to read currencies.</p>
 
@@ -24,9 +24,9 @@ Your API key must have permission to read currencies.</p>
   </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/02/2000 00:00:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='order-actions-dispatch-list-all-currencies-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='catalogues-delete-product-list-all-currencies-http-request'>HTTP Request</h4>
 <p><code>GET /api/v2/currencies</code></p>
-<h3 id='order-actions-dispatch-update-exchange-rates'>Update exchange rates</h3>
+<h3 id='catalogues-delete-product-update-exchange-rates'>Update exchange rates</h3>
 <p>An endpoint to update the exchange rate of a specified currency. Your API key must have permission to write currencies.</p>
 
 <blockquote>
@@ -51,9 +51,9 @@ Your API key must have permission to read currencies.</p>
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great British Pound (£)"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"exchange_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1111</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='order-actions-dispatch-update-exchange-rates-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='catalogues-delete-product-update-exchange-rates-http-request'>HTTP Request</h4>
 <p><code>PATCH /api/v2/currencies/{id}</code></p>
-<h4 id='order-actions-dispatch-update-exchange-rates-url-parameters'>URL Parameters</h4>
+<h4 id='catalogues-delete-product-update-exchange-rates-url-parameters'>URL Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -67,7 +67,7 @@ Your API key must have permission to read currencies.</p>
 <td>The id of the currency</td>
 </tr>
 </tbody></table>
-<h4 id='order-actions-dispatch-update-exchange-rates-body-parameters'>Body Parameters</h4>
+<h4 id='catalogues-delete-product-update-exchange-rates-body-parameters'>Body Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>

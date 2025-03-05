@@ -1,8 +1,8 @@
-<h2 id='regions-create-product'>Create product</h2>
+<h2 id='orders-create-product'>Create product</h2>
 <p>You can create products over the API as shown - all new products require approval. Products can only be approved using the GPS web interface by a supplier manager or CR staff. Products can only be approved once they have a Category, a Catalogue and at least one image applied. Once a product is approved, it can be shown in a catalogue and ordered, subject to availability.</p>
 
 <p>The created product has a status of pending, and unless provided in the POST request, will have no catalogue or categories - this product needs to be approved in GPS before it will show in a catalogue</p>
-<h3 id='regions-create-product-v2'>V2</h3>
+<h3 id='orders-create-product-v2'>V2</h3>
 <aside class="warning">
   <strong>Deprecated</strong> - use <a href="#products-create-product-v3">V3</a> instead
 </aside>
@@ -183,9 +183,9 @@
       </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='regions-create-product-v2-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='orders-create-product-v2-http-request'>HTTP Request</h4>
 <p><code>POST /api/v2/products</code></p>
-<h4 id='regions-create-product-v2-attributes'>Attributes</h4>
+<h4 id='orders-create-product-v2-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
