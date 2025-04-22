@@ -1,4 +1,4 @@
-<h3 id='catalogues-list-all-products-v3'>V3</h3>
+<h3 id='orders-creating-orders-v3'>V3</h3>
 <blockquote>
 <p>Request (non-voucher example)</p>
 </blockquote>
@@ -321,9 +321,9 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"translations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='catalogues-list-all-products-v3-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='orders-creating-orders-v3-http-request'>HTTP Request</h4>
 <p><code>POST /api/v3/products</code></p>
-<h4 id='catalogues-list-all-products-v3-attributes'>Attributes</h4>
+<h4 id='orders-creating-orders-v3-attributes'>Attributes</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
