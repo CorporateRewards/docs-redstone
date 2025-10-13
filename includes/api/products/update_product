@@ -1,4 +1,4 @@
-<h2 id='authentication-update-product'>Update product</h2>
+<h2 id='order-actions-update-product'>Update product</h2>
 <p>The update product API is available to update product information.</p>
 
 <blockquote>
@@ -131,11 +131,11 @@
         </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='authentication-update-product-v2-http-request'>HTTP Request</h4>
+</span></code></pre></div><h4 id='order-actions-update-product-v2-http-request'>HTTP Request</h4>
 <p><code>PUT /api/v2/products/{product_id}</code></p>
 
 <p><code>PATCH /api/v2/products/{product_id}</code></p>
-<h4 id='authentication-update-product-v2-request-parameters'>Request Parameters</h4>
+<h4 id='order-actions-update-product-v2-request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th>Attribute</th>
