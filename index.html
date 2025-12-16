@@ -2028,7 +2028,11 @@ Your API key must have permission to read currencies.</p>
 <h1 id='products'>Products</h1>
 <p>Access to products endpoint will be scoped to your supplier in GPS.</p>
 
-<p><strong>This section is should be considered pre-production and subject to significant change</strong></p>
+<p><strong>Important note</strong></p>
+
+<p>All products and product variants are assigned an id upon creation. It is important to note that the id assigned to product variants is subject to change regularly due to how updates are managed, and any product that is deleted and recreated will also receive a new id; therefore, it is vital that the SKU of a product or variant is considered as the unique identifier when evaluating products and their variants.</p>
+
+<p>When you update or create a product via the API, the product id and the ids of all of the product&#39;s variants <em>(if it has any)</em> will be returned. If you require the current variant ids then you can get them from the product response, or you can list all of your products and variants using our <a href="#products-list-all-products">list products endpoint</a>.</p>
 <h2 id='products-list-all-products'>List all products</h2>
 <p>This endpoint shows all products associated with this API key as a list</p>
 
