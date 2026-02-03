@@ -2,6 +2,15 @@
 
 The update product API is available to update product information.
 
+<aside class="warning">
+    <b><u>IMPORTANT</u></b><br />
+    <div style="margin-left:25px;">
+        When updating an existing product that has variants, it is important that <b><u>all</u></b> variants be included in the update request.<br />
+        Products can only be updated using the V2 API; each variant should be provided as a JSON encoded string within the variants array.<br />
+        Any variants that are not included in the update request will be removed from the product.
+    </div>
+</aside>
+
 > Request
 
 ``` http
