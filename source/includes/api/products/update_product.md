@@ -13,7 +13,7 @@ The update product API is available to update product information.
 
 > Request
 
-``` http
+```http
 PATCH /api/v2/products/{product_id} HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
@@ -31,11 +31,12 @@ Content-Type: application/json
         "currency": "USD",
         "availability_note": "available",
         "available": "yes",
-        "countries": [{
-            "country": "US",
-            "vat_rate": 0,
-            "delivery_charge": 0
-        }
+        "countries": [
+            {
+                "country": "US",
+                "vat_rate": 0,
+                "delivery_charge": 0
+            }
         ],
         "international_requirements": 0,
         "minimum_age": 21,
@@ -45,7 +46,9 @@ Content-Type: application/json
         "lowest_denomination": null,
         "catalogue_id": 1,
         "brand_id": 1,
-        "variants": ["{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"test\" }"]
+        "variants": [
+            "{ \"available\":1, \"product_sku\":\"000123454\", \"sku\":\"000123457\", \"face_value\":null, \"base_price\":100.0, \"voucher_status\":0, \"variant\":\"test\" }"
+        ]
     }
 }
 ```
