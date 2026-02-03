@@ -220,7 +220,8 @@ voucher  | Boolean  |  Required - indicates if this product is to be treated as 
 lowest_denomination  | Integer  | Optional conditional - if this product is considered a voucher this field should indicate the lowest denomination of voucher available
 catalogue_id  | Integer  |  Optional - The id of the catalogue the product should belong to
 categories  | Array  |  Optional - An array of category ids that the product should belong to
-variants  | Array  |  Required - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant
+brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS
+variants  | Array[Strings]  |  Optional - an array of JSON encoded strings representing objects, one for each variant that belongs to this master product
 variants.available  | Boolean  |  Required - indicates the availability of this particular variant
 variants.product_sku  | String  |  Required - this is a 'key' that links this variant to its parent product, the value should be the SKU of the main product we are posting
 variants.sku  | String  |  Required - this is the SKU of this particular variant and should be unique
@@ -228,4 +229,3 @@ variants.face_value  | Integer  |  Required conditional - if this product is a v
 variants.base_price  | Float  |  Required conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product
 variants.variant  | String  |  Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
-brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS
