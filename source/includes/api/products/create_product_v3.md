@@ -360,7 +360,7 @@ brand_id | Integer | Optional - this indicates a brand. Note this is not the nam
 catalogue_id | Integer | Optional - the ID of the catalogue the product should belong to
 categories | Array of Integers | Optional - an array of category IDs that the product should belong to
 variant_type_id | Integer | Optional - the ID of a variant type in GPS (Colour = 1, Size = 2, Other = 8). Ignored for vouchers (since their variants are always denominations)
-variants | Array | Optional - an array of variants or denominations for this product
+variants | Array[Objects] | Optional - an array of variants or denominations that belong to this master product
 variants.variant | String | Required - for non-voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
 variants.sku | String | Required - this is the SKU of this particular variant and should be unique
 variants.face_value | Integer | Required (conditional) - if this product is a voucher, this shows the face value of this denomination

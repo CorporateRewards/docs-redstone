@@ -2,9 +2,18 @@
 
 The update product API is available to update product information.
 
+<aside class="warning">
+    <b><u>IMPORTANT</u></b><br />
+    <div style="margin-left:25px;">
+        When updating an existing product that has variants, it is important that <b><u>all</u></b> variants be included in the update request.<br />
+        Products can only be updated using the V2 API; each variant should be provided as a JSON encoded string within the variants array.<br />
+        Any variants that are not included in the update request will be removed from the product.
+    </div>
+</aside>
+
 > Request
 
-``` http
+```http
 PATCH /api/v2/products/{product_id} HTTP/1.1
 Authorization: Token token=xxx
 Content-Type: application/json
@@ -22,11 +31,12 @@ Content-Type: application/json
         "currency": "USD",
         "availability_note": "available",
         "available": "yes",
-        "countries": [{
-            "country": "US",
-            "vat_rate": 0,
-            "delivery_charge": 0
-        }
+        "countries": [
+            {
+                "country": "US",
+                "vat_rate": 0,
+                "delivery_charge": 0
+            }
         ],
         "international_requirements": 0,
         "minimum_age": 21,
@@ -36,7 +46,9 @@ Content-Type: application/json
         "lowest_denomination": null,
         "catalogue_id": 1,
         "brand_id": 1,
-        "variants": ["{\"available\": 1, \"product_sku\": \"000123454\", \"sku\": \"000123457\", \"face_value\": null, \"base_price\": 100.0, \"voucher_status\": 0, \"variant\":\"test\" }"]
+        "variants": [
+            "{ \"available\":1, \"product_sku\":\"000123454\", \"sku\":\"000123457\", \"face_value\":null, \"base_price\":100.0, \"voucher_status\":0, \"variant\":\"test\" }"
+        ]
     }
 }
 ```
@@ -166,7 +178,8 @@ delivery_type_id  | Integer  |  Optional - delivery types in GPS are (but not li
 voucher  | Boolean  |  Optional - indicates if this product is to be treated as a voucher
 lowest_denomination  | Integer  | Optional conditional - if this product is considered a voucher this field should indicate the lowest denomination of voucher available
 catalogue_id  | Integer  |  Optional - The id of the catalogue the product should belong to
-variants  | Array  |  Optional - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant
+brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS
+variants  | Array[Strings]  |  Optional - an array of JSON encoded strings representing objects, one for each variant that belongs to this master product
 variants.available  | Boolean  |  Required for each variant added - indicates the availability of this particular variant
 variants.product_sku  | String  |  Required for each variant added - this is a 'key' that links this variant to its parent product, the value should be the SKU of the main product we are posting
 variants.sku  | String  |  Required for each variant added - this is the SKU of this particular variant and should be unique
@@ -174,4 +187,3 @@ variants.face_value  | Integer  |  Required for each variant added - conditional
 variants.base_price  | Float  |  Required for each variant added - conditional - for non-voucher products all variants will have the same cost/base price but voucher denominations will have differing base prices
 variants.voucher_status  | Boolean  |  Required for each variant added - indicated this variant is a voucher - you cannot mix vouchers and physical product variants this should be all or nothing and match the parent product
 variants.variant  | String  |  Required for each variant added - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination
-brand_id  | Integer  | Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS
