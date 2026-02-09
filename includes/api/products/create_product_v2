@@ -309,9 +309,14 @@
 <td>Optional - An array of category ids that the product should belong to</td>
 </tr>
 <tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
+</tr>
+<tr>
 <td>variants</td>
-<td>Array</td>
-<td>Required - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant</td>
+<td>Array[Strings]</td>
+<td>Optional - an array of JSON encoded strings representing objects, one for each variant that belongs to this master product</td>
 </tr>
 <tr>
 <td>variants.available</td>
@@ -347,10 +352,5 @@
 <td>variants.variant</td>
 <td>String</td>
 <td>Required - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
-</tr>
-<tr>
-<td>brand_id</td>
-<td>Integer</td>
-<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
 </tr>
 </tbody></table>

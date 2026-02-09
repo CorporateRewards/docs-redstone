@@ -1,6 +1,15 @@
 <h2 id='order-actions-update-product'>Update product</h2>
 <p>The update product API is available to update product information.</p>
 
+<aside class="warning">
+    <b><u>IMPORTANT</u></b><br />
+    <div style="margin-left:25px;">
+        When updating an existing product that has variants, it is important that <b><u>all</u></b> variants be included in the update request.<br />
+        Products can only be updated using the V2 API; each variant should be provided as a JSON encoded string within the variants array.<br />
+        Any variants that are not included in the update request will be removed from the product.
+    </div>
+</aside>
+
 <blockquote>
 <p>Request</p>
 </blockquote>
@@ -21,11 +30,12 @@
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"availability_note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"vat_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"delivery_charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"international_requirements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"minimum_age"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
@@ -35,7 +45,9 @@
         </span><span class="nl">"lowest_denomination"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"catalogue_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="nl">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{</span><span class="se">\"</span><span class="s2">available</span><span class="se">\"</span><span class="s2">: 1, </span><span class="se">\"</span><span class="s2">product_sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123454</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sku</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">000123457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">face_value</span><span class="se">\"</span><span class="s2">: null, </span><span class="se">\"</span><span class="s2">base_price</span><span class="se">\"</span><span class="s2">: 100.0, </span><span class="se">\"</span><span class="s2">voucher_status</span><span class="se">\"</span><span class="s2">: 0, </span><span class="se">\"</span><span class="s2">variant</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">test</span><span class="se">\"</span><span class="s2"> }"</span><span class="p">]</span><span class="w">
+        </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"{ </span><span class="se">\"</span><span class="s2">available</span><span class="se">\"</span><span class="s2">:1, </span><span class="se">\"</span><span class="s2">product_sku</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">000123454</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sku</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">000123457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">face_value</span><span class="se">\"</span><span class="s2">:null, </span><span class="se">\"</span><span class="s2">base_price</span><span class="se">\"</span><span class="s2">:100.0, </span><span class="se">\"</span><span class="s2">voucher_status</span><span class="se">\"</span><span class="s2">:0, </span><span class="se">\"</span><span class="s2">variant</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">test</span><span class="se">\"</span><span class="s2"> }"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -254,9 +266,14 @@
 <td>Optional - The id of the catalogue the product should belong to</td>
 </tr>
 <tr>
+<td>brand_id</td>
+<td>Integer</td>
+<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
+</tr>
+<tr>
 <td>variants</td>
-<td>Array</td>
-<td>Optional - this is (somewhat convolutedly) a list of at 0 or more JSON encoded strings representing objects for a variant</td>
+<td>Array[Strings]</td>
+<td>Optional - an array of JSON encoded strings representing objects, one for each variant that belongs to this master product</td>
 </tr>
 <tr>
 <td>variants.available</td>
@@ -292,10 +309,5 @@
 <td>variants.variant</td>
 <td>String</td>
 <td>Required for each variant added - for non voucher products this represents the reason for the variation such as size (medium large etc) or colour. For vouchers this represents the face value of this denomination</td>
-</tr>
-<tr>
-<td>brand_id</td>
-<td>Integer</td>
-<td>Optional - this indicates a brand. Note this is not the name of the brand, but the id of the brand as stored in GPS</td>
 </tr>
 </tbody></table>
