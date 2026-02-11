@@ -373,7 +373,7 @@
 <tr>
 <td>order[pingback_url]</td>
 <td>String</td>
-<td>Optional - if provided, must be a valid URL (with scheme i.e. http:// or https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not &#39;leak&#39; any information.</td>
+<td>Optional - if provided, must be a valid URL (with https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occured and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not &#39;leak&#39; any information and should NOT return a redirect.</td>
 </tr>
 <tr>
 <td>line_items[0][line_item][name]</td>
