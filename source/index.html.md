@@ -19,6 +19,7 @@ includes:
 - api/products/create_product_v2
 - api/products/create_product_v3
 - api/products/update_product
+- api/products/update_product_v3
 - api/products/delete_product
 - api/product_actions
 
