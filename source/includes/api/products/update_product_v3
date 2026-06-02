@@ -1,0 +1,359 @@
+### V3
+
+Products can be partially updated using `PATCH` or fully replaced using `PUT`.
+
+<aside class="notice">
+    <b>Products and variants</b><br />
+    <div style="margin-left:25px;">
+        Every product has zero or more <b>variants</b>. For non-voucher products, variants represent purchasable options such as sizes or colours. For voucher products, variants represent individual <b>denominations</b> — each with a face value and a base price.<br /><br />
+        <b>The master variant</b> is the variant whose <code>sku</code> exactly matches the product <code>sku</code>. It identifies the primary or default option:
+        <ul>
+            <li>For <b>non-voucher</b> products, the master variant's <code>variant</code> string is automatically copied to the product-level <code>variant</code> field.</li>
+            <li>For <b>voucher</b> products, the master denomination's <code>variant</code> string (e.g. "£5") is automatically copied to the product-level <code>lowest_denomination</code> field. By convention, the master denomination should be the lowest available denomination value.</li>
+        </ul>
+        Any request that includes a <code>variants</code> array must contain at least one entry whose <code>sku</code> matches the product <code>sku</code>, or a 422 error will be returned.
+    </div>
+</aside>
+
+<aside class="warning">
+    <b><u>IMPORTANT — derived fields</u></b><br />
+    <div style="margin-left:25px;">
+        <code>lowest_denomination</code> and the top-level <code>variant</code> field are <b>never accepted as request parameters</b> on update. They are always derived automatically from the master variant/denomination. Passing either will return a <code>422 Unprocessable Entity</code> error.<br /><br />
+        When a <code>variants</code> array is included, the opposing denormalised field is also cleared: updating a voucher product sets <code>lowest_denomination</code> and clears <code>variant</code>; updating a non-voucher product sets <code>variant</code> and clears <code>lowest_denomination</code>.
+    </div>
+</aside>
+
+<aside class="notice">
+    <b>PATCH vs PUT</b><br />
+    <div style="margin-left:25px;">
+        <b>PATCH</b> — only the fields you provide are changed; omitted fields retain their current values. Collections are merged:
+        <ul>
+            <li><b>variants</b> — matched by <code>sku</code>; existing SKUs are updated in-place, new SKUs create new variants, unlisted variants are left untouched.</li>
+            <li><b>countries</b> — existing entries are updated in-place, new country codes create new entries, uncovered entries remain.</li>
+            <li><b>media</b> — new URLs are appended to the existing list.</li>
+            <li><b>categories</b> — provided IDs are added to those already on the product.</li>
+        </ul>
+        <b>PUT</b> — all existing variants, countries, media, and categories are removed and replaced with exactly what you provide. Omitting a collection key entirely leaves that collection unchanged.
+    </div>
+</aside>
+
+> Request (PATCH non-voucher example — update a variant)
+
+```http
+PATCH /api/v3/products/{product_id} HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+  "variants": [
+    {
+      "sku": "A-123",
+      "variant": "One Size",
+      "available": true
+    }
+  ]
+}
+```
+
+> Response (PATCH non-voucher example)
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 357,
+  "name": "Product Name",
+  "base_price": 158.27,
+  "description": "Product Description",
+  "model_no": "A-123",
+  "sku": "A-123",
+  "available": true,
+  "availability_note": "",
+  "international_requirements": false,
+  "minimum_age": null,
+  "primary_image_id": 337,
+  "variant": "One Size",
+  "voucher": false,
+  "lowest_denomination": null,
+  "face_value": null,
+  "supplier_currency_id": 31,
+  "max_value_per_order": null,
+  "available_countries": [
+    {
+      "id": 140,
+      "name": "UK",
+      "vat_rate": "20%",
+      "delivery_charge": 7.2
+    }
+  ],
+  "rrp": "159.99",
+  "supplier": { "id": 14 },
+  "brand": { "id": 1, "name": "Acme" },
+  "variant_type": { "id": 2, "name": "Size" },
+  "vat_rate": { "name": "20%", "numeric": 20 },
+  "status": { "name": "Approved" },
+  "catalogue": { "id": 8, "name": "Demo Catalogue", "exclusive": false },
+  "categories": [
+    { "id": 62, "name": "Necklaces", "parent_id": 59 }
+  ],
+  "variants": [
+    {
+      "id": 529,
+      "variant": "One Size",
+      "sku": "A-123",
+      "available": true,
+      "product_sku": "A-123",
+      "face_value": null,
+      "product_id": null,
+      "voucher_status": false,
+      "variant_base_price": null,
+      "face_value_gbp": null
+    }
+  ],
+  "media": [
+    { "id": 337, "url": "https://example.test/image.jpg" }
+  ],
+  "delivery_type": {
+    "id": 1,
+    "name": "Physical",
+    "requires_address": true,
+    "requires_email": false
+  },
+  "currency": {
+    "title": "Pounds Sterling",
+    "abbreviation": "GBP",
+    "sign": "£"
+  }
+}
+```
+
+> Request (PATCH voucher example — update a denomination)
+
+```http
+PATCH /api/v3/products/{product_id} HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+  "variants": [
+    {
+      "sku": "A-123|10",
+      "variant": "£10",
+      "available": true,
+      "face_value": 1000,
+      "base_price": 9.50
+    }
+  ]
+}
+```
+
+> Response (PATCH voucher example)
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 358,
+  "name": "Gift Card",
+  "base_price": 9.95,
+  "description": "Product Description",
+  "model_no": null,
+  "sku": "A-123|10",
+  "available": true,
+  "availability_note": "",
+  "international_requirements": false,
+  "minimum_age": null,
+  "primary_image_id": 338,
+  "variant": null,
+  "voucher": true,
+  "lowest_denomination": "£10",
+  "face_value": 10,
+  "supplier_currency_id": 31,
+  "max_value_per_order": null,
+  "available_countries": [
+    {
+      "id": 140,
+      "name": "UK",
+      "vat_rate": "0%",
+      "delivery_charge": 0
+    }
+  ],
+  "rrp": "£10",
+  "supplier": { "id": 14 },
+  "vat_rate": { "name": "0%", "numeric": 0 },
+  "status": { "name": "Approved" },
+  "catalogue": { "id": 2, "name": "Vouchers", "exclusive": false },
+  "categories": [
+    { "id": 542, "name": "Food & Dining", "parent_id": 75 }
+  ],
+  "variants": [
+    {
+      "id": 529,
+      "variant": "£10",
+      "sku": "A-123|10",
+      "available": true,
+      "product_sku": "A-123|10",
+      "face_value": 1000,
+      "product_id": null,
+      "voucher_status": true,
+      "variant_base_price": 9.50,
+      "face_value_gbp": 10.0
+    },
+    {
+      "id": 530,
+      "variant": "£20",
+      "sku": "A-123|20",
+      "available": true,
+      "product_sku": "A-123|10",
+      "face_value": 2000,
+      "product_id": null,
+      "voucher_status": true,
+      "variant_base_price": 19.50,
+      "face_value_gbp": 20.0
+    }
+  ],
+  "media": [
+    { "id": 338, "url": "https://example.test/gift-card.jpg" }
+  ],
+  "delivery_type": {
+    "id": 3,
+    "name": "Email",
+    "requires_address": false,
+    "requires_email": true
+  },
+  "currency": {
+    "title": "Pounds Sterling",
+    "abbreviation": "GBP",
+    "sign": "£"
+  }
+}
+```
+
+> Request (PUT non-voucher example — full replacement)
+
+```http
+PUT /api/v3/products/{product_id} HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+  "name": "Updated Product Name",
+  "base_price": 99.99,
+  "description": "A fully updated product",
+  "model_no": "B-001",
+  "sku": "B-001",
+  "available": true,
+  "voucher": false,
+  "countries": [
+    {
+      "country": "GB",
+      "vat_rate": 20.0,
+      "delivery_charge": 5.0
+    }
+  ],
+  "rrp": "109.99",
+  "vat_rate": 20,
+  "brand_id": 1,
+  "catalogue_id": 8,
+  "categories": [62],
+  "variant_type_id": 2,
+  "variants": [
+    {
+      "variant": "One Size",
+      "sku": "B-001",
+      "available": true
+    }
+  ],
+  "media": ["https://example.test/image.jpg"],
+  "delivery_type_id": 1,
+  "currency": "GBP"
+}
+```
+
+> Request (PUT voucher example — full replacement)
+
+```http
+PUT /api/v3/products/{product_id} HTTP/1.1
+Authorization: Token token=xxx
+Content-Type: application/json
+
+{
+  "name": "Gift Card",
+  "base_price": 9.95,
+  "description": "A gift card",
+  "sku": "GC-001|10",
+  "available": true,
+  "voucher": true,
+  "face_value": 10,
+  "countries": [
+    {
+      "country": "GB",
+      "vat_rate": 0,
+      "delivery_charge": 0
+    }
+  ],
+  "rrp": "£10",
+  "vat_rate": 0,
+  "catalogue_id": 2,
+  "categories": [542],
+  "variants": [
+    {
+      "variant": "£10",
+      "face_value": 1000,
+      "base_price": 9.50,
+      "sku": "GC-001|10",
+      "available": true
+    },
+    {
+      "variant": "£20",
+      "face_value": 2000,
+      "base_price": 19.50,
+      "sku": "GC-001|20",
+      "available": true
+    }
+  ],
+  "media": ["https://example.test/gift-card.jpg"],
+  "delivery_type_id": 3,
+  "currency": "GBP"
+}
+```
+
+#### HTTP Request
+
+`PATCH /api/v3/products/{product_id}`
+
+`PUT /api/v3/products/{product_id}`
+
+#### Attributes
+
+Attribute | Type | Info
+--------- | ---- | ----
+name | String | Optional - name of the product as it is displayed in the catalogue
+description | String | Optional - a textual, detailed description of the product - can be plain text or HTML
+sku | String | Optional - canonical unique reference or identity of a product used for ordering. Changing the SKU also updates `product_sku` on all existing variants that reference the old value
+base_price | Float | Optional - the base price excluding tax and delivery. Maximum two decimal places
+rrp | String | Optional - recommended retail price of product
+currency | String | Optional - ISO 3-letter currency code for the currency this product will be billed in - this currency must be associated with your supplier
+available | Boolean | Optional - indicates if the product is or isn't available. When set to `false`, `availability_note` is required
+availability_note | String | Optional - required when `available` is `false`. Displayed in GPS to inform our team why the product is not available, e.g. "Coming soon" or "Temporarily out of stock"
+vat_rate | Float | Optional - sales tax rate as a percentage, e.g. `20` for 20%
+delivery_type_id | Integer | Optional - delivery types in GPS are (but not limited to) Physical = 1, Downloadable = 2, Email = 3, Prepaid = 4. These types enforce validation on orders, e.g. physical orders require a postal address
+voucher | Boolean | Optional - indicates if this product is to be treated as a voucher. Use PUT to transition between voucher and non-voucher while replacing all variants in the same request
+face_value | Integer | Optional (conditional, voucher only) - the face value of the lowest denomination in the lowest currency unit (e.g. `1000` for £10.00). Returns a 422 error for non-voucher products
+model_no | String | Optional - short descriptive code or model name
+minimum_age | Integer | Optional - minimum buyer age restriction in years
+max_value_per_order | Integer | Optional - maximum total face value purchasable in a single order, in the lowest currency unit
+international_requirements | Boolean | Optional - indicates if this product has international requirements such as alternative plugs or instructions. Not shown to end users
+brand_id | Integer | Optional - the ID of the brand as stored in GPS
+catalogue_id | Integer | Optional - the ID of the catalogue the product should belong to. Must be accessible to the authenticated API key
+categories | Array of Integers | Optional - array of leaf-level category IDs. PATCH adds to existing categories; PUT replaces them
+variant_type_id | Integer | Optional (non-voucher only) - the ID of a variant type in GPS (Colour = 1, Size = 2, Other = 8). Returns a 422 error for voucher products
+media | Array of URLs (String) | Optional - publicly accessible image URLs (JPG or PNG). PATCH appends to the existing media list; PUT replaces it. The first URL becomes the primary image
+variants | Array[Objects] | Optional - variants (non-voucher) or denominations (voucher) to create or update. Must include an entry whose `sku` matches the product `sku` (the master variant) — see note above
+variants.sku | String | Required for each variant - the SKU of this variant. Set equal to the product `sku` to designate it as the master variant/denomination, which drives the product-level `variant` or `lowest_denomination` field automatically
+variants.variant | String | Required for each variant - the display label for this variant or denomination (e.g. `"Size M"` or `"£10"`)
+variants.available | Boolean | Required for each variant - indicates the availability of this individual variant or denomination
+variants.face_value | Integer | Required (conditional, voucher only) - face value of this denomination in the lowest currency unit (e.g. `1000` for £10.00)
+variants.base_price | Float | Required (conditional, voucher only) - supplier cost price for this denomination as a decimal (e.g. `9.50`)

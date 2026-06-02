@@ -1,5 +1,11 @@
 ## Update product
 
+### V2
+
+<aside class="warning">
+  <strong>Deprecated</strong> - use <a href="#products-update-product-v3">V3</a> instead
+</aside>
+
 The update product API is available to update product information.
 
 <aside class="warning">
