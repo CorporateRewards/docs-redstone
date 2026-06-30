@@ -152,34 +152,34 @@ Authorization: Token token=xxx
 Content-Type: application/json
 
 {
-	"order": {
-		"programme_ref": "1309",
-		"product_id": "3257",
-		"points": "100",
-		"customer_name": "Test Order User",
-		"customer_email": "email@address.com",
-		"customer_phone": "447502375063",
-		"customer_address_1": "22 A street",
-		"customer_address_2": "",
-		"country": "UK",
-		"town": "renfrew",
-		"postcode": "pa4 8qy",
-		"recipient_address": "22 A street \n\nrenfrew \npa4 8qy",
-		"recipient_name": "Mohammed Ashraf",
-		"recipient_email": "",
-		"recipient_phone": "447502375063",
-		"delivery_instructions": ""
-	},
-	"line_items": {
-		"0": {
-			"line_item": {
-				"name": "Sony Playstation 4 Console",
-				"sku": "L-123",
-				"quantity": "1",
-				"points": "27720"
-			}
-		}
-	}
+  "order": {
+    "programme_ref": "1309",
+    "product_id": "3257",
+    "points": "100",
+    "customer_name": "Test Order User",
+    "customer_email": "email@address.com",
+    "customer_phone": "447700900063",
+    "customer_address_1": "22 A street",
+    "customer_address_2": "",
+    "country": "UK",
+    "town": "stratford",
+    "postcode": "CV37 9BF",
+    "recipient_address": "22 A street \n\nstratford \nCV37 9BF",
+    "recipient_name": "Test Order Recipient",
+    "recipient_email": "",
+    "recipient_phone": "447700900063",
+    "delivery_instructions": ""
+  },
+  "line_items": {
+    "0": {
+      "line_item": {
+        "name": "Sony Playstation 4 Console",
+        "sku": "L-123",
+        "quantity": "1",
+        "points": "27720"
+      }
+    }
+  }
 }
 ```
 
@@ -197,9 +197,9 @@ Content-Type: application/json
   "ordered_at": "2017-01-30T17:23:25.945Z",
   "programme_id": 34,
   "customer_name": "Test Order User",
-  "customer_phone": "447502375063",
+  "customer_phone": "447700900063",
   "customer_email": "email@address.com",
-  "recipient_address": "22 A street \n \nrenfrew \nUK \npa4 8qy",
+  "recipient_address": "22 A street \n\nstratford \nCV37 9BF",
   "delivery_instructions": "",
   "voucher_card_number": null,
   "tracking_id": null,
@@ -207,8 +207,8 @@ Content-Type: application/json
   "dispatch_date": null,
   "created_at": "2017-01-30T17:23:26.103Z",
   "updated_at": "2017-01-30T17:23:26.103Z",
-  "recipient_name": "Mohammed Ashraf",
-  "recipient_phone": "447502375063",
+  "recipient_name": "Test Order Recipient",
+  "recipient_phone": "447700900063",
   "recipient_email": "",
   "state": "pending",
   "variant_id": null,
@@ -234,8 +234,8 @@ Content-Type: application/json
   "old_order_type": false,
   "customer_address_1": "22 A street",
   "customer_address_2": "",
-  "town": "renfrew",
-  "postcode": "pa4 8qy",
+  "town": "stratford",
+  "postcode": "CV37 9BF",
   "country_name": "UK",
   "remote_order": null,
   "currency_id": 3,
