@@ -298,6 +298,7 @@ order\[delivery_instructions\] | String | Optional - allows for the provision of
 order\[remote_order\] | String | Optional - this can be used to record the ordering systems own unique id for this order. Some systems will create an order locally before attempting to push the order over the API to GPS. This field can be used to store this id value for later cross referencing.
 order\[pingback_url\] | String | Optional - if provided, must be a valid URL (with https://) that identifies this order locally on the ordering system. If an order is updated by GPS, we will make a simple get request to this url. This is a signal that an update has occurred and the ordering system should fetch the order by id (GPS order.id). The URL provided should not require any kind of authentication and as such should also not 'leak' any information and should NOT return a redirect.
 order\[bulk_order_number\] | String | Optional - if the order is part of a bulk order, this is used to provide the bulk order number.
+order\[voucher_card_number\] | String | Optional - The card number for the voucher, if the order is for a prepaid product.
 line_items\[0\]\[line_item\]\[name\] | String | Required - this is the name of the product being ordered
 line_items\[0\]\[line_item\]\[sku\] | String | Required - this is the SKU of the product being order. If ordering a variant of a product, ALWAYS provide the variant SKU
 line_items\[0\]\[line_item\]\[quantity\] | Integer | Required - the number of this product to deliver
